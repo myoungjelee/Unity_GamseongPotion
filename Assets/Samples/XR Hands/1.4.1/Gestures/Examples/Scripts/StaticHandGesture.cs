@@ -153,7 +153,7 @@ namespace UnityEngine.XR.Hands.Samples.GestureSample
 
         void Awake()
         {
-            m_BackgroundDefaultColor = m_Background.color;
+            m_BackgroundDefaultColor = m_Background.color;  
 
             if (m_Highlight)
             {
