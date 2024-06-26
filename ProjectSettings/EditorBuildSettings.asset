@@ -9,9 +9,11 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/MJ.unity
+    path: Assets/Scenes/HandTracking.unity
     guid: af01e217e2417bf4eb4253892e7b85d5
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 4fcc24bc678900b4ea81a4b5453c5754,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 042f477feac7ac14baf318e1320737e7,
       type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 5417e192e9e562d49918305f6b4c9efa,
