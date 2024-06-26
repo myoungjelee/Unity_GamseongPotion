@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4812880402012877839
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -9212671583956392497, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: acd82de56d2c22c468937c4387b6f25f, type: 2}
+    - target: {fileID: -8679921383154817045, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6389433884087242484, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -6389433884087242484, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.84541124
+      objectReference: {fileID: 0}
+    - target: {fileID: -6389433884087242484, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5339622
+      objectReference: {fileID: 0}
+    - target: {fileID: -6389433884087242484, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.0035025994
+      objectReference: {fileID: 0}
+    - target: {fileID: -6389433884087242484, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.012322469
+      objectReference: {fileID: 0}
+    - target: {fileID: -6389433884087242484, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 64.522
+      objectReference: {fileID: 0}
+    - target: {fileID: -6389433884087242484, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 2.542
+      objectReference: {fileID: 0}
+    - target: {fileID: -6389433884087242484, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 3.275
+      objectReference: {fileID: 0}
+    - target: {fileID: -3659948013793160229, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3659948013793160229, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8663072
+      objectReference: {fileID: 0}
+    - target: {fileID: -3659948013793160229, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.49934736
+      objectReference: {fileID: 0}
+    - target: {fileID: -3659948013793160229, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.0030015635
+      objectReference: {fileID: 0}
+    - target: {fileID: -3659948013793160229, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.012454101
+      objectReference: {fileID: 0}
+    - target: {fileID: -3659948013793160229, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 59.894
+      objectReference: {fileID: 0}
+    - target: {fileID: -3659948013793160229, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -2.015
+      objectReference: {fileID: 0}
+    - target: {fileID: -3659948013793160229, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -2.808
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 045bbc6d44dae5242bfda0e50fd860ef,
+        type: 3}
+      propertyPath: m_Name
+      value: man-glasses-steampunk
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 045bbc6d44dae5242bfda0e50fd860ef, type: 3}
