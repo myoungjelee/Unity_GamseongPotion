@@ -1363,7 +1363,7 @@ PrefabInstance:
     - target: {fileID: 3868271627154150697, guid: c16a7f518521bc742ab2ba7fcc5eb50b,
         type: 3}
       propertyPath: m_TagString
-      value: Grabbable
+      value: Herb
       objectReference: {fileID: 0}
     - target: {fileID: 4532041933166382995, guid: c16a7f518521bc742ab2ba7fcc5eb50b,
         type: 3}
@@ -1540,19 +1540,7 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 948651281}
-        m_TargetAssemblyTypeName: InteractableActor, Assembly-CSharp
-        m_MethodName: OutMagicPocket
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectExited:
     m_PersistentCalls:
       m_Calls: []
@@ -2196,7 +2184,7 @@ GameObject:
   - component: {fileID: 1440276821}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Grabbable
+  m_TagString: HerbPowder
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2276,7 +2264,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 3
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -3452,6 +3440,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2950888351695416205, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
+        type: 3}
+      propertyPath: m_PhysicsLayerMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2950888351695416205, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3718747981300290609, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -3461,6 +3459,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6176848201050929683, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6540079813722679768, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
         type: 3}

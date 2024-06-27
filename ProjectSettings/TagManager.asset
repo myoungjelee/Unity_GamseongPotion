@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Herb
   - HerbPowder
-  - Grabbable
+  - Potion
   layers:
   - Default
   - TransparentFX

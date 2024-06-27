@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractableActor : MonoBehaviour
 {
-    private Transform originTransform;
+    private Vector3 originScale;
     private Rigidbody rigid;
 
     public bool isInMagicPocket;
@@ -12,24 +12,36 @@ public class InteractableActor : MonoBehaviour
     private void Awake()
     {
         rigid = GetComponent<Rigidbody>();
-        originTransform = transform;
+        originScale = transform.localScale;
+
+        Debug.Log($"{originScale}");
     }
 
     public void OutMagicPocket()
     {
-        StartCoroutine(OutPocketRoutine());
+        //StartCoroutine(OutPocketRoutine());
+
+        //gameObject.layer = 0;
+
+        //rigid.isKinematic = false;
+
+        //transform.SetParent(null);
+
+        //transform.localScale = originScale;
+
+        //Debug.Log("±×·¦¹öÆ°");
     }
 
     IEnumerator OutPocketRoutine()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3f);
 
         gameObject.layer = 0;
 
         rigid.isKinematic = false;
 
-        transform.localScale = originTransform.localScale;
+        transform.SetParent(null);
 
-        transform.SetParent(originTransform);
+        transform.localScale = originScale;
     }
 }
