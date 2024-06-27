@@ -10,7 +10,7 @@ public class RayObjectName : MonoBehaviour
         rayInteractor = GetComponent<XRRayInteractor>();
     }
 
-    void Update()
+    public void Update()
     {
         if (rayInteractor.TryGetCurrent3DRaycastHit(out RaycastHit hit))
         {
