@@ -6,7 +6,7 @@ It uses stencil shaders with masks to accomplish this.
 
 by BadToxic (http://badtoxic.de)
 
-— Content —
+?Content ?
 
 - *StencilMask* shader
 - *StencilObject* shader
@@ -14,22 +14,22 @@ by BadToxic (http://badtoxic.de)
 - *game-card-frame* frame sprite template
 - *Rotate* C# script for rotation
 
-— Requirements —
+?Requirements ?
 
 _Shader_: Works on all platforms supported by Unity. *DX9* shader model *2.0*.
 Shader credits go to [Alan Zucconi](https://www.alanzucconi.com/2015/12/09/3873/)
 
-— Usage —
+?Usage ?
 
 Replace the 3D objects in the card with whatever you want and use the _StencilObject_ shader for the materials. The objects will only be visible through the card window using the _StencilMask_ shader.
 Use different ids in the __StencilMask_ shader variable if you want to have multiple object-mask pairs. (Objects only visible through the correct window.)
 Design the card frame as you want and replace the texts for your needs.
 
-— Support —
+?Support ?
 
 Need help? Join my discord server: https://discord.gg/8QMCm2d
 
-— Follow me —
+?Follow me ?
 
 Support me with likes and follows/subscriptions:
 [Instagram](https://www.instagram.com/xybadtoxic)
