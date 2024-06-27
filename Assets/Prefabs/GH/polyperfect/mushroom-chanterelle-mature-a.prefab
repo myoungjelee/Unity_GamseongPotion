@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &1211291040627819651
+--- !u!1001 &4767718100640570145
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -66,7 +66,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 655fcfad12a966f4192eb1b746e5513b,
         type: 3}
       propertyPath: m_Name
-      value: mushroom-chanterelle-mature-a
+      value: mushroom-chanterelle-mature-a 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

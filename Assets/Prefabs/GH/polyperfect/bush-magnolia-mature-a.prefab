@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &5571281375485711965
+--- !u!1001 &4440128807691286728
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ddbd36eecb06e51498caf5427508d2e0,
         type: 3}
       propertyPath: m_Name
-      value: bush-magnolia-mature-a
+      value: bush-magnolia-mature-a 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
