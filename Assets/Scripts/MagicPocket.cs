@@ -18,9 +18,14 @@ public class MagicPocket : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Herb") || other.gameObject.CompareTag("HerbPowder") || other.gameObject.CompareTag("Potion"))
         {
-                other.transform.SetParent(world.transform);
-                other.gameObject.layer = 6;
-                other.GetComponent<Rigidbody>().isKinematic = true;  
+            InteractableActor item = other.gameObject.GetComponent<InteractableActor>();
+
+            if (item.isInMagicPocket) return;
+
+            item.gameObject.transform.SetParent(world.transform);
+            item.gameObject.layer = 6;
+            item.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+            item.isInMagicPocket = true;
         }
     }
 

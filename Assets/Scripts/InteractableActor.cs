@@ -19,29 +19,24 @@ public class InteractableActor : MonoBehaviour
 
     public void OutMagicPocket()
     {
-        //StartCoroutine(OutPocketRoutine());
-
-        //gameObject.layer = 0;
-
-        //rigid.isKinematic = false;
-
-        //transform.SetParent(null);
-
-        //transform.localScale = originScale;
-
-        //Debug.Log("±×·¦¹öÆ°");
+        if( isInMagicPocket )
+        {
+            StartCoroutine(OutPocketRoutine());
+        }
     }
 
     IEnumerator OutPocketRoutine()
     {
-        yield return new WaitForSeconds(3f);
 
         gameObject.layer = 0;
-
-        rigid.isKinematic = false;
 
         transform.SetParent(null);
 
         transform.localScale = originScale;
+
+        yield return new WaitForSeconds(3f);
+
+        rigid.isKinematic = false;
+
     }
 }
