@@ -17,26 +17,29 @@ public class InteractableActor : MonoBehaviour
         Debug.Log($"{originScale}");
     }
 
-    public void OutMagicPocket()
+    public void PocketUnGrab()
     {
         if( isInMagicPocket )
         {
-            StartCoroutine(OutPocketRoutine());
+            Debug.Log("Æ÷ÄÏ ¾ð±×·¦");
+            gameObject.layer = 6;
+            gameObject.GetComponent<Rigidbody>().useGravity = false;
+            gameObject.GetComponent<Rigidbody>().isKinematic = true;
         }
     }
 
-    IEnumerator OutPocketRoutine()
+    public void PocketGrab()
     {
+        if( isInMagicPocket )
+        {
+            gameObject.layer = 0;
 
-        gameObject.layer = 0;
+            //transform.localScale = originScale;
 
-        transform.SetParent(null);
+            rigid.useGravity = true;
 
-        transform.localScale = originScale;
-
-        yield return new WaitForSeconds(3f);
-
-        rigid.isKinematic = false;
-
+            rigid.isKinematic = false;
+        }
     }
+
 }

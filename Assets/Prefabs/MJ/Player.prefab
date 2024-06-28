@@ -232,6 +232,21 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1349121313329643337, guid: 7c433da25cb32a340b9b89bb9807bcb1,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349121313329643337, guid: 7c433da25cb32a340b9b89bb9807bcb1,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349121313329643337, guid: 7c433da25cb32a340b9b89bb9807bcb1,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349121313329643337, guid: 7c433da25cb32a340b9b89bb9807bcb1,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.2
       objectReference: {fileID: 0}
@@ -280,6 +295,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1349121313329643337, guid: 7c433da25cb32a340b9b89bb9807bcb1,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1586577557918512896, guid: 7c433da25cb32a340b9b89bb9807bcb1,
         type: 3}
       propertyPath: m_Text
@@ -295,10 +315,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: MagicPocket
       objectReference: {fileID: 0}
+    - target: {fileID: 2612651954433740344, guid: 7c433da25cb32a340b9b89bb9807bcb1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8926601518721106592, guid: 7c433da25cb32a340b9b89bb9807bcb1,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8926601518721106592, guid: 7c433da25cb32a340b9b89bb9807bcb1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.722
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -525,6 +555,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RightHand
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555856430666216887, guid: d6878e1999eb4b44a9f5a263af86c185,
+        type: 3}
+      propertyPath: m_PhysicsLayerMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555856430666216887, guid: d6878e1999eb4b44a9f5a263af86c185,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6560933994651781378, guid: d6878e1999eb4b44a9f5a263af86c185,
         type: 3}

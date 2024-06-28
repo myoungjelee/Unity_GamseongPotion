@@ -20,12 +20,16 @@ public class MagicPocket : MonoBehaviour
         {
             InteractableActor item = other.gameObject.GetComponent<InteractableActor>();
 
-            if (item.isInMagicPocket) return;
+            // item이 이미 world의 자식인지 확인
+            //if (item.gameObject.transform.parent != transform)
+            //{
+            //    item.gameObject.transform.SetParent(transform);
+            //}
 
-            item.gameObject.transform.SetParent(world.transform);
-            item.gameObject.layer = 6;
-            item.gameObject.GetComponent<Rigidbody>().isKinematic = true;
-            item.isInMagicPocket = true;
+            // isInMagicPocket 값을 반대로 변경
+            item.isInMagicPocket = !item.isInMagicPocket;
+
+            Debug.Log($"{item.isInMagicPocket}");
         }
     }
 
