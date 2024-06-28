@@ -457,7 +457,8 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6444655750550188760, guid: 73dd45062e7fb1640ace67215330547a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5874,12 +5875,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 842675409}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &884294272 stripped
-MeshCollider:
-  m_CorrespondingSourceObject: {fileID: 6444655750550188760, guid: 73dd45062e7fb1640ace67215330547a,
-    type: 3}
-  m_PrefabInstance: {fileID: 26958370}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &894224648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6198,7 +6193,7 @@ Transform:
   m_GameObject: {fileID: 977254423}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.74062043, z: -0, w: 0.6719237}
-  m_LocalPosition: {x: -1.611, y: 0, z: -0.111}
+  m_LocalPosition: {x: -1.611, y: 0.257, z: -0.111}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11725,7 +11720,7 @@ PrefabInstance:
     - target: {fileID: 3550031255551700071, guid: 69fe6fd9f352db64f8e8f74af7ca60ef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2507193
+      value: 1.5077193
       objectReference: {fileID: 0}
     - target: {fileID: 3550031255551700071, guid: 69fe6fd9f352db64f8e8f74af7ca60ef,
         type: 3}
@@ -13066,7 +13061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 884294272}
+  - {fileID: 0}
   - {fileID: 1821421987}
   - {fileID: 2003440478}
   - {fileID: 1944237500}
