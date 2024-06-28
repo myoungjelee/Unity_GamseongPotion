@@ -5,8 +5,7 @@ public class Cauldron : MonoBehaviour
 {
     private List<string> herbPowders = new List<string>();
 
-    [Header("생성시 항아리 위쪽 거리")]
-    public float spawnDistance = 1.0f;
+    private float spawnDistance = 1.0f;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -49,14 +48,35 @@ public class Cauldron : MonoBehaviour
     private string CheckCombination()
     {
         // 예시 조합식
-        if (herbPowders.Contains("HerbName1") && herbPowders.Contains("HerbName2"))
+        if (herbPowders.Contains("Mosquito Mushroom") && herbPowders.Contains("Watery plant"))
         {
-            return "PotionName1";
+            return "Acceleration potion";
         }
-        else if (herbPowders.Contains("HerbName3") && herbPowders.Contains("HerbName4"))
+        else if (herbPowders.Contains("Daffodil of fire") && herbPowders.Contains("Mosquito Mushroom"))
         {
-            return "PotionName2";
+            return "Addiction potion";
         }
+        else if (herbPowders.Contains("Watery plant") && herbPowders.Contains("fluffy crystal"))
+        {
+            return "Coolness potion";
+        }
+        else if (herbPowders.Contains("fluffy crystal") && herbPowders.Contains("Daffodil of fire"))
+        {
+            return "Deceleration potion";
+        }
+        else if (herbPowders.Contains("Blood Garnet") && herbPowders.Contains("Daffodil of fire"))
+        {
+            return "Explosion potion";
+        }
+        else if (herbPowders.Contains("Blood Garnet") && herbPowders.Contains("Watery plant"))
+        {
+            return "Healing potion";
+        }
+        else if (herbPowders.Contains("Mosquito Mushroom") && herbPowders.Contains("Blood Garnet") && herbPowders.Contains("fluffy crystal"))
+        {
+            return "Necromancy potion";
+        }
+
 
         return null;
     }
