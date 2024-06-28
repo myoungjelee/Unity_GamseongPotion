@@ -11,17 +11,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: caa793e48fcdcb846a488e6cde35d2c4,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 100
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: caa793e48fcdcb846a488e6cde35d2c4,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 100
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: caa793e48fcdcb846a488e6cde35d2c4,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 100
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: caa793e48fcdcb846a488e6cde35d2c4,
         type: 3}
@@ -393,7 +393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     name: Blood Garnet
-    color: {r: 1, g: 1, b: 1, a: 1}
+    color: {r: 0.70980394, g: 0.33333334, b: 0.3372549, a: 1}
     usePrice: 0
   spawnDistance: 1
   isChange: 0
