@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 46f5c82c7c3ee9c499e3eea40d197eb2,
         type: 3}
       propertyPath: m_Name
-      value: Necromancy potion
+      value: Necromancy Potion
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -88,10 +88,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 46f5c82c7c3ee9c499e3eea40d197eb2,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8563099219246936776}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 46f5c82c7c3ee9c499e3eea40d197eb2,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 5321329016523834141}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 46f5c82c7c3ee9c499e3eea40d197eb2,
         type: 3}
@@ -101,6 +97,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4416623813156874858}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 46f5c82c7c3ee9c499e3eea40d197eb2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8165012840681708430}
   m_SourcePrefab: {fileID: 100100000, guid: 46f5c82c7c3ee9c499e3eea40d197eb2, type: 3}
 --- !u!1 &3019360068930237862 stripped
 GameObject:
@@ -152,11 +152,11 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8563099219246936776
+--- !u!114 &5321329016523834141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +165,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 3019360068930237862}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a98934aa93b10244b6c99fcba72e0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInMagicPocket: 0
+--- !u!114 &5015377015731600795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3019360068930237862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92c630daede4014ca52d021b54d5f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterialPath: Materials/M_Outline
+--- !u!114 &4416623813156874858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3019360068930237862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bb35678b8079f2479ac977da4310829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8165012840681708430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3019360068930237862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0f758e706ce204eb8c0ffc82d28a58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -189,7 +227,7 @@ MonoBehaviour:
   m_FirstHoverEntered:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5015377015731600795}
         m_TargetAssemblyTypeName: OutlineOnHover, Assembly-CSharp
         m_MethodName: OnHoverEnter
         m_Mode: 1
@@ -204,7 +242,7 @@ MonoBehaviour:
   m_LastHoverExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5015377015731600795}
         m_TargetAssemblyTypeName: OutlineOnHover, Assembly-CSharp
         m_MethodName: OnHoverExit
         m_Mode: 1
@@ -284,7 +322,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 1
+  m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -307,7 +345,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -332,41 +370,3 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &5321329016523834141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3019360068930237862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a98934aa93b10244b6c99fcba72e0ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInMagicPocket: 0
---- !u!114 &5015377015731600795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3019360068930237862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92c630daede4014ca52d021b54d5f67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMaterialPath: Materials/M_Outline
---- !u!114 &4416623813156874858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3019360068930237862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb35678b8079f2479ac977da4310829, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

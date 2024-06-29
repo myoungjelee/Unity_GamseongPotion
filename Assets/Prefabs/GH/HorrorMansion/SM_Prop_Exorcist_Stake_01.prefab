@@ -13,44 +13,60 @@ PrefabInstance:
       value: SM_Prop_Exorcist_Stake_01
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.17879546
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.9406099
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -9.200444
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7095923
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.19039793
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.17580983
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.6552239
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -2.282
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -29.961
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 86.048
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 6fd5e63eab669204db6c91562646f6d8, type: 3}
       propertyPath: m_Materials.Array.data[0]

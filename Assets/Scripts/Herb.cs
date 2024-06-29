@@ -16,7 +16,7 @@ public class Herb : MonoBehaviour
     public HerbData data;
 
     [Header("생성시 재료병 앞쪽 거리")]
-    public float spawnDistance = 1.0f;
+    private float spawnDistance = 0.3f;
 
     public bool isChange = false;
 
@@ -31,7 +31,7 @@ public class Herb : MonoBehaviour
             Vector3 spawnPosition = transform.position + transform.forward * spawnDistance;
 
             // 프리팹을 병 앞쪽 위치에 인스턴스화
-            Instantiate(herbPrefab, spawnPosition, Quaternion.identity);
+            GameObject spawnHerb = Instantiate(herbPrefab, spawnPosition, Quaternion.identity);
         }
         else
         {
