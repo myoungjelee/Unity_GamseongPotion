@@ -13,8 +13,6 @@ public class InteractableActor : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody>();
         originScale = transform.localScale;
-
-        Debug.Log($"{originScale}");
     }
 
     public void PocketUnGrab()

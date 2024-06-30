@@ -90,6 +90,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: caa793e48fcdcb846a488e6cde35d2c4,
         type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: caa793e48fcdcb846a488e6cde35d2c4,
+        type: 3}
       propertyPath: m_TagString
       value: Herb
       objectReference: {fileID: 0}
@@ -101,10 +106,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5393420526644597869}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: caa793e48fcdcb846a488e6cde35d2c4,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: -2406886100435047707}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: caa793e48fcdcb846a488e6cde35d2c4,
         type: 3}
       insertIndex: -1
@@ -121,6 +122,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 3708024216296417478}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: caa793e48fcdcb846a488e6cde35d2c4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7987399354178033017}
   m_SourcePrefab: {fileID: 100100000, guid: caa793e48fcdcb846a488e6cde35d2c4, type: 3}
 --- !u!1 &5098933416358678596 stripped
 GameObject:
@@ -151,11 +156,11 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-2406886100435047707
+--- !u!114 &-8981117257551423550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -164,7 +169,73 @@ MonoBehaviour:
   m_GameObject: {fileID: 5098933416358678596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a98934aa93b10244b6c99fcba72e0ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isInMagicPocket: 0
+--- !u!114 &-242897621305644916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098933416358678596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a92c630daede4014ca52d021b54d5f67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMaterialPath: Materials/M_Outline
+--- !u!114 &-7597054165533238773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098933416358678596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac5fdf1f6e4567946b3618b11d56faab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data:
+    name: Blood Garnet
+    color: {r: 0.70980394, g: 0.33333334, b: 0.3372549, a: 1}
+    usePrice: 0
+  isChange: 0
+--- !u!136 &3708024216296417478
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098933416358678596}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.006
+  m_Height: 0.02711155
+  m_Direction: 1
+  m_Center: {x: 4.656613e-10, y: 0.013156761, z: 0}
+--- !u!114 &7987399354178033017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5098933416358678596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e29999037e32c9a48ac8bcb4ab043d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -283,7 +354,7 @@ MonoBehaviour:
       m_Calls: []
   m_AttachTransform: {fileID: 0}
   m_SecondaryAttachTransform: {fileID: 0}
-  m_UseDynamicAttach: 0
+  m_UseDynamicAttach: 1
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
   m_SnapToColliderVolume: 1
@@ -331,70 +402,3 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &-8981117257551423550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5098933416358678596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a98934aa93b10244b6c99fcba72e0ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInMagicPocket: 0
---- !u!114 &-242897621305644916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5098933416358678596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a92c630daede4014ca52d021b54d5f67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMaterialPath: Materials/M_Outline
---- !u!114 &-7597054165533238773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5098933416358678596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac5fdf1f6e4567946b3618b11d56faab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data:
-    name: Blood Garnet
-    color: {r: 0.70980394, g: 0.33333334, b: 0.3372549, a: 1}
-    usePrice: 0
-  spawnDistance: 1
-  isChange: 0
---- !u!136 &3708024216296417478
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5098933416358678596}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.006
-  m_Height: 0.02711155
-  m_Direction: 1
-  m_Center: {x: 4.656613e-10, y: 0.013156761, z: 0}
