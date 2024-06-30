@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/MainHall 1.unity.meta
 guid: 9ed94e1aa6f27e0478b0da81a70f864b
+========
+guid: 056b0c18ee7a77847973c4b83d7819c9
+>>>>>>>> GH2:Assets/Scenes/MainHall.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
