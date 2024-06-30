@@ -109,10 +109,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: caa793e48fcdcb846a488e6cde35d2c4,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: -8981117257551423550}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: caa793e48fcdcb846a488e6cde35d2c4,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: -242897621305644916}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: caa793e48fcdcb846a488e6cde35d2c4,
         type: 3}
@@ -160,19 +156,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-8981117257551423550
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5098933416358678596}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a98934aa93b10244b6c99fcba72e0ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isInMagicPocket: 0
 --- !u!114 &-242897621305644916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +185,9 @@ MonoBehaviour:
     name: Blood Garnet
     color: {r: 0.70980394, g: 0.33333334, b: 0.3372549, a: 1}
     usePrice: 0
-  isChange: 0
+  nameTag: {fileID: 0}
+  minusCoin: {fileID: 0}
+  text_MinusCoin: {fileID: 0}
 --- !u!136 &3708024216296417478
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -360,7 +345,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0.15
-  m_MovementType: 2
+  m_MovementType: 0
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -377,7 +362,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -397,8 +382,10 @@ MonoBehaviour:
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
   m_ForceGravityOnDetach: 0
-  m_RetainTransformParent: 1
+  m_RetainTransformParent: 0
   m_AttachPointCompatibilityMode: 0
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  isInPocket: 0
+  originScale: {x: 0, y: 0, z: 0}

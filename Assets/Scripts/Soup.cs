@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; // UI 관련 네임스페이스 추가
 
 public class Soup : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class Soup : MonoBehaviour
 
     private float currentTime;
     private float spawnTime = 10f;
+
+    [SerializeField] private Image progressBar; // 프로그레스 바의 Fill 이미지
+    [SerializeField] private GameObject progressCanvas;
 
     private void Awake()
     {
@@ -45,6 +49,8 @@ public class Soup : MonoBehaviour
         if (other.gameObject.CompareTag("Ladle"))
         {
             currentTime = 0;
+            UpdateProgressBar(0); // 프로그레스 바 초기화
+            progressBar.color = Color.white;
         }
     }
 
@@ -54,9 +60,10 @@ public class Soup : MonoBehaviour
         {
             Ladle ladle = other.gameObject.GetComponent<Ladle>();
 
-            if(ladle.isGrabbed)
+            if (ladle.isGrabbed)
             {
                 currentTime += Time.deltaTime;
+                UpdateProgressBar(currentTime / spawnTime); // 프로그레스 바 업데이트
 
                 if (currentTime > spawnTime)
                 {
@@ -66,6 +73,8 @@ public class Soup : MonoBehaviour
             else
             {
                 currentTime = 0;
+                UpdateProgressBar(0); // 프로그레스 바 초기화
+                progressBar.color = Color.white;
             }
         }
     }
@@ -88,9 +97,11 @@ public class Soup : MonoBehaviour
             //Debug.LogWarning("포션 생성됨: " + potion);
             SpawnPotion(potion);
             currentTime = 0;
+            progressBar.color = Color.green;
         }
         else
         {
+            progressBar.color = Color.red;
             Debug.Log("유효한 조합식이 없습니다.");
         }
 
@@ -153,6 +164,22 @@ public class Soup : MonoBehaviour
         else
         {
             Debug.LogError($"potionPrefab with name {potionName} not found in Resources/Prefabs.");
+        }
+    }
+
+    // UpdateProgressBar 메서드는 프로그레스 바(progressBar)의 진행 상태를 업데이트하고,
+    // 특정 조건에 따라 프로그레스 바의 활성화 여부를 설정합니다.
+    private void UpdateProgressBar(float progress)
+    {
+        // progressBar가 null이 아닐 때만 진행 상태를 업데이트하고 활성화 여부를 설정합니다.
+        if (progressBar != null)
+        {
+            // Mathf.Clamp01 메서드를 사용하여 progress 값을 0과 1 사이의 값으로 제한합니다.
+            progressBar.fillAmount = Mathf.Clamp01(progress);
+
+            // progress 값이 0보다 큰 경우 progressBar를 활성화(보이게)하고,
+            // 그렇지 않으면 비활성화(안 보이게)합니다.
+            progressCanvas.gameObject.SetActive(progress > 0f);
         }
     }
 }

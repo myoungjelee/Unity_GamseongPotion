@@ -8,6 +8,8 @@ TagManager:
   - HerbPowder
   - Potion
   - Ladle
+  - CoinUI
+  - CoinText
   layers:
   - Default
   - TransparentFX

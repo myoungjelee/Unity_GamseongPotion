@@ -1,15 +1,13 @@
 using UnityEngine;
-using UnityEngine.UI;
-using System.Collections.Generic;
 using TMPro;
 using System.Collections;
 using DG.Tweening;
-using UnityEditor.Rendering;
+
 
 public class Customer : MonoBehaviour
 {
     private Vector3 initPos;
-    
+
     [Header("스킨")]
     public Mesh[] skins;
     private SkinnedMeshRenderer skinRenderer;
@@ -20,6 +18,7 @@ public class Customer : MonoBehaviour
     public string selectedDialogue;
     private string currentDialogue;
     private string correctAnswer;
+    private Coroutine currentCoroutine;
     private string[] dialogues = new string[21]
     {
         "치유의 포션 파는것 맞죠? 한병 주시죠. 혹시 몰라서 한병 장만해두려 합니다",
@@ -54,7 +53,7 @@ public class Customer : MonoBehaviour
 
     private void OnEnable()
     {
-        StartCoroutine(InitCustomer());     
+        StartCoroutine(InitCustomer());
     }
 
     IEnumerator InitCustomer()
@@ -62,12 +61,11 @@ public class Customer : MonoBehaviour
         SetRandomCharacter();
         float randomDelay = Random.Range(2f, 6f); // 2초에서 5초 사이의 랜덤 시간
         yield return new WaitForSecondsRealtime(randomDelay);
-        transform.DOMoveX(-0.16f, 2).OnComplete(() => SetText());
+        transform.DOMoveX(-0.2f, 2).OnComplete(() => SetText());
     }
 
     private void OnDisable()
     {
-        //StartCoroutine(InitCustomer());
         transform.position = initPos;
         textUI.SetActive(false);
     }
@@ -83,7 +81,7 @@ public class Customer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             SetText();
         }
@@ -91,16 +89,35 @@ public class Customer : MonoBehaviour
 
     void SetText()
     {
+        if (currentCoroutine != null)
+        {
+            StopCoroutine(currentCoroutine);
+        }
+
+        currentCoroutine = StartCoroutine(SetTextRoutine());
+    }
+
+    IEnumerator SetTextRoutine()
+    {
         textUI.SetActive(true);
         dialogueText.text = "";
         dialogueText.DOKill();
-        dialogueText.DOText(selectedDialogue, 3);
+
+        Tween textTween = dialogueText.DOText(selectedDialogue, 3);
+        yield return textTween.WaitForCompletion();
+
+        yield return new WaitForSeconds(5);
+        textUI.SetActive(false);
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
+            if (currentCoroutine != null)
+            {
+                StopCoroutine(currentCoroutine);
+            }
             dialogueText.DOKill();
             textUI.SetActive(false);
         }
@@ -115,7 +132,7 @@ public class Customer : MonoBehaviour
             return true;
         }
         else
-        {        
+        {
             return false;
         }
     }

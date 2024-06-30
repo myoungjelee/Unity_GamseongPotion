@@ -52,20 +52,11 @@ public class GameManager : MonoBehaviour
     public void AddCoins(int amount)
     {
         totalCoins += amount;
-        //Debug.Log("Total Coins: " + totalCoins);
     }
 
-    
     public void SubtractCoins(int amount)
     {
-        if (totalCoins >= amount)
-        {
-            totalCoins -= amount;
-            Debug.Log("Total Coins: " + totalCoins);
-        }
-        else
-        {
-            Debug.Log("Not enough coins to remove.");
-        }
+        totalCoins -= amount;
+
     }
 }

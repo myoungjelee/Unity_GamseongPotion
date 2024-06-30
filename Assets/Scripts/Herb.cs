@@ -1,5 +1,8 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 [System.Serializable]
@@ -21,6 +24,10 @@ public class Herb : MonoBehaviour
     [Header("이름표")]
     public GameObject nameTag;
 
+    [Header("사용가격")]
+    public GameObject minusCoin;
+    public TextMeshProUGUI text_MinusCoin;
+
     public void SpawnHerb()
     {
         // Resources 폴더에서 프리팹 로드
@@ -31,10 +38,19 @@ public class Herb : MonoBehaviour
             // 병 앞쪽 위치 계산
             Vector3 spawnPosition = transform.position + transform.forward * spawnDistance;
 
-            // 프리팹을 병 앞쪽 위치에 인스턴스화
+            // 프리팹을 병 앞쪽 위치에 생성
             GameObject spawnHerb = Instantiate(herbPrefab, spawnPosition, Quaternion.identity);
             Herb spawningHerb = spawnHerb.GetComponent<Herb>();
-            GameManager.Instance.SubtractCoins(spawningHerb.data.usePrice);
+
+            //가격 표시
+            text_MinusCoin.text = $"-{data.usePrice}";
+            minusCoin.SetActive(true);
+            minusCoin.transform.DOLocalMoveY(-0.08f, 1).OnComplete(() =>
+            {
+                minusCoin.SetActive(false);
+                minusCoin.transform.localPosition = Vector3.zero;
+            });
+            GameManager.Instance.SubtractCoins(data.usePrice);
         }
         else
         {
