@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
 
+    public int totalCoins;
+
+    public GameObject customer;
+
     public static GameManager Instance
     {
         get
@@ -32,6 +36,36 @@ public class GameManager : MonoBehaviour
         else
         {
             Destroy(this.gameObject);
+        }
+
+        StartCoroutine(TestRoutine());
+    }
+
+
+    IEnumerator TestRoutine()
+    {
+        yield return new WaitForSeconds(4);
+        customer.gameObject.SetActive(true);
+    }
+
+
+    public void AddCoins(int amount)
+    {
+        totalCoins += amount;
+        //Debug.Log("Total Coins: " + totalCoins);
+    }
+
+    
+    public void SubtractCoins(int amount)
+    {
+        if (totalCoins >= amount)
+        {
+            totalCoins -= amount;
+            Debug.Log("Total Coins: " + totalCoins);
+        }
+        else
+        {
+            Debug.Log("Not enough coins to remove.");
         }
     }
 }

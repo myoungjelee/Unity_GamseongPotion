@@ -59,7 +59,7 @@ public class GrindingBat : MonoBehaviour
         {
             Herb herb = collision.gameObject.GetComponent<Herb>();
 
-            if (herb != null && !herb.isChange)
+            if (herb != null)
             {
                 StartCoroutine(ProcessHerb(collision, herb));
             }
@@ -127,8 +127,7 @@ public class GrindingBat : MonoBehaviour
             Destroy(powder1);
 
             // 카운트를 초기화하고 변환 플래그 설정
-            count = 0;
-            herb.isChange = true;
+            count = 0;        
         }
         else
         {

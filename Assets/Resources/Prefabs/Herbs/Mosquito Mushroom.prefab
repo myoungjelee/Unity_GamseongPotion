@@ -202,7 +202,7 @@ MonoBehaviour:
     name: Mosquito Mushroom
     color: {r: 0.3584906, g: 0.2756319, b: 0.2756319, a: 1}
     usePrice: 0
-  isChange: 0
+  nameTag: {fileID: 0}
 --- !u!136 &2896176504014224248
 CapsuleCollider:
   m_ObjectHideFlags: 0

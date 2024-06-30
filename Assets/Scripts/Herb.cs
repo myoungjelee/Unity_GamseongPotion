@@ -18,7 +18,8 @@ public class Herb : MonoBehaviour
     [Header("생성시 재료병 앞쪽 거리")]
     private float spawnDistance = 0.3f;
 
-    public bool isChange = false;
+    [Header("이름표")]
+    public GameObject nameTag;
 
     public void SpawnHerb()
     {
@@ -32,10 +33,24 @@ public class Herb : MonoBehaviour
 
             // 프리팹을 병 앞쪽 위치에 인스턴스화
             GameObject spawnHerb = Instantiate(herbPrefab, spawnPosition, Quaternion.identity);
+            Herb spawningHerb = spawnHerb.GetComponent<Herb>();
+            GameManager.Instance.SubtractCoins(spawningHerb.data.usePrice);
         }
         else
         {
             Debug.LogError($"herbPrefab with name {data.name} not found in Resources/Prefabs.");
         }
+    }
+
+    // 호버 시작 시 호출되는 메서드
+    public void OnHoverEnter()
+    {
+        nameTag.SetActive(true);
+    }
+
+    // 호버 종료 시 호출되는 메서드
+    public void OnHoverExit()
+    {
+        nameTag.SetActive(false);
     }
 }
