@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 7086223628400626404}
   - component: {fileID: 7987861425353215663}
   m_Layer: 11
-  m_Name: NameTag
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5918240436243219490
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32,7 +32,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7704506280005107808}
-  m_Father: {fileID: 2498718586787704604}
+  m_Father: {fileID: 3017729209066159260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -102,6 +102,38 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &1730764532265305566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3017729209066159260}
+  m_Layer: 11
+  m_Name: NameTag
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &3017729209066159260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1730764532265305566}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5918240436243219490}
+  m_Father: {fileID: 2498718586787704604}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &5557476312004048808
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,17 +280,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 46f5c82c7c3ee9c499e3eea40d197eb2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.4603901
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46f5c82c7c3ee9c499e3eea40d197eb2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.504
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46f5c82c7c3ee9c499e3eea40d197eb2,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 8.760972
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 46f5c82c7c3ee9c499e3eea40d197eb2,
         type: 3}
@@ -326,7 +358,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 46f5c82c7c3ee9c499e3eea40d197eb2,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5918240436243219490}
+      addedObject: {fileID: 3017729209066159260}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 46f5c82c7c3ee9c499e3eea40d197eb2,
         type: 3}
@@ -454,7 +486,7 @@ MonoBehaviour:
   data:
     name: Necromancy potion
     sellPrice: 700
-  nameTag: {fileID: 3019360068930237862}
+  nameTag: {fileID: 1730764532265305566}
 --- !u!114 &8165012840681708430
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 730910884047439760}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -409,7 +409,7 @@ PrefabInstance:
     - target: {fileID: 674821759559459567, guid: d6878e1999eb4b44a9f5a263af86c185,
         type: 3}
       propertyPath: m_RaycastMask.m_Bits
-      value: 4294967295
+      value: 2039
       objectReference: {fileID: 0}
     - target: {fileID: 674821759559459567, guid: d6878e1999eb4b44a9f5a263af86c185,
         type: 3}
@@ -439,7 +439,7 @@ PrefabInstance:
     - target: {fileID: 786759544300764772, guid: d6878e1999eb4b44a9f5a263af86c185,
         type: 3}
       propertyPath: m_RaycastMask.m_Bits
-      value: 4294967295
+      value: 2039
       objectReference: {fileID: 0}
     - target: {fileID: 786759544300764772, guid: d6878e1999eb4b44a9f5a263af86c185,
         type: 3}

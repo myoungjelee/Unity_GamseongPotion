@@ -479,6 +479,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ladle
       objectReference: {fileID: 0}
+    - target: {fileID: 1658948261263041543, guid: 2aa20936380fdfa4c906f3eb9920a601,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ladle
+      objectReference: {fileID: 0}
     - target: {fileID: 3475641432549924422, guid: 2aa20936380fdfa4c906f3eb9920a601,
         type: 3}
       propertyPath: m_Convex
@@ -532,6 +537,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cauldron: {fileID: 1440026660537031651}
+  isGrabbed: 0
 --- !u!54 &229590508333961786
 Rigidbody:
   m_ObjectHideFlags: 0

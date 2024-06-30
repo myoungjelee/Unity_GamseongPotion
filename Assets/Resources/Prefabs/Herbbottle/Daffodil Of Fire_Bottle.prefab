@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 3767443627935863989}
   - component: {fileID: 43133444181381970}
   m_Layer: 11
-  m_Name: NameTag
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4460818481121136463
 RectTransform:
   m_ObjectHideFlags: 0
@@ -26,17 +26,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 65158929176785709}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.00005, y: 0.00005, z: 0.00005}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1159691586204371016}
-  m_Father: {fileID: 8265076038828199061}
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+  m_Father: {fileID: 796253487441647784}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.1058}
+  m_AnchoredPosition: {x: 0, y: 0.10580003}
   m_SizeDelta: {x: 1355, y: 781}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &1551742745793225673
@@ -102,6 +102,38 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &2326788358988229422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796253487441647784}
+  m_Layer: 11
+  m_Name: NameTag
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &796253487441647784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2326788358988229422}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4460818481121136463}
+  m_Father: {fileID: 8265076038828199061}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &7158260069176793080
 GameObject:
   m_ObjectHideFlags: 0
@@ -530,17 +562,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d7e1917b9fe269e4ebb4053ba1d37faf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.5845852
+      value: 1.4516394
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d7e1917b9fe269e4ebb4053ba1d37faf,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.17346892
+      value: 0.7383102
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d7e1917b9fe269e4ebb4053ba1d37faf,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.14401
+      value: 1.0864735
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d7e1917b9fe269e4ebb4053ba1d37faf,
         type: 3}
@@ -619,7 +651,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: d7e1917b9fe269e4ebb4053ba1d37faf,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4460818481121136463}
+      addedObject: {fileID: 796253487441647784}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d7e1917b9fe269e4ebb4053ba1d37faf,
         type: 3}
@@ -687,7 +719,7 @@ MonoBehaviour:
     name: Daffodil Of Fire
     color: {r: 1, g: 1, b: 1, a: 1}
     usePrice: 0
-  nameTag: {fileID: 65158929176785709}
+  nameTag: {fileID: 2326788358988229422}
 --- !u!114 &-2759979455192658583
 MonoBehaviour:
   m_ObjectHideFlags: 0

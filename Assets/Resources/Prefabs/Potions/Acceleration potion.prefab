@@ -1,5 +1,37 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &262915550817388108
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6468986551635348002}
+  m_Layer: 11
+  m_Name: NameTag
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6468986551635348002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 262915550817388108}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3270981365663398073}
+  m_Father: {fileID: 2984915819716119522}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1301007269023092081
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,12 +45,12 @@ GameObject:
   - component: {fileID: 1911557155593095363}
   - component: {fileID: 6043985606782335956}
   m_Layer: 11
-  m_Name: NameTag
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3270981365663398073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32,7 +64,7 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2646793787266810609}
-  m_Father: {fileID: 2984915819716119522}
+  m_Father: {fileID: 6468986551635348002}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -248,17 +280,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 67b13c298e3fd65429c8728b5f3498c7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.4603901
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67b13c298e3fd65429c8728b5f3498c7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.504
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67b13c298e3fd65429c8728b5f3498c7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 8.760972
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67b13c298e3fd65429c8728b5f3498c7,
         type: 3}
@@ -331,7 +363,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67b13c298e3fd65429c8728b5f3498c7,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3270981365663398073}
+      addedObject: {fileID: 6468986551635348002}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 67b13c298e3fd65429c8728b5f3498c7,
         type: 3}
@@ -455,7 +487,7 @@ MonoBehaviour:
   data:
     name: Acceleration potion
     sellPrice: 100
-  nameTag: {fileID: 1301007269023092081}
+  nameTag: {fileID: 262915550817388108}
 --- !u!114 &-7536483028915317139
 MonoBehaviour:
   m_ObjectHideFlags: 0

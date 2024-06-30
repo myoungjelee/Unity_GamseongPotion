@@ -83,7 +83,7 @@ public class Customer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if(other.CompareTag("Player"))
         {
             SetText();
         }
@@ -99,11 +99,10 @@ public class Customer : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             dialogueText.DOKill();
             textUI.SetActive(false);
-            Debug.Log("Æ®¸®°Å ¾Æ¿ô");
         }
     }
 

@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 6158651560406435287}
   - component: {fileID: 8389183096272228755}
   m_Layer: 11
-  m_Name: NameTag
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1998852888266342073
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32,11 +32,11 @@ RectTransform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6774268331691512701}
-  m_Father: {fileID: 2710590601595654146}
+  m_Father: {fileID: 5832667743271531370}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.2109}
+  m_AnchoredPosition: {x: 0, y: 0.21090001}
   m_SizeDelta: {x: 1355, y: 781}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4957685021737168845
@@ -102,6 +102,38 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!1 &3772495909567952935
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5832667743271531370}
+  m_Layer: 11
+  m_Name: NameTag
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5832667743271531370
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3772495909567952935}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1998852888266342073}
+  m_Father: {fileID: 2710590601595654146}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &7205438454981033292
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,17 +280,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 6f688af80b90693428c5a6f8d5eacc54,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.4603901
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f688af80b90693428c5a6f8d5eacc54,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.504
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f688af80b90693428c5a6f8d5eacc54,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 8.760972
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6f688af80b90693428c5a6f8d5eacc54,
         type: 3}
@@ -326,7 +358,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6f688af80b90693428c5a6f8d5eacc54,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1998852888266342073}
+      addedObject: {fileID: 5832667743271531370}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f688af80b90693428c5a6f8d5eacc54,
         type: 3}
@@ -456,7 +488,7 @@ MonoBehaviour:
   data:
     name: Deceleration potion
     sellPrice: 400
-  nameTag: {fileID: 1399354112204113355}
+  nameTag: {fileID: 3772495909567952935}
 --- !u!114 &2554690568538048259
 MonoBehaviour:
   m_ObjectHideFlags: 0

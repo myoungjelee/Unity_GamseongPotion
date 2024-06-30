@@ -1,12 +1,12 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using DG.Tweening;
-using System.Collections; // TextMeshProUGUI 사용을 위해 추가
+using System.Collections; 
 
 public class SellSocketInteractor : XRSocketInteractor
 {
     [Header("손님")]
-    public Customer customer; // Customer 스크립트를 참조하기 위한 변수
+    public Customer customer; 
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
@@ -39,7 +39,7 @@ public class SellSocketInteractor : XRSocketInteractor
                     //    Debug.LogError("코인 프리팹을 로드할 수 없습니다.");
                     //}
 
-                    Destroy(interactableObject.gameObject); // 포션을 파괴하여 판매 완료 처리
+                    Destroy(interactableObject.gameObject);
 
                     // 대사 완료 후 이동
                     customer.dialogueText.text = "";
