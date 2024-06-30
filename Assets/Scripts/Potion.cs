@@ -34,7 +34,7 @@ public class Potion : MonoBehaviour
         {
             // 플레이어를 바라보도록 회전
             Vector3 direction = player.position - nameTag.transform.position;
-            //direction.y = 0; // y 축 회전을 방지하여 네임태그가 수평을 유지하도록 함
+            direction.y = 0; // y 축 회전을 방지하여 네임태그가 수평을 유지하도록 함
             nameTag.transform.rotation = Quaternion.LookRotation(direction);
             nameTag.transform.forward *= -1;
         }

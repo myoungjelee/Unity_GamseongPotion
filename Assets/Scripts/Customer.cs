@@ -62,7 +62,7 @@ public class Customer : MonoBehaviour
         SetRandomCharacter();
         float randomDelay = Random.Range(2f, 6f); // 2초에서 5초 사이의 랜덤 시간
         yield return new WaitForSecondsRealtime(randomDelay);
-        transform.DOMoveX(-0.16f, 2).OnComplete(() => SetText());
+        transform.DOMoveX(-0.2f, 2).OnComplete(() => SetText());
     }
 
     private void OnDisable()
@@ -91,6 +91,8 @@ public class Customer : MonoBehaviour
 
     void SetText()
     {
+        if (DOTween.IsTweening(dialogueText)) return;
+
         textUI.SetActive(true);
         dialogueText.text = "";
         dialogueText.DOKill();

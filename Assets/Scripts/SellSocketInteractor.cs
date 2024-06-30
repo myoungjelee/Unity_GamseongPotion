@@ -23,21 +23,21 @@ public class SellSocketInteractor : XRSocketInteractor
             {
                 if (customer.OnPotionResult(potion.data.name))
                 {
-                    //// 코인 세팅 (코인프리팹 만들고 주석풀기)
-                    //GameObject coinPrefab = Resources.Load<GameObject>($"Prefabs/Coin");
-                    //if (coinPrefab != null)
-                    //{
-                    //    GameObject spawnCoin = Instantiate(coinPrefab, potion.transform.position, Quaternion.identity);
-                    //    Coin coin = spawnCoin.GetComponent<Coin>();
-                    //    if (coin != null)
-                    //    {
-                    //        coin.coin = potion.data.sellPrice;
-                    //    }
-                    //}
-                    //else
-                    //{
-                    //    Debug.LogError("코인 프리팹을 로드할 수 없습니다.");
-                    //}
+                    // 코인 세팅 (코인프리팹 만들고 주석풀기)
+                    GameObject coinPrefab = Resources.Load<GameObject>($"Prefabs/Coin");
+                    if (coinPrefab != null)
+                    {
+                        GameObject spawnCoin = Instantiate(coinPrefab, potion.transform.position, Quaternion.identity);
+                        Coin coin = spawnCoin.GetComponent<Coin>();
+                        if (coin != null)
+                        {
+                            coin.coin = potion.data.sellPrice;
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogError("코인 프리팹을 로드할 수 없습니다.");
+                    }
 
                     Destroy(interactableObject.gameObject);
 
