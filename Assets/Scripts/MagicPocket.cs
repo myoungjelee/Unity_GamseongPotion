@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,48 +6,71 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class MagicPocket : MonoBehaviour
 {
-    private GameObject world;
-
-    private bool isTrigger;
-
-    private void Awake()
-    {
-        world = GameObject.Find("World");
-    }
+    public Transform pocketWorld;
+    private HashSet<XRGrabInteractable> itemsInPocket = new HashSet<XRGrabInteractable>();
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Herb") || other.gameObject.CompareTag("HerbPowder") || other.gameObject.CompareTag("Potion"))
         {
-            InteractableActor item = other.gameObject.GetComponent<InteractableActor>();
+            XRGrabInteractable item = other.gameObject.GetComponent<XRGrabInteractable>();
 
-            // item이 이미 world의 자식인지 확인
-            //if (item.gameObject.transform.parent != transform)
-            //{
-            //    item.gameObject.transform.SetParent(transform);
-            //}
+            if (item != null && item.isSelected && !itemsInPocket.Contains(item))
+            {
+                // HerbGrabInteractable 또는 PotionGrabInteractable 인지 확인
+                var pocketHerb = item as HerbGrabInteractable;
+                var pocketPotion = item as PotionGrabInteractable;
 
-            // isInMagicPocket 값을 반대로 변경
-            item.isInMagicPocket = !item.isInMagicPocket;
+                if (pocketHerb != null)
+                {
+                    pocketHerb.isInPocket = true;
+                }
+                else if (pocketPotion != null)
+                {
+                    pocketPotion.isInPocket = true;
+                }
 
-            Debug.Log($"{item.isInMagicPocket}");
+                item.gameObject.transform.SetParent(pocketWorld);
+                item.gameObject.layer = LayerMask.NameToLayer("Stencil");
+
+                itemsInPocket.Add(item);
+
+                //Debug.Log($"{item.gameObject.name}가 Magic Pocket에 들어갔습니다.");
+            }
         }
     }
 
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.gameObject.CompareTag("Herb") || other.gameObject.CompareTag("HerbPowder") || other.gameObject.CompareTag("Potion"))
-    //    {
-    //        InteractableActor interactableActor = other.GetComponent<InteractableActor>();
-    //        XRGrabInteractable grab = other.GetComponent<XRGrabInteractable>();
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Herb") || other.gameObject.CompareTag("HerbPowder") || other.gameObject.CompareTag("Potion"))
+        {
+            XRGrabInteractable item = other.gameObject.GetComponent<XRGrabInteractable>();
 
-    //        if (interactableActor.isInMagicPocket && isTrigger)
-    //        {
-    //            other.transform.SetParent(null);
-    //            other.gameObject.layer = 0;
-    //            other.GetComponent<Rigidbody>().isKinematic = false;
-    //            interactableActor.isInMagicPocket = false;
-    //        }
-    //    }
-    //}
+            if (item != null && item.isSelected && itemsInPocket.Contains(item))
+            {
+
+                item.gameObject.transform.SetParent(null);
+                item.gameObject.layer = LayerMask.NameToLayer("Default");
+
+                // HerbGrabInteractable 또는 PotionGrabInteractable 인지 확인
+                var pocketHerb = item as HerbGrabInteractable;
+                var pocketPotion = item as PotionGrabInteractable;
+
+                if (pocketHerb != null)
+                {
+                    pocketHerb.isInPocket = false;
+                    item.gameObject.transform.DOScale(pocketHerb.originScale, 1);
+                }
+                else if (pocketPotion != null)
+                {
+                    pocketPotion.isInPocket = false;
+                    item.gameObject.transform.DOScale(pocketPotion.originScale, 1);
+                }
+
+                itemsInPocket.Remove(item);
+
+                //Debug.Log($"{item.gameObject.name}가 Magic Pocket에서 나갔습니다.");
+            }
+        }
+    }
 }
