@@ -5708,7 +5708,7 @@ PrefabInstance:
     - target: {fileID: 1532069136323459689, guid: 2dc3c888d638c2240908f4fe9593ed08,
         type: 3}
       propertyPath: m_Name
-      value: SM_Bld_Wall_Door_Large_01
+      value: ArchemistRoom
       objectReference: {fileID: 0}
     - target: {fileID: 2164208799254470867, guid: 2dc3c888d638c2240908f4fe9593ed08,
         type: 3}
@@ -5765,7 +5765,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6157188755286535129, guid: 2dc3c888d638c2240908f4fe9593ed08, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 2164208799254470867, guid: 2dc3c888d638c2240908f4fe9593ed08,
@@ -5800,7 +5801,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1940312736}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1532069136323459689, guid: 2dc3c888d638c2240908f4fe9593ed08,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 415510513}
   m_SourcePrefab: {fileID: 100100000, guid: 2dc3c888d638c2240908f4fe9593ed08, type: 3}
 --- !u!4 &415510511 stripped
 Transform:
@@ -5808,6 +5813,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 415510510}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &415510512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1532069136323459689, guid: 2dc3c888d638c2240908f4fe9593ed08,
+    type: 3}
+  m_PrefabInstance: {fileID: 415510510}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &415510513
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415510512}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.2, y: 3.64, z: 2}
+  m_Center: {x: -1.5, y: 1.5, z: 1.5}
 --- !u!1001 &417341640
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8497,7 +8529,7 @@ PrefabInstance:
     - target: {fileID: 1532069136323459689, guid: 2dc3c888d638c2240908f4fe9593ed08,
         type: 3}
       propertyPath: m_Name
-      value: SM_Bld_Wall_Door_Large_01
+      value: BedRoomDoor
       objectReference: {fileID: 0}
     - target: {fileID: 2164208799254470867, guid: 2dc3c888d638c2240908f4fe9593ed08,
         type: 3}
@@ -8564,12 +8596,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6157188755286535129, guid: 2dc3c888d638c2240908f4fe9593ed08, type: 3}
     m_RemovedGameObjects:
     - {fileID: 7170245429862405910, guid: 2dc3c888d638c2240908f4fe9593ed08, type: 3}
     - {fileID: 4003478357671212153, guid: 2dc3c888d638c2240908f4fe9593ed08, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1532069136323459689, guid: 2dc3c888d638c2240908f4fe9593ed08,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 712631375}
   m_SourcePrefab: {fileID: 100100000, guid: 2dc3c888d638c2240908f4fe9593ed08, type: 3}
 --- !u!4 &712631373 stripped
 Transform:
@@ -8577,6 +8614,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 712631372}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &712631374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1532069136323459689, guid: 2dc3c888d638c2240908f4fe9593ed08,
+    type: 3}
+  m_PrefabInstance: {fileID: 712631372}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &712631375
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712631374}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.28, y: 2.84, z: 1}
+  m_Center: {x: -1.21, y: 1.57, z: 0.45}
 --- !u!1001 &719655647
 PrefabInstance:
   m_ObjectHideFlags: 0
