@@ -13,6 +13,9 @@ public class MagicPocket : MonoBehaviour
         if (other.gameObject.CompareTag("Herb") || other.gameObject.CompareTag("HerbPowder") || other.gameObject.CompareTag("Potion"))
         {
             XRGrabInteractable item = other.gameObject.GetComponent<XRGrabInteractable>();
+            Rigidbody rigidbody = other.gameObject.GetComponent<Rigidbody>();
+
+            
 
             if (item != null && item.isSelected && !itemsInPocket.Contains(item))
             {
@@ -29,7 +32,13 @@ public class MagicPocket : MonoBehaviour
                     pocketPotion.isInPocket = true;
                 }
 
-                item.gameObject.transform.SetParent(pocketWorld);
+                if (!rigidbody.isKinematic && (pocketHerb.isInPocket || pocketPotion.isInPocket)) return;
+
+                if (item.gameObject.transform.parent != pocketWorld)
+                {
+                    item.gameObject.transform.SetParent(pocketWorld);
+                }
+
                 item.gameObject.layer = LayerMask.NameToLayer("Stencil");
 
                 itemsInPocket.Add(item);

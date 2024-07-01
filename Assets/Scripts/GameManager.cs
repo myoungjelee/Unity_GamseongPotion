@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+        text_CoinBank = GameObject.Find("Text_CoinBank").GetComponent<TextMeshProUGUI>();
+
         totalCoin = 1000;
         SetCoinText(totalCoin);
 

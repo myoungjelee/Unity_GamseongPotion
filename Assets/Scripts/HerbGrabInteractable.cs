@@ -15,6 +15,8 @@ public class HerbGrabInteractable : XRGrabInteractable
         rb = GetComponent<Rigidbody>();
         isInPocket = false; // √ ±‚»≠
         originScale = transform.localScale;
+
+        //Debug.Log(originScale);
     }
 
     protected override void OnSelectExited(SelectExitEventArgs args)
@@ -23,8 +25,7 @@ public class HerbGrabInteractable : XRGrabInteractable
 
         if (isInPocket)
         {
-            rb.isKinematic = true;
-            
+            rb.isKinematic = true;         
         }
         else
         {

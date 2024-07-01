@@ -9,8 +9,9 @@ public class ActivateOnLookAt : MonoBehaviour
     public GameObject target;
     //public XRRayInteractor interactor;
 
-    private float thresholdAngle = 30f;
-    private float thresholdDuration = 1f;
+    private float minThresholdAngle = 5f;
+    private float maxThresholdAngle = 15f;
+    private float thresholdDuration = 0f;
 
     private bool isLooking = false;
     private float showingTime;
@@ -25,7 +26,8 @@ public class ActivateOnLookAt : MonoBehaviour
         var dir = target.transform.position - camera.transform.position;
         var angle = Vector3.Angle(camera.transform.forward, dir);
 
-        if (angle <= thresholdAngle)
+
+        if (angle >= minThresholdAngle && angle <= maxThresholdAngle)
         {
             if (!isLooking)
             {
@@ -36,6 +38,7 @@ public class ActivateOnLookAt : MonoBehaviour
             {
                 if (!target.activeSelf && Time.time >= showingTime)
                 {
+                    //Debug.Log(angle);
                     target.SetActive(true);
                 }
             }

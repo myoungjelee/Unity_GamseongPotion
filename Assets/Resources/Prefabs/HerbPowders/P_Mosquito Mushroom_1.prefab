@@ -113,15 +113,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b4444f1c3bf8fd44ab17c3f96c867d2e,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: -6939695036659252545}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b4444f1c3bf8fd44ab17c3f96c867d2e,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 3697565793356466152}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b4444f1c3bf8fd44ab17c3f96c867d2e,
         type: 3}
       insertIndex: -1
       addedObject: {fileID: -7784779008850931751}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b4444f1c3bf8fd44ab17c3f96c867d2e,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5387816026251555630}
   m_SourcePrefab: {fileID: 100100000, guid: b4444f1c3bf8fd44ab17c3f96c867d2e, type: 3}
 --- !u!1 &7564282718374000021 stripped
 GameObject:
@@ -177,25 +177,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.54, y: 0.62, z: 2.45}
   m_Center: {x: 0.000000059604645, y: -0.000000029802322, z: 0}
---- !u!114 &-6939695036659252545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7564282718374000021}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac5fdf1f6e4567946b3618b11d56faab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  data:
-    name: Mosquito Mushroom
-    color: {r: 1, g: 1, b: 1, a: 1}
-    usePrice: 0
-  nameTag: {fileID: 0}
-  minusCoin: {fileID: 0}
-  text_MinusCoin: {fileID: 0}
 --- !u!114 &3697565793356466152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,7 +328,7 @@ MonoBehaviour:
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
-  m_ThrowOnDetach: 0
+  m_ThrowOnDetach: 1
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -366,7 +347,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   m_ThrowVelocityScale: 1.5
   m_ThrowAngularVelocityScale: 1
-  m_ForceGravityOnDetach: 0
+  m_ForceGravityOnDetach: 1
   m_RetainTransformParent: 0
   m_AttachPointCompatibilityMode: 0
   m_StartingSingleGrabTransformers: []
@@ -387,3 +368,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMaterialPath: Materials/M_Outline
+--- !u!114 &5387816026251555630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7564282718374000021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4400d7874e83a44cb3d9c296c5f6b24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powderName: 
+  powderColor: {r: 0, g: 0, b: 0, a: 0}

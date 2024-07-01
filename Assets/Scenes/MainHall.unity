@@ -6766,7 +6766,7 @@ PrefabInstance:
         type: 3}
       propertyPath: text_CoinBank
       value: 
-      objectReference: {fileID: 1270760351}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17504,18 +17504,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a2dcd7c9d7ce254b8d9af172197ab86, type: 3}
---- !u!114 &1270760351 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 304954393237283637, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
-    type: 3}
-  m_PrefabInstance: {fileID: 1270760350}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1283643682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25036,6 +25024,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4869469566466206166, guid: 48e747ac4c5aa1f40b22d6252364d2d5,
+        type: 3}
+      propertyPath: grinder
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

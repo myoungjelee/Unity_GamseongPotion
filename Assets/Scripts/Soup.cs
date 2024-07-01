@@ -16,7 +16,7 @@ public class Soup : MonoBehaviour
     [SerializeField] private Image progressBar; 
     [SerializeField] private GameObject progressCanvas;
 
-    public GameObject Player;
+    //public GameObject Player;
 
     private void Awake()
     {
@@ -170,15 +170,19 @@ public class Soup : MonoBehaviour
     // 특정 조건에 따라 프로그레스 바의 활성화 여부를 설정합니다.
     private void UpdateProgressBar(float progress)
     {
-        // progressBar가 null이 아닐 때만 진행 상태를 업데이트하고 활성화 여부를 설정합니다.
         if (progressBar != null)
         {
-            // Mathf.Clamp01 메서드를 사용하여 progress 값을 0과 1 사이의 값으로 제한합니다.
             progressBar.fillAmount = Mathf.Clamp01(progress);
+            bool shouldShowProgressBar = progress > 0f;
+            progressCanvas.gameObject.SetActive(shouldShowProgressBar);
 
-            // progress 값이 0보다 큰 경우 progressBar를 활성화(보이게)하고,
-            // 그렇지 않으면 비활성화(안 보이게)합니다.
-            progressCanvas.gameObject.SetActive(progress > 0f);
+            //if (shouldShowProgressBar)
+            //{
+            //    // 프로그레스 캔버스를 플레이어 방향으로 회전
+            //    Vector3 directionToPlayer = Player.transform.position - progressCanvas.transform.position;
+            //    directionToPlayer.y = 0; // 수평 회전만 고려
+            //    progressCanvas.transform.rotation = Quaternion.LookRotation(directionToPlayer);
+            //}
         }
     }
 }

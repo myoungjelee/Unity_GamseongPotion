@@ -10,6 +10,8 @@ TagManager:
   - Ladle
   - CoinUI
   - CoinText
+  - Grinder
+  - GrindingBat
   layers:
   - Default
   - TransparentFX
