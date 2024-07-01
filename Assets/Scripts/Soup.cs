@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI; // UI 관련 네임스페이스 추가
+using UnityEngine.UI;
 
 public class Soup : MonoBehaviour
 {
@@ -13,14 +13,15 @@ public class Soup : MonoBehaviour
     private float currentTime;
     private float spawnTime = 10f;
 
-    [SerializeField] private Image progressBar; // 프로그레스 바의 Fill 이미지
+    [SerializeField] private Image progressBar; 
     [SerializeField] private GameObject progressCanvas;
+
+    public GameObject Player;
 
     private void Awake()
     {
         mdshRenderer = GetComponent<MeshRenderer>();
         originColor = mdshRenderer.material.color;
-        //Debug.Log(originColor.ToString());
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,7 +34,6 @@ public class Soup : MonoBehaviour
             {
                 // 가루를 항아리에 추가
                 herbPowders.Add(powder.powderName);
-                //Debug.Log($"Added powder: {powder.powderName}"); // 추가된 가루의 이름을 출력
 
                 // 색상 혼합
                 MixColor(powder.powderColor);
@@ -94,7 +94,6 @@ public class Soup : MonoBehaviour
 
         if (potion != null)
         {
-            //Debug.LogWarning("포션 생성됨: " + potion);
             SpawnPotion(potion);
             currentTime = 0;
             progressBar.color = Color.green;
