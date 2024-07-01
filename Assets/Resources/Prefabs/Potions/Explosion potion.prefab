@@ -463,7 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     name: Explosion potion
-    sellPrice: 500
+    sellPrice: 200
   nameTag: {fileID: 2854120276417991807}
 --- !u!114 &3276991514666990622
 MonoBehaviour:

@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager instance;
 
-    public int totalCoins;
+    public int totalCoin;
 
     public GameObject customer;
+
+    public TextMeshProUGUI text_CoinBank;
 
     public static GameManager Instance
     {
@@ -38,6 +41,9 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+        totalCoin = 1000;
+        SetCoinText(totalCoin);
+
         StartCoroutine(TestRoutine());
     }
 
@@ -51,12 +57,18 @@ public class GameManager : MonoBehaviour
 
     public void AddCoins(int amount)
     {
-        totalCoins += amount;
+        totalCoin += amount;
+        SetCoinText(totalCoin);
     }
 
     public void SubtractCoins(int amount)
     {
-        totalCoins -= amount;
+        totalCoin -= amount;
+        SetCoinText(totalCoin);
+    }
 
+    private void SetCoinText(int coin)
+    {
+        text_CoinBank.text = $"{coin}\u20A9";
     }
 }

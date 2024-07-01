@@ -184,7 +184,7 @@ MonoBehaviour:
   data:
     name: Mosquito Mushroom
     color: {r: 0.3584906, g: 0.2756319, b: 0.2756319, a: 1}
-    usePrice: 0
+    usePrice: 110
   nameTag: {fileID: 0}
   minusCoin: {fileID: 0}
   text_MinusCoin: {fileID: 0}

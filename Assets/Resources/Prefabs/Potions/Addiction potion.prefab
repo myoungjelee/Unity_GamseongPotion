@@ -457,7 +457,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     name: Addiction potion
-    sellPrice: 200
+    sellPrice: 180
   nameTag: {fileID: 5821041309635853479}
 --- !u!114 &-7644436331306771178
 MonoBehaviour:

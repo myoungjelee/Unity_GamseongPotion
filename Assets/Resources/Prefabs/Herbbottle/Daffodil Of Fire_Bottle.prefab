@@ -990,7 +990,7 @@ MonoBehaviour:
   data:
     name: Daffodil Of Fire
     color: {r: 1, g: 1, b: 1, a: 1}
-    usePrice: 20
+    usePrice: 77
   nameTag: {fileID: 2326788358988229422}
   minusCoin: {fileID: 136701387814290217}
   text_MinusCoin: {fileID: 1922848670386771194}
