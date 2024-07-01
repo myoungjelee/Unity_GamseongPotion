@@ -50,6 +50,10 @@ public class SellSocketInteractor : XRSocketInteractor
                 }
                 else
                 {
+                    if(customer.currentCoroutine != null)
+                    {
+                        StopCoroutine(customer.currentCoroutine);
+                    }
                     customer.dialogueText.text = "";
                     customer.dialogueText.DOText("이건 제가 원한 것이 아니에요.", 1);
                 }

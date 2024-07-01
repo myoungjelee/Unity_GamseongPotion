@@ -18,7 +18,7 @@ public class Customer : MonoBehaviour
     public string selectedDialogue;
     private string currentDialogue;
     private string correctAnswer;
-    private Coroutine currentCoroutine;
+    public Coroutine currentCoroutine;
     private string[] dialogues = new string[21]
     {
         "치유의 포션 파는것 맞죠? 한병 주시죠. 혹시 몰라서 한병 장만해두려 합니다",

@@ -31,7 +31,6 @@ public class ActivateOnLookAt : MonoBehaviour
             {
                 isLooking = true;
                 showingTime = Time.time + thresholdDuration;
-
             }
             else
             {
