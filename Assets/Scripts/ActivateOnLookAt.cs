@@ -1,21 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class ActivateOnLookAt : MonoBehaviour
 {
     public new Camera camera;
-    public Behaviour target;
+    public GameObject target;
+    //public XRRayInteractor interactor;
 
-    public float thresholdAngle = 30f;
-    public float thresholdDuration = 2f;
+    private float thresholdAngle = 30f;
+    private float thresholdDuration = 1f;
 
     private bool isLooking = false;
     private float showingTime;
 
     private void Awake()
     {
-        target.enabled = false;
+        target.SetActive(false);
     }
 
     private void Update()
@@ -33,9 +35,9 @@ public class ActivateOnLookAt : MonoBehaviour
             }
             else
             {
-                if (!target.enabled && Time.time >= showingTime)
+                if (!target.activeSelf && Time.time >= showingTime)
                 {
-                    target.enabled = true;
+                    target.SetActive(true);
                 }
             }
         }
@@ -44,7 +46,7 @@ public class ActivateOnLookAt : MonoBehaviour
             if (isLooking)
             {
                 isLooking = false;
-                target.enabled = false;
+                target.SetActive(false);
             }
         }
     }
