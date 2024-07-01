@@ -184,7 +184,7 @@ MonoBehaviour:
   data:
     name: Blood Garnet
     color: {r: 0.70980394, g: 0.33333334, b: 0.3372549, a: 1}
-    usePrice: 0
+    usePrice: 100
   nameTag: {fileID: 0}
   minusCoin: {fileID: 0}
   text_MinusCoin: {fileID: 0}

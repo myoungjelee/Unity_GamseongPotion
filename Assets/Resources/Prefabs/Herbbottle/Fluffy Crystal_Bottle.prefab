@@ -806,7 +806,7 @@ MonoBehaviour:
   data:
     name: fluffy crystal
     color: {r: 1, g: 1, b: 1, a: 1}
-    usePrice: 30
+    usePrice: 105
   nameTag: {fileID: 7548751898449880543}
   minusCoin: {fileID: 4419480722095563297}
   text_MinusCoin: {fileID: 985139325057936049}

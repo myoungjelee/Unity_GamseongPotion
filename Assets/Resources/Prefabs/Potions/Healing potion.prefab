@@ -464,7 +464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     name: Healing potion
-    sellPrice: 600
+    sellPrice: 171
   nameTag: {fileID: 1882262413803719396}
 --- !u!114 &7411140230652532536
 MonoBehaviour:

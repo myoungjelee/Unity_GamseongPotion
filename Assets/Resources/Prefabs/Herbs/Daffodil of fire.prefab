@@ -184,7 +184,7 @@ MonoBehaviour:
   data:
     name: Daffodil Of Fire
     color: {r: 0.764151, g: 0.40194887, b: 0.24870951, a: 1}
-    usePrice: 0
+    usePrice: 77
   nameTag: {fileID: 0}
   minusCoin: {fileID: 0}
   text_MinusCoin: {fileID: 0}

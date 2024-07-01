@@ -184,7 +184,7 @@ MonoBehaviour:
   data:
     name: Watery Plant
     color: {r: 0.16540584, g: 0.23060544, b: 0.5566038, a: 1}
-    usePrice: 0
+    usePrice: 50
   nameTag: {fileID: 0}
   minusCoin: {fileID: 0}
   text_MinusCoin: {fileID: 0}

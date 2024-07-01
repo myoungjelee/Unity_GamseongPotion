@@ -470,7 +470,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     name: Deceleration potion
-    sellPrice: 400
+    sellPrice: 350
   nameTag: {fileID: 3772495909567952935}
 --- !u!114 &2554690568538048259
 MonoBehaviour:

@@ -464,7 +464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     name: Coolness potion
-    sellPrice: 300
+    sellPrice: 250
   nameTag: {fileID: 2629016182534102980}
 --- !u!114 &2021186780697457422
 MonoBehaviour:

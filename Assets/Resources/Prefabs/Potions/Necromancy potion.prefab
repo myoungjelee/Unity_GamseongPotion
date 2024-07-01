@@ -468,7 +468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     name: Necromancy potion
-    sellPrice: 700
+    sellPrice: 609
   nameTag: {fileID: 1730764532265305566}
 --- !u!114 &8165012840681708430
 MonoBehaviour:
