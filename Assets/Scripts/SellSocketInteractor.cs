@@ -6,7 +6,19 @@ using System.Collections;
 public class SellSocketInteractor : XRSocketInteractor
 {
     [Header("손님")]
-    public Customer customer; 
+    public Customer customer;
+
+    private void Awake()
+    {
+        StartCoroutine(StartVisitCustormer());
+    }
+
+    IEnumerator StartVisitCustormer()
+    {
+        yield return new WaitForSeconds(6);
+
+        customer.gameObject.SetActive(true);
+    }
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
@@ -42,6 +54,11 @@ public class SellSocketInteractor : XRSocketInteractor
                     Destroy(interactableObject.gameObject);
 
                     // 대사 완료 후 이동
+                    if (customer.currentCoroutine != null)
+                    {
+                        StopCoroutine(customer.currentCoroutine);
+                        customer.currentCoroutine = null;
+                    }
                     customer.dialogueText.text = "";
                     Sequence sequence = DOTween.Sequence();
                     sequence.Append(customer.dialogueText.DOText("고맙습니다!", 1));
