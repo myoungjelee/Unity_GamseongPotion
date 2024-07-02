@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Models/GH/HorrorMansion/Materials.meta
 guid: 46f59893faa912949b0a3eeeca6a6951
+========
+guid: 0a7798f8ef5aae24f99639772c6d4540
+>>>>>>>> GH2:Assets/Textures/GH/UI.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
