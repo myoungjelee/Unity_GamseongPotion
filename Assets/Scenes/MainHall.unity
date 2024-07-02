@@ -19212,11 +19212,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8459100225708359983, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27049,7 +27044,12 @@ PrefabInstance:
     - target: {fileID: 483837783617532332, guid: 48e747ac4c5aa1f40b22d6252364d2d5,
         type: 3}
       propertyPath: m_Name
-      value: mortar-stone-empty
+      value: Grinder
+      objectReference: {fileID: 0}
+    - target: {fileID: 483837783617532332, guid: 48e747ac4c5aa1f40b22d6252364d2d5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grinder
       objectReference: {fileID: 0}
     - target: {fileID: 1008031478927272726, guid: 48e747ac4c5aa1f40b22d6252364d2d5,
         type: 3}
@@ -27101,11 +27101,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2376826916483405075, guid: 48e747ac4c5aa1f40b22d6252364d2d5,
+        type: 3}
+      propertyPath: m_Name
+      value: GrindingBat
+      objectReference: {fileID: 0}
+    - target: {fileID: 2376826916483405075, guid: 48e747ac4c5aa1f40b22d6252364d2d5,
+        type: 3}
+      propertyPath: m_TagString
+      value: GrindingBat
+      objectReference: {fileID: 0}
     - target: {fileID: 4869469566466206166, guid: 48e747ac4c5aa1f40b22d6252364d2d5,
         type: 3}
       propertyPath: grinder
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1832233221}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
