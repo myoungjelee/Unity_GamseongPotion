@@ -28390,6 +28390,11 @@ PrefabInstance:
       propertyPath: grinder
       value: 
       objectReference: {fileID: 1832233221}
+    - target: {fileID: 9151165163110121650, guid: 48e747ac4c5aa1f40b22d6252364d2d5,
+        type: 3}
+      propertyPath: m_MovementType
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

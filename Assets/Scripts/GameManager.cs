@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("싱글톤")]
     private static GameManager instance;
-
-    public int totalCoin;
-
-    public TextMeshProUGUI text_CoinBank;
-
     public static GameManager Instance
     {
         get
@@ -23,9 +20,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public enum State
+    {
+        Awake,          // 깨어있는 상태
+        Sleeping,       // 자는 중 상태
+        CanSleep        // 잘 수 있는 상태
+    }
+
+    [Header("상태변환")]
+    private State currentState;
+
+    [Header("저장데이터")]
+    private int totalCoin;
     private int date;
-    private bool isSleep;
-    private int money;
+
+    [SerializeField]private TextMeshProUGUI text_CoinBank;
 
     private void Awake()
     {
@@ -39,23 +48,11 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        // 비활성화된 오브젝트도 포함하여 모든 TextMeshProUGUI 컴포넌트를 찾습니다.
-        TextMeshProUGUI[] textComponents = Resources.FindObjectsOfTypeAll<TextMeshProUGUI>();
-
-        // 각각의 컴포넌트를 확인하여 이름이 "Text_CoinBank"인 오브젝트를 찾습니다.
-        foreach (TextMeshProUGUI tmp in textComponents)
-        {
-            if (tmp.gameObject.name == "Text_CoinBank")
-            {
-                text_CoinBank = tmp;
-                break;
-            }
-        }
-
         totalCoin = 1000;
         SetCoinText(totalCoin);
-    }
 
+        currentState = State.Sleeping;
+    }
 
     public void AddCoins(int amount)
     {
@@ -72,5 +69,25 @@ public class GameManager : MonoBehaviour
     private void SetCoinText(int coin)
     {
         text_CoinBank.text = $"{coin}\u20A9";
+    }
+
+    public void GoToMainHall()
+    {
+        SceneManager.LoadScene("MainHall");
+    }
+
+    public void GoToBedRoom()
+    {
+        switch (currentState)
+        {
+            case State.Awake:
+                SceneManager.LoadScene("Start Scenes");
+                break;
+            case State.CanSleep:
+                SceneManager.LoadScene("Start Scenes");
+                break;
+            default:
+                break;
+        }
     }
 }

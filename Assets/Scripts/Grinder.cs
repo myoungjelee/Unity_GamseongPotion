@@ -5,29 +5,29 @@ using UnityEngine;
 
 public class Grinder : MonoBehaviour
 {
-    //public bool isInSide;
+    public bool isInSide;
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Herb") || collision.gameObject.CompareTag("HerbPowder"))
-    //    {
-    //        isInSide = true;
-    //    }
-    //}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Herb") || other.gameObject.CompareTag("HerbPowder"))
+        {
+            isInSide = true;
+        }
+    }
 
-    //private void OnCollisionStay(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Herb") || collision.gameObject.CompareTag("HerbPowder"))
-    //    {
-    //        isInSide = true;
-    //    }
-    //}
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Herb") || other.gameObject.CompareTag("HerbPowder"))
+        {
+            isInSide = true;
+        }
+    }
 
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Herb") || collision.gameObject.CompareTag("HerbPowder"))
-    //    {
-    //        isInSide = false;
-    //    }
-    //}
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Herb") || other.gameObject.CompareTag("HerbPowder"))
+        {
+            isInSide = false;
+        }
+    }
 }

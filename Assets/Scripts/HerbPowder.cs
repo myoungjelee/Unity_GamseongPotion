@@ -8,23 +8,30 @@ public class HerbPowder : MonoBehaviour
     public Color powderColor;
 
     [Header("허브 빻기")]
-    private bool isInGrinder = false;
+    //private bool isInGrinder = false;
+    private Grinder grinder;
     private int count;
     private int grindCount = 5;
     private int powderState;
+
+    private void Awake()
+    {
+        // 하이어라키에서 "Grinder" 태그를 가진 오브젝트를 찾음
+        grinder = GameObject.FindWithTag("Grinder").GetComponent<Grinder>();
+
+        if (grinder == null)
+        {
+            Debug.LogError("Grinder를 찾을 수 없습니다. 'Grinder' 태그를 가진 오브젝트가 존재하는지 확인하세요.");
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (this.gameObject.name.Contains("_2")) return;
 
-        if (collision.gameObject.CompareTag("Grinder"))
-        {
-            isInGrinder = true;
-        }
-
         if (collision.gameObject.CompareTag("GrindingBat"))
         {
-            if (isInGrinder)
+            if (grinder.isInSide)
             {
                 count++;
 
@@ -43,7 +50,7 @@ public class HerbPowder : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Grinder"))
         {
-            isInGrinder = false;
+            //isInGrinder = false;
             Debug.Log("Exited Grinder");
         }
     }

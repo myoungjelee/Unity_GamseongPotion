@@ -49,15 +49,6 @@ public class Customer : MonoBehaviour
         skinRenderer = transform.Find("Character").GetComponent<SkinnedMeshRenderer>();
         initPos = new Vector3(-3f, 0, 11.1f);
         transform.position = initPos;
-
-        StartCoroutine(StartCustomner());
-    }
-
-    IEnumerator StartCustomner()
-    {
-        yield return new WaitForSeconds(10);
-
-        gameObject.SetActive(true);
     }
 
     private void OnEnable()
