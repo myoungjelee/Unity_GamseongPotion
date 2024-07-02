@@ -104,10 +104,6 @@ public class GameManager : MonoBehaviour
         switch (currentState)
         {
             case State.BeAwake:
-                SceneManager.sceneLoaded += OnBedRoomLoaded;
-                SceneManager.LoadScene("BedRoom_Morning");
-                break;
-
             case State.Sleeping:
                 SceneManager.sceneLoaded += OnBedRoomLoaded;
                 SceneManager.LoadScene("BedRoom_Morning");
