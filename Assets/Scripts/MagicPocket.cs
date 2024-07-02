@@ -20,7 +20,7 @@ public class MagicPocket : MonoBehaviour
             if (item != null && item.isSelected && !itemsInPocket.Contains(item))
             {
                 // HerbGrabInteractable 또는 PotionGrabInteractable 인지 확인
-                var pocketHerb = item as HerbGrabInteractable;
+                var pocketHerb = item as HerbsGrabInteractable;
                 var pocketPotion = item as PotionGrabInteractable;
 
                 if (pocketHerb != null)
@@ -31,8 +31,6 @@ public class MagicPocket : MonoBehaviour
                 {
                     pocketPotion.isInPocket = true;
                 }
-
-                if (!rigidbody.isKinematic && (pocketHerb.isInPocket || pocketPotion.isInPocket)) return;
 
                 if (item.gameObject.transform.parent != pocketWorld)
                 {
@@ -61,7 +59,7 @@ public class MagicPocket : MonoBehaviour
                 item.gameObject.layer = LayerMask.NameToLayer("Default");
 
                 // HerbGrabInteractable 또는 PotionGrabInteractable 인지 확인
-                var pocketHerb = item as HerbGrabInteractable;
+                var pocketHerb = item as HerbsGrabInteractable;
                 var pocketPotion = item as PotionGrabInteractable;
 
                 if (pocketHerb != null)
