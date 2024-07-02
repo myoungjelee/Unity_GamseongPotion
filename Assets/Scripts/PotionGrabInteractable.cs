@@ -19,6 +19,13 @@ public class PotionGrabInteractable : XRGrabInteractable
         originScale = transform.localScale;
     }
 
+    protected override void OnSelectEntered(SelectEnterEventArgs args)
+    {
+        base.OnSelectEntered(args);
+
+        rb.isKinematic = false;
+    }
+
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
         base.OnSelectExited(args);
@@ -32,5 +39,5 @@ public class PotionGrabInteractable : XRGrabInteractable
             rb.isKinematic = false;
             //transform.localScale = originScale;
         }
-    }
+    }   
 }

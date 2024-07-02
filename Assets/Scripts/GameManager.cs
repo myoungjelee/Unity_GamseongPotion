@@ -9,8 +9,6 @@ public class GameManager : MonoBehaviour
 
     public int totalCoin;
 
-    public GameObject customer;
-
     public TextMeshProUGUI text_CoinBank;
 
     public static GameManager Instance
@@ -56,15 +54,6 @@ public class GameManager : MonoBehaviour
 
         totalCoin = 1000;
         SetCoinText(totalCoin);
-
-        StartCoroutine(TestRoutine());
-    }
-
-
-    IEnumerator TestRoutine()
-    {
-        yield return new WaitForSeconds(4);
-        customer.gameObject.SetActive(true);
     }
 
 
