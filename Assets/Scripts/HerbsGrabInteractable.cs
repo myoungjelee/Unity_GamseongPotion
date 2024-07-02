@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class HerbGrabInteractable : XRGrabInteractable
+public class HerbsGrabInteractable : XRGrabInteractable
 {
     private Rigidbody rb;
 
@@ -19,6 +19,13 @@ public class HerbGrabInteractable : XRGrabInteractable
         //Debug.Log(originScale);
     }
 
+    protected override void OnSelectEntered(SelectEnterEventArgs args)
+    {
+        base.OnSelectEntered(args);
+
+        rb.isKinematic = false;
+    }
+
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
         base.OnSelectExited(args);
@@ -33,4 +40,6 @@ public class HerbGrabInteractable : XRGrabInteractable
             //transform.localScale = originScale;
         }
     }
+
+
 }
