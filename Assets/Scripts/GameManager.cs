@@ -107,11 +107,15 @@ public class GameManager : MonoBehaviour
                 SceneManager.sceneLoaded += OnBedRoomLoaded;
                 SceneManager.LoadScene("BedRoom_Morning");
                 break;
+
+            case State.Sleeping:
+                SceneManager.sceneLoaded += OnBedRoomLoaded;
+                SceneManager.LoadScene("BedRoom_Morning");
+                break;
+
             case State.CanSleep:
                 SceneManager.sceneLoaded += OnBedRoomLoaded;
                 SceneManager.LoadScene("BedRoom_Night");
-                break;
-            default:
                 break;
         }
     }
@@ -120,17 +124,39 @@ public class GameManager : MonoBehaviour
     {
         if (scene.name.Contains("BedRoom"))
         {
-            // PlayerStart라는 이름의 게임 오브젝트를 찾음
-            GameObject playerStart = GameObject.Find("PlayerStart_Awake");
-            if (playerStart != null)
+            GameObject playerStart;
+            switch (currentState)
             {
-                // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
-                transform.position = playerStart.transform.position;
-                transform.rotation = playerStart.transform.rotation;
-            }
-            else
-            {
-                Debug.LogWarning("PlayerStart_Awake 오브젝트를 찾을 수 없습니다.");
+                case State.BeAwake:
+                case State.CanSleep:
+                    // PlayerStart라는 이름의 게임 오브젝트를 찾음
+                    playerStart = GameObject.Find("PlayerStart_BeAwake");
+                    if (playerStart != null)
+                    {
+                        // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
+                        transform.position = playerStart.transform.position;
+                        transform.rotation = playerStart.transform.rotation;
+                    }
+                    else
+                    {
+                        Debug.LogWarning("PlayerStart_BeAwake 오브젝트를 찾을 수 없습니다.");
+                    }
+                    break;
+
+                case State.Sleeping:
+                    // PlayerStart라는 이름의 게임 오브젝트를 찾음
+                    playerStart = GameObject.Find("PlayerStart_Bed");
+                    if (playerStart != null)
+                    {
+                        // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
+                        transform.position = playerStart.transform.position;
+                        transform.rotation = playerStart.transform.rotation;
+                    }
+                    else
+                    {
+                        Debug.LogWarning("PlayerStart_Bed 오브젝트를 찾을 수 없습니다.");
+                    }
+                    break;
             }
         }
 
