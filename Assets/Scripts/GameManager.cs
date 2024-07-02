@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
 
     public enum State
     {
-        Awake,          // 깨어있는 상태
+        BeAwake,          // 깨어있는 상태
         Sleeping,       // 자는 중 상태
         CanSleep        // 잘 수 있는 상태
     }
@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
     private int totalCoin;
     private int date;
 
-    [SerializeField]private TextMeshProUGUI text_CoinBank;
+    [SerializeField] private TextMeshProUGUI text_CoinBank;
 
     private void Awake()
     {
@@ -73,11 +73,11 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainHall()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.sceneLoaded += OnMainHallLoaded;
         SceneManager.LoadScene("MainHall");
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void OnMainHallLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "MainHall")
         {
@@ -96,21 +96,45 @@ public class GameManager : MonoBehaviour
         }
 
         // 이벤트 구독 해제
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.sceneLoaded -= OnMainHallLoaded;
     }
 
     public void GoToBedRoom()
     {
         switch (currentState)
         {
-            case State.Awake:
-                SceneManager.LoadScene("Start Scenes");
+            case State.BeAwake:
+                SceneManager.sceneLoaded += OnBedRoomLoaded;
+                SceneManager.LoadScene("BedRoom_Morning");
                 break;
             case State.CanSleep:
-                SceneManager.LoadScene("Start Scenes");
+                SceneManager.sceneLoaded += OnBedRoomLoaded;
+                SceneManager.LoadScene("BedRoom_Night");
                 break;
             default:
                 break;
         }
+    }
+
+    private void OnBedRoomLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name.Contains("BedRoom"))
+        {
+            // PlayerStart라는 이름의 게임 오브젝트를 찾음
+            GameObject playerStart = GameObject.Find("PlayerStart_Awake");
+            if (playerStart != null)
+            {
+                // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
+                transform.position = playerStart.transform.position;
+                transform.rotation = playerStart.transform.rotation;
+            }
+            else
+            {
+                Debug.LogWarning("PlayerStart_Awake 오브젝트를 찾을 수 없습니다.");
+            }
+        }
+
+        // 이벤트 구독 해제
+        SceneManager.sceneLoaded -= OnBedRoomLoaded;
     }
 }
