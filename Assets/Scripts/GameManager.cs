@@ -73,7 +73,30 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainHall()
     {
+        SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.LoadScene("MainHall");
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MainHall")
+        {
+            // PlayerStart라는 이름의 게임 오브젝트를 찾음
+            GameObject playerStart = GameObject.Find("PlayerStart");
+            if (playerStart != null)
+            {
+                // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
+                transform.position = playerStart.transform.position;
+                transform.rotation = playerStart.transform.rotation;
+            }
+            else
+            {
+                Debug.LogWarning("PlayerStart 오브젝트를 찾을 수 없습니다.");
+            }
+        }
+
+        // 이벤트 구독 해제
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     public void GoToBedRoom()
