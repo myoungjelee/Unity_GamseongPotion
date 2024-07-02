@@ -2259,7 +2259,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1960955717}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -12032,26 +12032,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 533815646611217351, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
+    - target: {fileID: 3857170326403145621, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
         type: 3}
-      propertyPath: m_Camera
-      value: 
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1517884345938817450, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
+    - target: {fileID: 8248071558358117877, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
         type: 3}
-      propertyPath: m_ForwardSource
-      value: 
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1517884345938817450, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
+    - target: {fileID: 8248071558358117877, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
         type: 3}
-      propertyPath: m_HeadTransform
-      value: 
+      propertyPath: autoGenerate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361933724847411393, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8361933724847411393, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
+        type: 3}
+      propertyPath: autoGenerate
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a2dcd7c9d7ce254b8d9af172197ab86, type: 3}
+--- !u!20 &1960955717 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 261888477218470384, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
+    type: 3}
+  m_PrefabInstance: {fileID: 1960955716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1967165164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14503,6 +14519,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GH_UI_Main
       objectReference: {fileID: 0}
+    - target: {fileID: 8206762712489228651, guid: e7370d21cd08cbb4c8e5383b06e406b5,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1960955717}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

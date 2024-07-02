@@ -87,7 +87,7 @@ public class Customer : MonoBehaviour
         }
     }
 
-    void SetText()
+    public void SetText()
     {
         if (DOTween.IsTweening(dialogueText)) return;        
         if (currentCoroutine != null)

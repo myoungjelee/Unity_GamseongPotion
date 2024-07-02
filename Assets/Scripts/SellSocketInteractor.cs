@@ -46,16 +46,11 @@ public class SellSocketInteractor : XRSocketInteractor
                     Sequence sequence = DOTween.Sequence();
                     sequence.Append(customer.dialogueText.DOText("고맙습니다!", 1));
                     sequence.Append(customer.transform.DOMoveX(3, 3));
-                    sequence.OnComplete(() => StartCoroutine(OnOff()));
+                    sequence.OnComplete(() => StartCoroutine(CustomerOnOff()));
                 }
                 else
                 {
-                    if(customer.currentCoroutine != null)
-                    {
-                        StopCoroutine(customer.currentCoroutine);
-                    }
-                    customer.dialogueText.text = "";
-                    customer.dialogueText.DOText("이건 제가 원한 것이 아니에요.", 1);
+                    StartCoroutine(WrongAnswer());
                 }
             }
         }
@@ -65,12 +60,28 @@ public class SellSocketInteractor : XRSocketInteractor
         }
     }
 
-    IEnumerator OnOff()
+    IEnumerator CustomerOnOff()
     {
         customer.gameObject.SetActive(false);
 
         yield return new WaitForSeconds(0.5f);
 
         customer.gameObject.SetActive(true);
+    }
+
+    IEnumerator WrongAnswer()
+    {
+        if (customer.currentCoroutine != null)
+        {
+            StopCoroutine(customer.currentCoroutine);
+            customer.currentCoroutine = null;
+        }
+        customer.dialogueText.text = "";
+        Tween wrongTween = customer.dialogueText.DOText("이건 제가 원한 것이 아니에요.", 1);
+        yield return wrongTween.WaitForCompletion();
+
+        yield return new WaitForSeconds(0.5f);
+
+        customer.SetText();
     }
 }
