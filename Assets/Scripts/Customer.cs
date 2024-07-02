@@ -61,7 +61,7 @@ public class Customer : MonoBehaviour
         SetRandomCharacter();
         float randomDelay = Random.Range(2f, 6f); // 2초에서 5초 사이의 랜덤 시간
         yield return new WaitForSecondsRealtime(randomDelay);
-        transform.DOMoveX(-0.2f, 2).OnComplete(() => SetText());
+        transform.DOMoveX(-0.2f, 2);
     }
 
     private void OnDisable()
@@ -93,6 +93,7 @@ public class Customer : MonoBehaviour
         if (currentCoroutine != null)
         {
             StopCoroutine(currentCoroutine);
+            currentCoroutine = null;
         }
 
         currentCoroutine = StartCoroutine(SetTextRoutine());
@@ -118,6 +119,7 @@ public class Customer : MonoBehaviour
             if (currentCoroutine != null)
             {
                 StopCoroutine(currentCoroutine);
+                currentCoroutine = null;
             }
             dialogueText.DOKill();
             textUI.SetActive(false);
