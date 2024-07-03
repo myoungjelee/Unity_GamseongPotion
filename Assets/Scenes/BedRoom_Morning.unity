@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.5512421, g: 0.5699302, b: 0.5979344, a: 1}
+  m_IndirectSpecularColor: {r: 0.19875795, g: 0.22397903, b: 0.25262612, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -12060,7 +12060,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 299373675850027605, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1960955719}
   m_SourcePrefab: {fileID: 100100000, guid: 9a2dcd7c9d7ce254b8d9af172197ab86, type: 3}
 --- !u!20 &1960955717 stripped
 Camera:
@@ -12068,6 +12072,121 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1960955716}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1960955718 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 299373675850027605, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
+    type: 3}
+  m_PrefabInstance: {fileID: 1960955716}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1960955719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960955718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2fadf230d1919748a9aa21d40f74619, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_TrackingType: 0
+  m_UpdateType: 0
+  m_IgnoreTrackingState: 0
+  m_PositionInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Position
+      m_Type: 0
+      m_ExpectedControlType: Vector3
+      m_Id: eb23f425-e279-487b-b052-09927b5c55a8
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: f98901ce-84ca-4065-b9a6-12132db08655
+        m_Path: <XRHMD>/centerEyePosition
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Position
+        m_Flags: 0
+      - m_Name: 
+        m_Id: da811ffe-4d11-4059-8bd2-5acbf4dceb9d
+        m_Path: <HandheldARInputDevice>/devicePosition
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Position
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_RotationInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Rotation
+      m_Type: 0
+      m_ExpectedControlType: Quaternion
+      m_Id: eae26ffa-cd12-4f0d-91a5-df815a979b59
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: f9cf6c4f-59f9-4b9b-80fb-c2c43f4a0795
+        m_Path: <XRHMD>/centerEyeRotation
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Rotation
+        m_Flags: 0
+      - m_Name: 
+        m_Id: a7edef2b-aa66-4549-a108-fbd563ef4d72
+        m_Path: <HandheldARInputDevice>/deviceRotation
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Rotation
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_TrackingStateInput:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Tracking State
+      m_Type: 0
+      m_ExpectedControlType: Integer
+      m_Id: 0ba164d6-643e-42c7-b041-b776d783d6e5
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings:
+      - m_Name: 
+        m_Id: 68f6307d-2f10-4a8d-b1ca-ed0553b0372f
+        m_Path: <XRHMD>/trackingState
+        m_Interactions: 
+        m_Processors: 
+        m_Groups: 
+        m_Action: Tracking State
+        m_Flags: 0
+      m_Flags: 0
+    m_Reference: {fileID: 0}
+  m_PositionAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d59e5837-1c80-4242-9a2a-90fbf8cb6802
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
+  m_RotationAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 6c0250f8-27a9-4ae4-bee9-28fb0b153c4e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1001 &1967165164
 PrefabInstance:
   m_ObjectHideFlags: 0
