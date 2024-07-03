@@ -8,8 +8,10 @@ public class SellSocketInteractor : XRSocketInteractor
     [Header("¼Õ´Ô")]
     public Customer customer;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         StartCoroutine(StartVisitCustormer());
     }
 

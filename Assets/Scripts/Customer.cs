@@ -54,6 +54,11 @@ public class Customer : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(InitCustomer());
+        GameManager.Instance.customerCount++;
+        if(GameManager.Instance.customerCount >= 3)
+        {
+            GameManager.Instance.currentState = GameManager.State.CanSleep;
+        }
     }
 
     IEnumerator InitCustomer()
