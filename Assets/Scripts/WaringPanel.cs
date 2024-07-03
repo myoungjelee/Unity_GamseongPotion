@@ -3,17 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.UI;
 
 public class WaringPanel : MonoBehaviour
 {
     public Material warningMaterial;
     private bool isFading = false;
     public TextMeshProUGUI[] warningText;
+    
     private void Start()
     {
         warningMaterial.SetFloat("_FadeAmount", 1f);//시작하자마자 투명하게 만들기
-        warningText[0].DOFade(0f, 1f);
-        warningText[1].DOFade(0f, 1f);
+
+        for (int i = 0; i < warningText.Length; i++)
+        {
+            warningText[i].DOFade(0f, 1f);
+        }
     }
 
     private void Update()
@@ -28,7 +33,7 @@ public class WaringPanel : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) //트리거 감지했을때 나타나는거
     {
         if (other.gameObject.CompareTag("Player"))
         {
@@ -37,12 +42,17 @@ public class WaringPanel : MonoBehaviour
             if (!isFading)
             {
                 warningMaterial.DOFloat(-0.1f, "_FadeAmount", 1f); // 1초 동안 애니메이션
-                warningText[0].DOFade(1f,1f);
-                warningText[1].DOFade(1f,1f);
+
+                for (int i = 0; i < warningText.Length; i++)
+                {
+                    warningText[i].DOFade(1f, 1f);
+                }
+
                 isFading = true;
             }
         }
     }
+
 
     private void OnTriggerExit(Collider other)
     {
@@ -52,8 +62,7 @@ public class WaringPanel : MonoBehaviour
             if (isFading)
             {
                 warningMaterial.DOFloat(1f, "_FadeAmount", 1f); // 1초 동안 애니메이션
-                warningText[0].DOFade(0f, 1f);
-                warningText[1].DOFade(0f, 1f);
+
                 isFading = false;
             }
         }
