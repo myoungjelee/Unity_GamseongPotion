@@ -28,11 +28,13 @@ public class GameManager : MonoBehaviour
     }
 
     [Header("상태변환")]
-    private State currentState;
+    public State currentState;
 
     [Header("저장데이터")]
     private int totalCoin;
-    private int date;
+    public int date;
+
+    public int customerCount;
 
     [SerializeField] private TextMeshProUGUI text_CoinBank;
 
@@ -51,7 +53,7 @@ public class GameManager : MonoBehaviour
         totalCoin = 1000;
         SetCoinText(totalCoin);
 
-        currentState = State.Sleeping;
+        currentState = State.BeAwake;
     }
 
     public void AddCoins(int amount)
@@ -146,7 +148,7 @@ public class GameManager : MonoBehaviour
                     {
                         // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
                         transform.position = playerStart.transform.position;
-                        transform.rotation = playerStart.transform.rotation;
+                        transform.rotation = playerStart.transform.rotation;          
                     }
                     else
                     {
@@ -158,5 +160,17 @@ public class GameManager : MonoBehaviour
 
         // 이벤트 구독 해제
         SceneManager.sceneLoaded -= OnBedRoomLoaded;
+    }
+
+    public void GoToNextDay()
+    {
+        SceneManager.sceneLoaded += OnBedRoomLoaded;
+        SceneManager.LoadScene("BedRoom_Morning");
+        currentState = State.BeAwake;
+    }
+
+    public void SetCalendar()
+    {
+        date++;
     }
 }
