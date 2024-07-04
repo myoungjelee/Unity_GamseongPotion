@@ -1010,6 +1010,7 @@ GameObject:
   - component: {fileID: 50101088}
   - component: {fileID: 50101087}
   - component: {fileID: 50101090}
+  - component: {fileID: 50101091}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -1120,6 +1121,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RaycastTriggerInteraction: 1
+--- !u!114 &50101091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50101085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d7dffd2867afd4880e90d03eddc127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &53248906
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12966,7 +12979,7 @@ GameObject:
   - component: {fileID: 739938922}
   - component: {fileID: 739938921}
   m_Layer: 0
-  m_Name: Button
+  m_Name: Cancle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13035,7 +13048,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 739938922}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 50101091}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: OnClick_CancleButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &739938922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39906,6 +39931,41 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 712631373}
     m_Modifications:
+    - target: {fileID: 2171771049071666766, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171771049071666766, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171771049071666766, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8046586643092013582}
+    - target: {fileID: 2171771049071666766, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171771049071666766, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick_CancleButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171771049071666766, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2171771049071666766, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 3588637329865176564, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
         type: 3}
       propertyPath: m_Pivot.x
@@ -40011,16 +40071,83 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6551773107925238571, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551773107925238571, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551773107925238571, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8046586643092013582}
+    - target: {fileID: 6551773107925238571, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551773107925238571, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnClick_GoToBedRoom
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551773107925238571, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ButtonManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6551773107925238571, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7361581341721710366, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_Name
+      value: BedRoom
+      objectReference: {fileID: 0}
     - target: {fileID: 7548523454685769625, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
         type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1270760351}
+    - target: {fileID: 8637713099622319740, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      propertyPath: m_Name
+      value: Cancle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3976874504137674186, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8046586643092013582}
   m_SourcePrefab: {fileID: 100100000, guid: 46b5e4732d8b7c14f9d4e7bf568135d6, type: 3}
+--- !u!1 &8046586643092013581 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3976874504137674186, guid: 46b5e4732d8b7c14f9d4e7bf568135d6,
+    type: 3}
+  m_PrefabInstance: {fileID: 8046586643092013580}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8046586643092013582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8046586643092013581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d7dffd2867afd4880e90d03eddc127, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
