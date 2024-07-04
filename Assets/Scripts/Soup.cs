@@ -16,7 +16,7 @@ public class Soup : MonoBehaviour
     [SerializeField] private Image progressBar; 
     [SerializeField] private GameObject progressCanvas;
 
-    //public GameObject Player;
+    public bool isPotionSpawn;
 
     private void Awake()
     {
@@ -172,9 +172,13 @@ public class Soup : MonoBehaviour
     {
         if (progressBar != null)
         {
-            progressBar.fillAmount = Mathf.Clamp01(progress);
-            bool shouldShowProgressBar = progress > 0f;
-            progressCanvas.gameObject.SetActive(shouldShowProgressBar);
+            if(!isPotionSpawn)
+            {
+                progressBar.fillAmount = Mathf.Clamp01(progress);
+                bool shouldShowProgressBar = progress > 0f;
+                progressCanvas.gameObject.SetActive(shouldShowProgressBar);
+            }
+
 
             //if (shouldShowProgressBar)
             //{
