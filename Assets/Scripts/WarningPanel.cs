@@ -55,6 +55,11 @@ public class WarningPanel : MonoBehaviour
 
         }
 
+        for (int i = 0; i < warningText.Length; i++)
+        {
+            warningText[i].DOFade(0f, 0.5f); // 텍스트도 사라지게 만들기
+        }
+
         isFading = false;
     }
 }
