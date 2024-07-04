@@ -883,7 +883,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1680501586, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1680501587, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -946,6 +946,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 19064736505062540, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19064736505062540, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
+        type: 3}
       propertyPath: m_BlockUIOnInteractableSelection
       value: 0
       objectReference: {fileID: 0}
@@ -987,6 +992,11 @@ PrefabInstance:
     - target: {fileID: 285389467476424711, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
       propertyPath: m_HideControllerOnSelect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 285389467476424711, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
+        type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 285389467476424711, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
@@ -1538,9 +1548,13 @@ PrefabInstance:
       propertyPath: autoGenerate
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2585999887676979456, guid: dee1684ea602e6e498c9d3671f5c3fce, type: 3}
+    - {fileID: 2711121040384984116, guid: dee1684ea602e6e498c9d3671f5c3fce, type: 3}
+    - {fileID: 7093086540802553428, guid: dee1684ea602e6e498c9d3671f5c3fce, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5097545385569615432, guid: dee1684ea602e6e498c9d3671f5c3fce, type: 3}
+    - {fileID: 1321480271382473876, guid: dee1684ea602e6e498c9d3671f5c3fce, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6039126562558245780, guid: dee1684ea602e6e498c9d3671f5c3fce,

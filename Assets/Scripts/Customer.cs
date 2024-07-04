@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using System.Collections;
 using DG.Tweening;
+using Unity.VisualScripting;
 
 
 public class Customer : MonoBehaviour
@@ -54,11 +55,6 @@ public class Customer : MonoBehaviour
     private void OnEnable()
     {
         StartCoroutine(InitCustomer());
-        GameManager.Instance.customerCount++;
-        if(GameManager.Instance.customerCount >= 3)
-        {
-            GameManager.Instance.currentState = GameManager.State.CanSleep;
-        }
     }
 
     IEnumerator InitCustomer()
@@ -66,13 +62,19 @@ public class Customer : MonoBehaviour
         SetRandomCharacter();
         float randomDelay = Random.Range(2f, 6f); // 2초에서 5초 사이의 랜덤 시간
         yield return new WaitForSecondsRealtime(randomDelay);
-        transform.DOMoveX(-0.2f, 2);
+        transform.DOMoveX(-0.2f, 2).OnComplete(() => SetText());
     }
 
     private void OnDisable()
     {
         transform.position = initPos;
         textUI.SetActive(false);
+
+        if (currentCoroutine != null)
+        {
+            StopCoroutine(currentCoroutine);
+            currentCoroutine = null;
+        }
     }
 
     void SetRandomCharacter()

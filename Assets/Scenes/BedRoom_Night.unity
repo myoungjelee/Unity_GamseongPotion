@@ -1033,7 +1033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: cc460e5b1c6c0bd498b44195a0c3da99, type: 2}
+  m_Material: {fileID: 2100000, guid: 0de68390b8bb957498731ba44038b0ce, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1235,7 +1235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: cc460e5b1c6c0bd498b44195a0c3da99, type: 2}
+  m_Material: {fileID: 2100000, guid: f02688031f7fa4f4687e47ff489df9a5, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1817,7 +1817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: cc460e5b1c6c0bd498b44195a0c3da99, type: 2}
+  m_Material: {fileID: 2100000, guid: 915184f8dab7c6b44a34a5ea4101461d, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2006,8 +2006,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ca1d78fe3505c4695c6de2e25a3767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warningMaterial: {fileID: 2100000, guid: cc460e5b1c6c0bd498b44195a0c3da99, type: 2}
-  warningText:
+  warningMaterials:
+  - {fileID: 2100000, guid: f02688031f7fa4f4687e47ff489df9a5, type: 2}
+  - {fileID: 2100000, guid: 0de68390b8bb957498731ba44038b0ce, type: 2}
+  - {fileID: 2100000, guid: f497e4034897b174abf8c7bc071c6d9a, type: 2}
+  warningTexts:
   - {fileID: 1166553213}
   - {fileID: 1187549615}
   - {fileID: 756830896}
@@ -4450,7 +4453,7 @@ Transform:
   m_GameObject: {fileID: 785348212}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.744, y: 1, z: 0.582}
+  m_LocalPosition: {x: 0.744, y: 0, z: 0.582}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6159,7 +6162,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1122563277}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: OnClick_GoToBedRoom
+        m_MethodName: OnClick_GoToNextDay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6181,7 +6184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: cc460e5b1c6c0bd498b44195a0c3da99, type: 2}
+  m_Material: {fileID: 2100000, guid: a31237ec5a987d545a6442bbfa70e6d8, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -9037,8 +9040,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ca1d78fe3505c4695c6de2e25a3767, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  warningMaterial: {fileID: 2100000, guid: cc460e5b1c6c0bd498b44195a0c3da99, type: 2}
-  warningText:
+  warningMaterials:
+  - {fileID: 2100000, guid: a31237ec5a987d545a6442bbfa70e6d8, type: 2}
+  - {fileID: 2100000, guid: 915184f8dab7c6b44a34a5ea4101461d, type: 2}
+  warningTexts:
   - {fileID: 1519355022}
   - {fileID: 1424030408}
 --- !u!4 &1238869336
@@ -9881,7 +9886,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: cc460e5b1c6c0bd498b44195a0c3da99, type: 2}
+  m_Material: {fileID: 2100000, guid: f497e4034897b174abf8c7bc071c6d9a, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -12625,7 +12630,7 @@ Transform:
   m_GameObject: {fileID: 1862325010}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0.811, y: 0.916, z: 2.152}
+  m_LocalPosition: {x: 0.811, y: 0, z: 2.152}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
