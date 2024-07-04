@@ -54,6 +54,7 @@ public class Customer : MonoBehaviour
 
     private void OnEnable()
     {
+        StopConversation();
         StartCoroutine(InitCustomer());
     }
 
@@ -69,12 +70,7 @@ public class Customer : MonoBehaviour
     {
         transform.position = initPos;
         textUI.SetActive(false);
-
-        if (currentCoroutine != null)
-        {
-            StopCoroutine(currentCoroutine);
-            currentCoroutine = null;
-        }
+        StopConversation();
     }
 
     void SetRandomCharacter()
@@ -96,12 +92,9 @@ public class Customer : MonoBehaviour
 
     public void SetText()
     {
-        if (DOTween.IsTweening(dialogueText)) return;        
-        if (currentCoroutine != null)
-        {
-            StopCoroutine(currentCoroutine);
-            currentCoroutine = null;
-        }
+        if (DOTween.IsTweening(dialogueText)) return;
+
+        StopConversation();
 
         currentCoroutine = StartCoroutine(SetTextRoutine());
     }
@@ -123,12 +116,7 @@ public class Customer : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (currentCoroutine != null)
-            {
-                StopCoroutine(currentCoroutine);
-                currentCoroutine = null;
-            }
-            dialogueText.DOKill();
+            StopConversation();
             textUI.SetActive(false);
         }
     }
@@ -158,5 +146,16 @@ public class Customer : MonoBehaviour
         if (dialogue.Contains("주술") || dialogue.Contains("망자") || dialogue.Contains("소환")) return "Necromancy potion";
 
         return string.Empty;
+    }
+
+    public void StopConversation()
+    {
+        if (currentCoroutine != null)
+        {
+            StopCoroutine(currentCoroutine);
+            currentCoroutine = null;
+        }
+        dialogueText.DOKill();
+        dialogueText.text = "";
     }
 }
