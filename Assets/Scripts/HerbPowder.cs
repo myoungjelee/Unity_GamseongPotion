@@ -35,23 +35,13 @@ public class HerbPowder : MonoBehaviour
             {
                 count++;
 
-                Debug.Log(count);
+                //Debug.Log(count);
 
                 if (count >= grindCount)
                 {
                     CreatePowder(2, this);
                 }
             }
-        }
-    }
-
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Grinder"))
-        {
-            //isInGrinder = false;
-            Debug.Log("Exited Grinder");
         }
     }
 
