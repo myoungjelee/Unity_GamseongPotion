@@ -56,12 +56,7 @@ public class SellSocketInteractor : XRSocketInteractor
                     Destroy(potion.gameObject);
 
                     // 대사 완료 후 이동
-                    if (customer.currentCoroutine != null)
-                    {
-                        StopCoroutine(customer.currentCoroutine);
-                        customer.currentCoroutine = null;
-                    }
-                    customer.dialogueText.text = "";
+                    customer.StopConversation();
                     Sequence sequence = DOTween.Sequence();
                     sequence.Append(customer.dialogueText.DOText("고맙습니다!", 1));
                     sequence.Append(customer.transform.DOMoveX(3, 3));
@@ -94,12 +89,7 @@ public class SellSocketInteractor : XRSocketInteractor
 
     IEnumerator WrongAnswer()
     {
-        if (customer.currentCoroutine != null)
-        {
-            StopCoroutine(customer.currentCoroutine);
-            customer.currentCoroutine = null;
-        }
-        customer.dialogueText.text = "";
+        customer.StopConversation();
         Tween wrongTween = customer.dialogueText.DOText("이건 제가 원한 것이 아니에요.", 1);
         yield return wrongTween.WaitForCompletion();
 

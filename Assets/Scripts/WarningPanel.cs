@@ -28,7 +28,7 @@ public class WarningPanel : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("트리거 감지");
+            //Debug.Log("트리거 감지");
             // _FadeAmount 값을 1에서 0.1로 변경 (애니메이션으로)
             if (!isFading)
             {

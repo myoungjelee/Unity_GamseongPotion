@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainHall()
     {
+        DOTween.KillAll();
         SceneManager.sceneLoaded += OnMainHallLoaded;
         SceneManager.LoadScene("MainHall");
     }
@@ -108,11 +110,13 @@ public class GameManager : MonoBehaviour
         {
             case State.BeAwake:
             case State.Sleeping:
+                DOTween.KillAll();
                 SceneManager.sceneLoaded += OnBedRoomLoaded;
                 SceneManager.LoadScene("BedRoom_Morning");
                 break;
 
             case State.CanSleep:
+                DOTween.KillAll();
                 SceneManager.sceneLoaded += OnBedRoomLoaded;
                 SceneManager.LoadScene("BedRoom_Night");
                 break;
@@ -165,6 +169,7 @@ public class GameManager : MonoBehaviour
 
     public void GoToNextDay()
     {
+        DOTween.KillAll();
         SceneManager.sceneLoaded += OnBedRoomLoaded;
         SceneManager.LoadScene("BedRoom_Morning");
         currentState = State.BeAwake;
