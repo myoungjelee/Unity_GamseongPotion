@@ -17,6 +17,24 @@ public class PotionSocketInteractor : XRSocketInteractor
             base.OnSelectEntered(args);
 
             soup.isPotionSpawn = true;
+
+            Debug.Log("포션생성!!");
         }
     }
+
+    protected override void OnSelectExited(SelectExitEventArgs args)
+    {
+        base.OnSelectExited(args);
+
+        // interactableObject가 PotionGrabInteractable 타입인지 확인합니다.
+        if (args.interactableObject is PotionGrabInteractable potion)
+        {
+            base.OnSelectExited(args);
+
+            soup.isPotionSpawn = false;
+
+            Debug.Log("포션 가져감!!");
+        }
+    }
+
 }
