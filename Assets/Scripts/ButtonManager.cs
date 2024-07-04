@@ -21,6 +21,11 @@ public class ButtonManager : MonoBehaviour
         GameManager.Instance.GoToMainHall();
     }
 
+    public void OnClick_GoToNextDay()
+    {
+        GameManager.Instance.GoToNextDay();
+    }
+
     public void OnClick_CancleButton()
     {
         warningPanel.UIFadeOut();

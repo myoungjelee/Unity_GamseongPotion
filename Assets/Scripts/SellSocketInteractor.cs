@@ -41,7 +41,7 @@ public class SellSocketInteractor : XRSocketInteractor
                     GameObject coinPrefab = Resources.Load<GameObject>($"Prefabs/Coin");
                     if (coinPrefab != null)
                     {
-                        GameObject spawnCoin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
+                        GameObject spawnCoin = Instantiate(coinPrefab, potion.transform.position, Quaternion.identity);
                         Coin coin = spawnCoin.GetComponent<Coin>();
                         if (coin != null)
                         {
@@ -53,7 +53,7 @@ public class SellSocketInteractor : XRSocketInteractor
                         Debug.LogError("코인 프리팹을 로드할 수 없습니다.");
                     }
 
-                    Destroy(interactableObject.gameObject);
+                    Destroy(potion.gameObject);
 
                     // 대사 완료 후 이동
                     if (customer.currentCoroutine != null)
@@ -71,6 +71,10 @@ public class SellSocketInteractor : XRSocketInteractor
                 {
                     StartCoroutine(WrongAnswer());
                 }
+            }
+            else
+            {
+                StartCoroutine(WrongAnswer());
             }
         }
         else

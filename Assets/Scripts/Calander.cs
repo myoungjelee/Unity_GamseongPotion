@@ -10,5 +10,6 @@ public class Calander : MonoBehaviour
     void Start()
     {
         dateText.text = $"DAY {GameManager.Instance.date}";
+        //Debug.Log($"¿À´Ã ³¯Â¥ : {GameManager.Instance.date}");
     }
 }

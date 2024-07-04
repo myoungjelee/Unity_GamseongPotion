@@ -43,13 +43,14 @@ public class GameManager : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-            //DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
             Destroy(this.gameObject);
         }
 
+        date = 1;
         totalCoin = 1000;
         SetCoinText(totalCoin);
 
@@ -88,8 +89,8 @@ public class GameManager : MonoBehaviour
             if (playerStart != null)
             {
                 // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
-                transform.position = playerStart.transform.position;
-                transform.rotation = playerStart.transform.rotation;
+                gameObject.transform.position = playerStart.transform.position;
+                gameObject.transform.rotation = playerStart.transform.rotation;
             }
             else
             {
@@ -167,6 +168,7 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += OnBedRoomLoaded;
         SceneManager.LoadScene("BedRoom_Morning");
         currentState = State.BeAwake;
+        SetCalendar();
     }
 
     public void SetCalendar()

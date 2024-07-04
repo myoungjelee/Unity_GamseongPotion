@@ -13,13 +13,20 @@ public class Coin : MonoBehaviour
     public MeshRenderer meshRenderer;
 
 
-
     public void GetCoin()
     {
         meshRenderer.enabled = false;
         coinUI.SetActive(true);
         coinText.text = $"+{coin}";
         GameManager.Instance.AddCoins(coin);
+        GameManager.Instance.customerCount++;
+
+        if (GameManager.Instance.customerCount >= 1)
+        {
+            GameManager.Instance.currentState = GameManager.State.CanSleep;
+        }
+        Debug.Log($"¼Õ´Ô¼ýÀÚ : {GameManager.Instance.customerCount}");
+
         coinUI.transform.DOMoveY(1.5f, 1).OnComplete(() => Destroy(gameObject));
     }
 }
