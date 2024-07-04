@@ -701,7 +701,7 @@ GameObject:
   - component: {fileID: 4807616924571567116}
   - component: {fileID: 681683816845695918}
   - component: {fileID: 1890945526223420838}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Player Collision
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -765,7 +765,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1125,6 +1125,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
       propertyPath: m_RootOrder
@@ -1133,12 +1143,12 @@ PrefabInstance:
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.813
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0.861
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
@@ -1387,6 +1397,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6aaa180bd489d364d93a9cf7a96658bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentState: 0
+  date: 0
+  customerCount: 0
   text_CoinBank: {fileID: 5965640128735222677}
 --- !u!1 &1671844902419587940 stripped
 GameObject:
