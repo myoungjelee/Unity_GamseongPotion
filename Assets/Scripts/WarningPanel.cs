@@ -21,7 +21,7 @@ public class WarningPanel : MonoBehaviour
 
         for (int i = 0; i < warningTexts.Length; i++)
         {
-            warningTexts[i].DOFade(-0.1f, 0f);
+            warningTexts[i].DOFade(-0.1f, 0.1f);
         }
     }
     private void OnTriggerEnter(Collider other) //트리거 감지했을때 나타나는거

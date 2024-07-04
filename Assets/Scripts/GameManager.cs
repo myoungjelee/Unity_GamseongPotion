@@ -79,7 +79,6 @@ public class GameManager : MonoBehaviour
 
     public void GoToMainHall()
     {
-        DOTween.KillAll();
         SceneManager.sceneLoaded += OnMainHallLoaded;
         GoToSceneAsync("MainHall");
     }
@@ -95,6 +94,7 @@ public class GameManager : MonoBehaviour
                 // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
                 gameObject.transform.position = playerStart.transform.position;
                 gameObject.transform.rotation = playerStart.transform.rotation;
+                fadeScreen.FadeIn();
             }
             else
             {
@@ -141,6 +141,7 @@ public class GameManager : MonoBehaviour
                         // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
                         transform.position = playerStart.transform.position;
                         transform.rotation = playerStart.transform.rotation;
+                        fadeScreen.FadeIn();
                     }
                     else
                     {
@@ -156,6 +157,7 @@ public class GameManager : MonoBehaviour
                         // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
                         transform.position = playerStart.transform.position;
                         transform.rotation = playerStart.transform.rotation;
+                        fadeScreen.FadeIn();
                     }
                     else
                     {
@@ -203,6 +205,5 @@ public class GameManager : MonoBehaviour
         }
 
         operation.allowSceneActivation = true;
-        fadeScreen.FadeIn();
     }
 }
