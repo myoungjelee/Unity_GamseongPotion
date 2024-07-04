@@ -37,7 +37,7 @@ public class PotionGrabInteractable : XRGrabInteractable
         else
         {
             rb.isKinematic = false;
-            //transform.localScale = originScale;
+            transform.localScale = originScale;
         }
     }   
 }

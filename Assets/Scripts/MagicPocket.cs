@@ -65,12 +65,12 @@ public class MagicPocket : MonoBehaviour
                 if (pocketHerb != null)
                 {
                     pocketHerb.isInPocket = false;
-                    item.gameObject.transform.DOScale(pocketHerb.originScale, 1);
+                    //item.gameObject.transform.DOScale(pocketHerb.originScale, 1);
                 }
                 else if (pocketPotion != null)
                 {
                     pocketPotion.isInPocket = false;
-                    item.gameObject.transform.DOScale(pocketPotion.originScale, 1);
+                    //item.gameObject.transform.DOScale(pocketPotion.originScale, 1);
                 }
 
                 itemsInPocket.Remove(item);
