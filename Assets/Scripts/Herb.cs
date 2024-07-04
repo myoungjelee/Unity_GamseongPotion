@@ -1,9 +1,7 @@
 using DG.Tweening;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.XR.CoreUtils;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 [System.Serializable]
 public class HerbData

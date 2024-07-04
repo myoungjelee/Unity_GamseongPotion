@@ -21,7 +21,7 @@ public class Coin : MonoBehaviour
         GameManager.Instance.AddCoins(coin);
         GameManager.Instance.customerCount++;
 
-        if (GameManager.Instance.customerCount >= 1)
+        if (GameManager.Instance.customerCount >= 10)
         {
             GameManager.Instance.currentState = GameManager.State.CanSleep;
         }

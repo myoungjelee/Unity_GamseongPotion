@@ -30,12 +30,14 @@ public class GameManager : MonoBehaviour
 
     [Header("상태변환")]
     public State currentState;
+    public int customerCount;
 
     [Header("저장데이터")]
     private int totalCoin;
     public int date;
 
-    public int customerCount;
+    [Header("페이드인/아웃")]
+    public FadeScreen fadeScreen;
 
     [SerializeField] private TextMeshProUGUI text_CoinBank;
 
@@ -79,7 +81,7 @@ public class GameManager : MonoBehaviour
     {
         DOTween.KillAll();
         SceneManager.sceneLoaded += OnMainHallLoaded;
-        SceneManager.LoadScene("MainHall");
+        GoToSceneAsync("MainHall");
     }
 
     private void OnMainHallLoaded(Scene scene, LoadSceneMode mode)
@@ -112,13 +114,13 @@ public class GameManager : MonoBehaviour
             case State.Sleeping:
                 DOTween.KillAll();
                 SceneManager.sceneLoaded += OnBedRoomLoaded;
-                SceneManager.LoadScene("BedRoom_Morning");
+                GoToSceneAsync("BedRoom_Morning");
                 break;
 
             case State.CanSleep:
                 DOTween.KillAll();
                 SceneManager.sceneLoaded += OnBedRoomLoaded;
-                SceneManager.LoadScene("BedRoom_Night");
+                GoToSceneAsync("BedRoom_Night");
                 break;
         }
     }
@@ -153,7 +155,7 @@ public class GameManager : MonoBehaviour
                     {
                         // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
                         transform.position = playerStart.transform.position;
-                        transform.rotation = playerStart.transform.rotation;          
+                        transform.rotation = playerStart.transform.rotation;
                     }
                     else
                     {
@@ -169,9 +171,8 @@ public class GameManager : MonoBehaviour
 
     public void GoToNextDay()
     {
-        DOTween.KillAll();
         SceneManager.sceneLoaded += OnBedRoomLoaded;
-        SceneManager.LoadScene("BedRoom_Morning");
+        GoToSceneAsync("BedRoom_Morning");
         currentState = State.BeAwake;
         SetCalendar();
     }
@@ -179,5 +180,29 @@ public class GameManager : MonoBehaviour
     public void SetCalendar()
     {
         date++;
+    }
+
+    public void GoToSceneAsync(string sceneName)
+    {
+        StartCoroutine(SceneChangeAsync(sceneName));
+    }
+
+    IEnumerator SceneChangeAsync(string sceneName)
+    {
+        DOTween.KillAll();
+        fadeScreen.FadeOut();
+        
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneName);
+        operation.allowSceneActivation = false;
+
+        float timer = 0f;
+        while(timer <= fadeScreen.fadeDuration && !operation.isDone)
+        {
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        operation.allowSceneActivation = true;
+        fadeScreen.FadeIn();
     }
 }

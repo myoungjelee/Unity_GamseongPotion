@@ -9,6 +9,9 @@ public class HerbsGrabInteractable : XRGrabInteractable
 
     public Vector3 originScale;
 
+    [Header("Α¶Έν")]
+    public GameObject herbLight;
+
     protected override void Awake()
     {
         base.Awake();
@@ -32,14 +35,20 @@ public class HerbsGrabInteractable : XRGrabInteractable
 
         if (isInPocket)
         {
-            rb.isKinematic = true;         
+            rb.isKinematic = true;
+            if (herbLight != null)
+            {
+                herbLight.SetActive(false);
+            }
         }
         else
         {
             rb.isKinematic = false;
             transform.localScale = originScale;
+            if (herbLight != null)
+            {
+                herbLight.SetActive(true);
+            }
         }
     }
-
-
 }

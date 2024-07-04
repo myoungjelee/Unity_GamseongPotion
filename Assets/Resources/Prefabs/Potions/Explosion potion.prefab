@@ -357,6 +357,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36ba1d5eb41dc964ab4d59ce6a2846e5, type: 3}
+--- !u!1 &981717237596361520 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 622377394565574139, guid: 36ba1d5eb41dc964ab4d59ce6a2846e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 377425306574618315}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3642460223062027920 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4012843707144687707, guid: 36ba1d5eb41dc964ab4d59ce6a2846e5,
@@ -765,3 +771,4 @@ MonoBehaviour:
   m_AddDefaultGrabTransformers: 1
   isInPocket: 0
   originScale: {x: 0, y: 0, z: 0}
+  effect: {fileID: 981717237596361520}

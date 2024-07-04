@@ -58,9 +58,10 @@ public class SellSocketInteractor : XRSocketInteractor
                     // 대사 완료 후 이동
                     customer.StopConversation();
                     Sequence sequence = DOTween.Sequence();
-                    sequence.Append(customer.dialogueText.DOText("고맙습니다!", 1));
-                    sequence.Append(customer.transform.DOMoveX(3, 3));
-                    sequence.OnComplete(() => StartCoroutine(CustomerOnOff()));
+                    sequence.Append(customer.dialogueText.DOText("고맙습니다!", 1))
+                            .AppendCallback(() => customer.textUI.SetActive(false))
+                            .Append(customer.transform.DOMoveX(3, 3))
+                            .OnComplete(() => StartCoroutine(CustomerOnOff()));
                 }
                 else
                 {

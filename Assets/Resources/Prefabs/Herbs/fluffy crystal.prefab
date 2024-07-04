@@ -511,6 +511,7 @@ MonoBehaviour:
   m_AddDefaultGrabTransformers: 1
   isInPocket: 0
   originScale: {x: 0, y: 0, z: 0}
+  herbLight: {fileID: 8808906991460967161}
 --- !u!4 &3142885023774772959 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a3d465e5b3fceb44496034debd14b85b,

@@ -13,7 +13,7 @@ public class PotionSocketInteractor : XRSocketInteractor
         // interactableObject가 PotionGrabInteractable 타입인지 확인합니다.
         if (args.interactableObject is PotionGrabInteractable)
         {
-            base.OnSelectEntered(args);
+            //base.OnSelectEntered(args);
 
             soup.isPotionSpawn = true;
         }
