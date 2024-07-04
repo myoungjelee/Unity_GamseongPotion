@@ -6,6 +6,7 @@ public class XButtonHandler : MonoBehaviour
 {
     public InputActionProperty xButtonAction;
     public GameObject magicPocket;
+    public XRRayInteractor interactor;
 
     void OnEnable()
     {
@@ -25,6 +26,7 @@ public class XButtonHandler : MonoBehaviour
         if (magicPocket != null)
         {
             magicPocket.SetActive(true);
+            interactor.enabled = false;
         }
     }
 
@@ -34,6 +36,7 @@ public class XButtonHandler : MonoBehaviour
         if (magicPocket != null)
         {
             magicPocket.SetActive(false);
+            interactor.enabled = true;
         }
     }
 }

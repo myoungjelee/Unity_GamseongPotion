@@ -24,7 +24,7 @@ public class Potion : MonoBehaviour
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
         {
-            player = playerObject.transform;
+            player = Camera.main.transform;
         }
     }
 

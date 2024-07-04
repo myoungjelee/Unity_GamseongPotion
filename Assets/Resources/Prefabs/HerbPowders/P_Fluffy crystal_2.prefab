@@ -478,6 +478,7 @@ MonoBehaviour:
   m_AddDefaultGrabTransformers: 1
   isInPocket: 0
   originScale: {x: 0, y: 0, z: 0}
+  herbLight: {fileID: 4922503532235350350}
 --- !u!65 &-4151465334993079889
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -677,6 +677,7 @@ MonoBehaviour:
   m_AddDefaultGrabTransformers: 1
   isInPocket: 0
   originScale: {x: 0, y: 0, z: 0}
+  effect: {fileID: 8669161375870204834}
 --- !u!4 &2984915819716119522 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 67b13c298e3fd65429c8728b5f3498c7,
@@ -774,6 +775,12 @@ PrefabInstance:
 --- !u!4 &4417594358232854241 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 448115333190404985, guid: c848ebd5d327ea94593f4475c95fb999,
+    type: 3}
+  m_PrefabInstance: {fileID: 4284739830518474136}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8669161375870204834 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4844035346914270778, guid: c848ebd5d327ea94593f4475c95fb999,
     type: 3}
   m_PrefabInstance: {fileID: 4284739830518474136}
   m_PrefabAsset: {fileID: 0}

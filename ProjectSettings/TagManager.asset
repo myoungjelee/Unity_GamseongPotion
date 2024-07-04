@@ -12,6 +12,7 @@ TagManager:
   - CoinText
   - Grinder
   - GrindingBat
+  - Socket
   layers:
   - Default
   - TransparentFX

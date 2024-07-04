@@ -11,6 +11,9 @@ public class PotionGrabInteractable : XRGrabInteractable
 
     public Vector3 originScale;
 
+    [Header("¿Ã∆Â∆Æ")]
+    public GameObject effect;
+
     protected override void Awake()
     {
         base.Awake();
@@ -24,6 +27,11 @@ public class PotionGrabInteractable : XRGrabInteractable
         base.OnSelectEntered(args);
 
         rb.isKinematic = false;
+
+        if (!args.interactorObject.transform.CompareTag("Socket"))
+        {
+            effect.SetActive(false);
+        }
     }
 
     protected override void OnSelectExited(SelectExitEventArgs args)

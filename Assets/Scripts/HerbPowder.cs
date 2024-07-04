@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class HerbPowder : MonoBehaviour
 {
-    public string powderName; // 허브의 종류를 저장
+    [Header("파우더 데이터")]
+    public string powderName; 
     public Color powderColor;
 
     [Header("허브 빻기")]
-    //private bool isInGrinder = false;
     private Grinder grinder;
     private int count;
     private int grindCount = 5;

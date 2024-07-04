@@ -82,7 +82,7 @@ public class Soup : MonoBehaviour
     private void MixColor(Color newColor)
     {
         // 현재 색상과 새로운 색상을 혼합
-        currentColor = Color.Lerp(currentColor, newColor, 0.5f);
+        currentColor = Color.Lerp(currentColor, newColor, 0.8f);
 
         // 수프의 색상 변경
         mdshRenderer.material.color = currentColor;
@@ -101,7 +101,7 @@ public class Soup : MonoBehaviour
         else
         {
             progressBar.color = Color.red;
-            Debug.Log("유효한 조합식이 없습니다.");
+            //Debug.Log("유효한 조합식이 없습니다.");
         }
 
         // 항아리 초기화
