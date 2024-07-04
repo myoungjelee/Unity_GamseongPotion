@@ -25,4 +25,22 @@ public class ButtonManager : MonoBehaviour
     {
         warningPanel.UIFadeOut();
     }
+
+    public void QuitGame()
+    {
+        StartCoroutine(QuitGameCoRoutine());
+    }
+
+    IEnumerator QuitGameCoRoutine()
+    {
+        yield return new WaitForSecondsRealtime(0.2f);
+
+        // 유니티 에디터에서 실행 중인 경우
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        // 빌드 완료후 실행파일에서 실행 중인 경우
+        Application.Quit();
+#endif
+    }
 }
