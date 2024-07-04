@@ -6,19 +6,16 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class PotionSocketInteractor : XRSocketInteractor
 {
-    public Image progressBar;
     public Soup soup;
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         // interactableObject가 PotionGrabInteractable 타입인지 확인합니다.
-        if (args.interactableObject is PotionGrabInteractable potion)
+        if (args.interactableObject is PotionGrabInteractable)
         {
             base.OnSelectEntered(args);
 
             soup.isPotionSpawn = true;
-
-            Debug.Log("포션생성!!");
         }
     }
 
@@ -27,13 +24,11 @@ public class PotionSocketInteractor : XRSocketInteractor
         base.OnSelectExited(args);
 
         // interactableObject가 PotionGrabInteractable 타입인지 확인합니다.
-        if (args.interactableObject is PotionGrabInteractable potion)
+        if (args.interactableObject is PotionGrabInteractable)
         {
             base.OnSelectExited(args);
 
             soup.isPotionSpawn = false;
-
-            Debug.Log("포션 가져감!!");
         }
     }
 

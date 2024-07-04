@@ -96,7 +96,7 @@ public class Soup : MonoBehaviour
         {
             SpawnPotion(potion);
             currentTime = 0;
-            progressBar.color = Color.green;
+            //progressBar.color = Color.green;
         }
         else
         {
@@ -177,6 +177,10 @@ public class Soup : MonoBehaviour
                 progressBar.fillAmount = Mathf.Clamp01(progress);
                 bool shouldShowProgressBar = progress > 0f;
                 progressCanvas.gameObject.SetActive(shouldShowProgressBar);
+            }
+            else
+            {
+                progressCanvas.gameObject.SetActive(false);
             }
 
 

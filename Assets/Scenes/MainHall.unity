@@ -13768,6 +13768,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 770297431}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &770297433 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4214102229123537994, guid: 964e6a9f154a49942851609626fbd012,
+    type: 3}
+  m_PrefabInstance: {fileID: 770297431}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 558ec8607e086194b849243a76c69cde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &770904110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27796,7 +27808,7 @@ PrefabInstance:
     - target: {fileID: 54897514126147223, guid: 1aa825273d96e7a4285148be0ffb889e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.866
+      value: 1.022
       objectReference: {fileID: 0}
     - target: {fileID: 54897514126147223, guid: 1aa825273d96e7a4285148be0ffb889e,
         type: 3}
@@ -27841,17 +27853,17 @@ PrefabInstance:
     - target: {fileID: 627100524865540573, guid: 1aa825273d96e7a4285148be0ffb889e,
         type: 3}
       propertyPath: m_Size.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 627100524865540573, guid: 1aa825273d96e7a4285148be0ffb889e,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 627100524865540573, guid: 1aa825273d96e7a4285148be0ffb889e,
         type: 3}
       propertyPath: m_Size.z
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5143001829348016334, guid: 1aa825273d96e7a4285148be0ffb889e,
         type: 3}
@@ -27933,7 +27945,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 4
   m_AttachTransform: {fileID: 1525600622}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -27976,8 +27988,7 @@ MonoBehaviour:
   m_SocketScaleMode: 0
   m_FixedScale: {x: 1, y: 1, z: 1}
   m_TargetBoundsSize: {x: 1, y: 1, z: 1}
-  progressBar: {fileID: 0}
-  soup: {fileID: 0}
+  soup: {fileID: 770297433}
 --- !u!1 &1528653337
 GameObject:
   m_ObjectHideFlags: 0

@@ -54,7 +54,7 @@ public class Herb : MonoBehaviour
             {
                 count++;
 
-                Debug.Log(count);
+                //Debug.Log(count);
 
                 if(count >= grindCount )
                 {
