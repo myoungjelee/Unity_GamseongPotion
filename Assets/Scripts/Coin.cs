@@ -22,7 +22,7 @@ public class Coin : MonoBehaviour
         AudioManager.Instance.PlaySfx(AudioManager.Sfx.Coin);
         GameManager.Instance.customerCount++;
 
-        if (GameManager.Instance.customerCount >= 3)
+        if (GameManager.Instance.customerCount >= 1)
         {
             GameManager.Instance.currentState = GameManager.State.CanSleep;
         }

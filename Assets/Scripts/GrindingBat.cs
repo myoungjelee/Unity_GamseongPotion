@@ -15,8 +15,8 @@ public class GrindingBat : MonoBehaviour
     private bool isGrabbed = false;
 
     [Header("햅틱")]
-    public float amplitude = 0.5f;      // 진동의 강도
-    public float duration = 0.1f;
+    private float amplitude = 0.5f;      // 진동의 강도
+    private float duration = 0.1f;
     private XRBaseInteractable target;
 
     private void Awake()
@@ -76,7 +76,7 @@ public class GrindingBat : MonoBehaviour
             
         }
     }
-
+ 
     public void OnGrab()
     {
         isGrabbed = true;

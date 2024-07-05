@@ -27,13 +27,12 @@ public class PotionGrabInteractable : XRGrabInteractable
     {
         base.OnSelectEntered(args);
 
-        rb.isKinematic = false;
-
-        audioSource.enabled = false;
+        rb.isKinematic = false;  
 
         if (!args.interactorObject.transform.CompareTag("Socket"))
         {
             effect.SetActive(false);
+            audioSource.enabled = false;
         }
     }
 
