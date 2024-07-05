@@ -38,6 +38,7 @@ public class GameManager : MonoBehaviour
 
     [Header("페이드인/아웃")]
     public FadeScreen fadeScreen;
+    private bool isSceneChanging;
 
     [SerializeField] private TextMeshProUGUI text_CoinBank;
 
@@ -57,7 +58,12 @@ public class GameManager : MonoBehaviour
         totalCoin = 1000;
         SetCoinText(totalCoin);
 
-        currentState = State.BeAwake;
+        currentState = State.CanSleep;
+    }
+
+    private void Start()
+    {
+         WakeUp();
     }
 
     public void AddCoins(int amount)
@@ -95,6 +101,7 @@ public class GameManager : MonoBehaviour
                 gameObject.transform.position = playerStart.transform.position;
                 gameObject.transform.rotation = playerStart.transform.rotation;
                 fadeScreen.FadeIn();
+                isSceneChanging = false; // 플래그 설정
             }
             else
             {
@@ -142,6 +149,7 @@ public class GameManager : MonoBehaviour
                         transform.position = playerStart.transform.position;
                         transform.rotation = playerStart.transform.rotation;
                         fadeScreen.FadeIn();
+                        isSceneChanging = false; // 플래그 설정
                     }
                     else
                     {
@@ -157,7 +165,8 @@ public class GameManager : MonoBehaviour
                         // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
                         transform.position = playerStart.transform.position;
                         transform.rotation = playerStart.transform.rotation;
-                        fadeScreen.FadeIn();
+                        WakeUp();
+                        isSceneChanging = false; // 플래그 설정
                     }
                     else
                     {
@@ -175,22 +184,28 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnBedRoomLoaded;
         GoToSceneAsync("BedRoom_Morning");
-        currentState = State.BeAwake;
         SetCalendar();
     }
 
     public void SetCalendar()
     {
         date++;
+        GameManager.Instance.customerCount = 0;
     }
 
     public void GoToSceneAsync(string sceneName)
     {
-        StartCoroutine(SceneChangeAsync(sceneName));
+        if(!isSceneChanging)
+        {
+            StartCoroutine(SceneChangeAsync(sceneName));
+           // Debug.Log("씬 전환");
+        }
     }
 
     IEnumerator SceneChangeAsync(string sceneName)
     {
+        isSceneChanging = true; // 플래그 설정
+
         DOTween.KillAll();
         fadeScreen.FadeOut();
         
@@ -205,5 +220,27 @@ public class GameManager : MonoBehaviour
         }
 
         operation.allowSceneActivation = true;
+    }
+
+    void WakeUp()
+    {
+        StartCoroutine(FadeRoutine());
+    }
+
+    IEnumerator FadeRoutine()
+    {
+        fadeScreen.FadeIn();
+
+        yield return new WaitForSeconds(fadeScreen.fadeDuration);
+
+        fadeScreen.FadeOut();
+
+        yield return new WaitForSeconds(fadeScreen.fadeDuration);
+
+        fadeScreen.FadeIn();
+
+        transform.position = new Vector3(-0.35f, 0, -2.3f);
+        transform.rotation = Quaternion.identity;
+        currentState = State.BeAwake;   
     }
 }
