@@ -1992,8 +1992,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.961869, y: 2.1974394, z: 2.1659138}
-  m_Center: {x: 0.053282738, y: 1.0987197, z: -0.95930827}
+  m_Size: {x: 1.961869, y: 2.1974394, z: 1.6711582}
+  m_Center: {x: 0.053282738, y: 1.0987197, z: -0.71193045}
 --- !u!114 &300900562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7613,6 +7613,7 @@ GameObject:
   - component: {fileID: 1058594551}
   - component: {fileID: 1058594550}
   - component: {fileID: 1058594549}
+  - component: {fileID: 1058594552}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -7703,6 +7704,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1058594552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058594547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af4ebdb4dc31ac49aa060a2a9f8be54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dateText: {fileID: 618968440}
+  Bed_UI: {fileID: 1238869333}
 --- !u!64 &1077561617
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -9006,7 +9021,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1238869334
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9026,8 +9041,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.4095488, y: 1.7096757, z: 1.1899757}
-  m_Center: {x: 1.9459858, y: 0.89989954, z: -2.6506763}
+  m_Size: {x: 2.9989746, y: 1.7096757, z: 1.1899757}
+  m_Center: {x: 1.6512729, y: 0.89989954, z: -2.6506763}
 --- !u!114 &1238869335
 MonoBehaviour:
   m_ObjectHideFlags: 0

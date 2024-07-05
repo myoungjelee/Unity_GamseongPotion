@@ -4,6 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.XR.Interaction.Toolkit;
+
+
 
 public class GameManager : MonoBehaviour
 {
@@ -40,6 +43,10 @@ public class GameManager : MonoBehaviour
     public FadeScreen fadeScreen;
     private bool isSceneChanging;
     public CharacterController characterController;
+    public GameObject locomotion;
+   
+
+    //public XRController
 
     [SerializeField] private TextMeshProUGUI text_CoinBank;
 
@@ -209,6 +216,7 @@ public class GameManager : MonoBehaviour
     {
         isSceneChanging = true; // 플래그 설정
 
+        locomotion.SetActive(false);
         DOTween.KillAll();
         fadeScreen.FadeOut();
         
@@ -224,6 +232,7 @@ public class GameManager : MonoBehaviour
 
         operation.allowSceneActivation = true;
         AudioManager.Instance.PlayBgm(sceneName);
+        locomotion.SetActive(true);
     }
 
     void WakeUp()
@@ -233,6 +242,8 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FadeRoutine()
     {
+        yield return null;
+        locomotion.SetActive(false);
         fadeScreen.FadeIn();
 
         yield return new WaitForSeconds(fadeScreen.fadeDuration);
@@ -246,6 +257,7 @@ public class GameManager : MonoBehaviour
         transform.position = new Vector3(-0.5f, 0, -2.3f);
         transform.rotation = Quaternion.identity;
         currentState = State.BeAwake;
+        locomotion.SetActive(true);
     }
 
     public void GoToEnding()
@@ -259,5 +271,6 @@ public class GameManager : MonoBehaviour
         transform.position = Vector3.zero;
         transform.rotation = Quaternion.identity;
         characterController.enabled = false;
+        locomotion.SetActive(false);
     }
 }

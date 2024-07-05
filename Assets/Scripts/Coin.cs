@@ -26,7 +26,7 @@ public class Coin : MonoBehaviour
         {
             GameManager.Instance.currentState = GameManager.State.CanSleep;
         }
-        Debug.Log($"¼Õ´Ô¼ýÀÚ : {GameManager.Instance.customerCount}");
+        //Debug.Log($"¼Õ´Ô¼ýÀÚ : {GameManager.Instance.customerCount}");
 
         coinUI.transform.DOMoveY(1.5f, 1).OnComplete(() => Destroy(gameObject));
     }

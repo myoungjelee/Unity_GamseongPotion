@@ -20,7 +20,6 @@ public class AudioManager : MonoBehaviour
     }
     private bool isPlaying;
 
-
     [Header("#BGM")]
     public AudioClip[] bgmClips;
     public float bgmVolume;
@@ -28,7 +27,6 @@ public class AudioManager : MonoBehaviour
     AudioHighPassFilter bgmEffect;
 
     private Dictionary<string, AudioClip> sceneBgmMap;
-    // 씬 이름 배열
     string[] sceneNames = { "MainHall", "BedRoom_Morning", "BedRoom_Night", "Ending_Credit" };
 
     [Header("#SFX")]
@@ -38,8 +36,9 @@ public class AudioManager : MonoBehaviour
     AudioSource[] sfxPlayers;
     int channelsIndex;
 
-    public enum Sfx { Herb, Bubble = 7, Crystal, Coin = 15, Fail, UI }
-    
+    private Dictionary<AudioSource, AudioClip> activeSfxClips = new Dictionary<AudioSource, AudioClip>();
+
+    public enum Sfx { Herb, Bubble = 7, Crystal, Coin = 15, Fail, UI, Dialogue, Bell }
 
     private void Awake()
     {
@@ -52,13 +51,11 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
         Init();
     }
 
     void Init()
     {
-        // 배경음 플레이어 초기화
         GameObject bgmObject = new GameObject("BgmPlayer");
         bgmObject.transform.parent = transform;
         bgmPlayer = bgmObject.AddComponent<AudioSource>();
@@ -67,7 +64,6 @@ public class AudioManager : MonoBehaviour
         bgmPlayer.volume = bgmVolume;
         bgmEffect = Camera.main.GetComponent<AudioHighPassFilter>();
 
-        // 효과음 플레이어 초기화
         GameObject sfxObject = new GameObject("SfxPlayer");
         sfxObject.transform.parent = transform;
         sfxPlayers = new AudioSource[channels];
@@ -80,21 +76,14 @@ public class AudioManager : MonoBehaviour
             sfxPlayers[i].volume = sfxVolume;
         }
 
-        // sceneBgmMap 초기화
         sceneBgmMap = new Dictionary<string, AudioClip>();
         if (sceneNames.Length == bgmClips.Length)
         {
             for (int i = 0; i < bgmClips.Length; i++)
             {
                 sceneBgmMap.Add(sceneNames[i], bgmClips[i]);
-
             }
         }
-
-        //foreach (var kvp in sceneBgmMap)
-        //{
-        //    Debug.Log($"씬 이름: {kvp.Key}, 클립 이름: {kvp.Value.name}");
-        //}
     }
 
     public void PlayBgm(string sceneName)
@@ -115,7 +104,6 @@ public class AudioManager : MonoBehaviour
         {
             bgmPlayer.clip = bgmClip;
             bgmPlayer.Play();
-            //Debug.Log(bgmClip.name);
         }
         else
         {
@@ -132,7 +120,6 @@ public class AudioManager : MonoBehaviour
     {
         for (int i = 0; i < sfxPlayers.Length; i++)
         {
-            // loopIndex가 sfxPlayers.Length를 넘어가지 않게 해주는 수식
             int loopIndex = (i + channelsIndex) % sfxPlayers.Length;
 
             if (sfxPlayers[loopIndex].isPlaying) continue;
@@ -140,27 +127,30 @@ public class AudioManager : MonoBehaviour
             int ranIndex = 0;
             if (sfx == Sfx.Herb || sfx == Sfx.Crystal)
             {
-                ranIndex = UnityEngine.Random.Range(0, 8);
+                ranIndex = UnityEngine.Random.Range(0, 7);
             }
 
-            // 사용 가능한 sfxPlayer를 찾았으므로 channelsIndex를 현재 loopIndex로 업데이트
             channelsIndex = loopIndex;
-            sfxPlayers[loopIndex].clip = sfxClips[(int)sfx + ranIndex];
+            AudioClip clipToPlay = sfxClips[(int)sfx + ranIndex];
+            sfxPlayers[loopIndex].clip = clipToPlay;
             sfxPlayers[loopIndex].Play();
 
-            // 사용 가능한 sfxPlayer를 찾았으므로 반복을 종료합니다.
+            activeSfxClips[sfxPlayers[loopIndex]] = clipToPlay;
+
             break;
         }
     }
 
-public void StopSfx(Sfx sfxToStop)
-{
-    foreach (var sfxPlayer in sfxPlayers)
+    public void StopSfx(Sfx sfxToStop)
     {
-        if (sfxPlayer.isPlaying && sfxPlayer.clip == sfxClips[(int)sfxToStop])
+        AudioClip clipToStop = sfxClips[(int)sfxToStop];
+
+        foreach (var kvp in activeSfxClips)
         {
-            sfxPlayer.Stop();
+            if (kvp.Value == clipToStop && kvp.Key.isPlaying)
+            {
+                kvp.Key.Stop();
+            }
         }
     }
-}
 }

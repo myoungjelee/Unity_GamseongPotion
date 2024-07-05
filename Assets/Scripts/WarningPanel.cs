@@ -72,9 +72,7 @@ public class WarningPanel : MonoBehaviour
             }
 
             isFading = false;
-            //AudioManager.Instance.PlaySfx(AudioManager.Sfx.UI);
+            AudioManager.Instance.PlaySfx(AudioManager.Sfx.UI);
         }
-
-
     }
 }

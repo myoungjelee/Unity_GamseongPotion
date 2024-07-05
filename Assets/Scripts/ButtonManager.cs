@@ -13,16 +13,20 @@ public class ButtonManager : MonoBehaviour
 
     public void OnClick_GoToBedRoom()
     {
+        warningPanel.UIFadeOut();
         GameManager.Instance.GoToBedRoom();
     }
 
     public void OnClick_GoToMainHall()
     {
+        warningPanel.UIFadeOut();
         GameManager.Instance.GoToMainHall();
     }
 
     public void OnClick_GoToNextDay()
     {
+        GameManager.Instance.currentState = GameManager.State.Sleeping;
+        warningPanel.UIFadeOut();
         GameManager.Instance.GoToNextDay();
     }
 
@@ -33,7 +37,7 @@ public class ButtonManager : MonoBehaviour
 
     public void OnClick_GoToEnding()
     {
-        
+        warningPanel.UIFadeOut();
         GameManager.Instance.GoToEnding();
     }
 
