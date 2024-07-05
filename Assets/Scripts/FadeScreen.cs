@@ -9,28 +9,22 @@ public class FadeScreen : MonoBehaviour
     public float fadeDuration = 2;
     public Color fadeColor;
     private Image image;
-    //private Renderer rend;
-    //public Animator animator;
+
 
     private void Start()
     {
-        //rend = GetComponent<Renderer>();
         image = GetComponent<Image>();
         FadeIn();
-        //FadeOut();
     }
 
     public void FadeIn()
     {
         Fade(1, 0);
-        //Debug.Log("페이드인");
-
     }
 
     public void FadeOut()
     {
         Fade(0, 1);
-        //Debug.Log("페이드아웃");
     }
 
     public void Fade(float alphaIn, float alphaOut)
