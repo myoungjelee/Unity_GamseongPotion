@@ -42,6 +42,7 @@ public class SellSocketInteractor : XRSocketInteractor
                     if (coinPrefab != null)
                     {
                         GameObject spawnCoin = Instantiate(coinPrefab, potion.transform.position, Quaternion.identity);
+                        AudioManager.Instance.PlaySfx(AudioManager.Sfx.Coin);
                         Coin coin = spawnCoin.GetComponent<Coin>();
                         if (coin != null)
                         {
