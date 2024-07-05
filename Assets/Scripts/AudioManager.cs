@@ -1,16 +1,35 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static AudioManager;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
+    private static AudioManager instance;
+    public static AudioManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                return null;
+            }
+            return instance;
+        }
+    }
+    private bool isPlaying;
+
 
     [Header("#BGM")]
-    public AudioClip bgmClip;
+    public AudioClip[] bgmClips;
     public float bgmVolume;
     AudioSource bgmPlayer;
     AudioHighPassFilter bgmEffect;
+
+    private Dictionary<string, AudioClip> sceneBgmMap;
+    // 씬 이름 배열
+    string[] sceneNames = { "MainHall", "BedRoom_Morning", "BedRoom_Night", "Ending_Credit" };
 
     [Header("#SFX")]
     public AudioClip[] sfxClips;
@@ -19,11 +38,21 @@ public class AudioManager : MonoBehaviour
     AudioSource[] sfxPlayers;
     int channelsIndex;
 
-    public enum Sfx { Dead, Hit, LevelUp = 3, Lose, Melee, Range = 7, Select, Win }
+    public enum Sfx { Bubble, Grind, Coin = 4, Fail, UI }
+    
 
     private void Awake()
     {
-        instance = this;
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
         Init();
     }
 
@@ -36,7 +65,6 @@ public class AudioManager : MonoBehaviour
         bgmPlayer.playOnAwake = false;
         bgmPlayer.loop = true;
         bgmPlayer.volume = bgmVolume;
-        bgmPlayer.clip = bgmClip;
         bgmEffect = Camera.main.GetComponent<AudioHighPassFilter>();
 
         // 효과음 플레이어 초기화
@@ -51,17 +79,47 @@ public class AudioManager : MonoBehaviour
             sfxPlayers[i].bypassEffects = true;
             sfxPlayers[i].volume = sfxVolume;
         }
+
+        // sceneBgmMap 초기화
+        sceneBgmMap = new Dictionary<string, AudioClip>();
+        if (sceneNames.Length == bgmClips.Length)
+        {
+            for (int i = 0; i < bgmClips.Length; i++)
+            {
+                sceneBgmMap.Add(sceneNames[i], bgmClips[i]);
+
+            }
+        }
+
+        //foreach (var kvp in sceneBgmMap)
+        //{
+        //    Debug.Log($"씬 이름: {kvp.Key}, 클립 이름: {kvp.Value.name}");
+        //}
     }
 
-    public void PlayBgm(bool isPlay)
+    public void PlayBgm(string sceneName)
     {
-        if (isPlay)
+        StartCoroutine(BgmRoutine(sceneName));
+    }
+
+    IEnumerator BgmRoutine(string sceneName)
+    {
+        if (bgmPlayer.isPlaying)
         {
+            bgmPlayer.Stop();
+        }
+
+        yield return new WaitForSeconds(3);
+
+        if (sceneBgmMap.TryGetValue(sceneName, out AudioClip bgmClip))
+        {
+            bgmPlayer.clip = bgmClip;
             bgmPlayer.Play();
+            Debug.Log(bgmClip.name);
         }
         else
         {
-            bgmPlayer.Stop();
+            Debug.LogError($"'{sceneName}'에 해당하는 BGM을 찾을 수 없습니다.");
         }
     }
 
@@ -80,9 +138,9 @@ public class AudioManager : MonoBehaviour
             if (sfxPlayers[loopIndex].isPlaying) continue;
 
             int ranIndex = 0;
-            if (sfx == Sfx.Hit || sfx == Sfx.Melee)
+            if (sfx == Sfx.Bubble || sfx == Sfx.Grind)
             {
-                ranIndex = Random.Range(0, 2);
+                ranIndex = UnityEngine.Random.Range(0, 2);
             }
 
             // 사용 가능한 sfxPlayer를 찾았으므로 channelsIndex를 현재 loopIndex로 업데이트
@@ -92,6 +150,18 @@ public class AudioManager : MonoBehaviour
 
             // 사용 가능한 sfxPlayer를 찾았으므로 반복을 종료합니다.
             break;
+        }
+    }
+
+    public void StopSfx(Sfx sfx)
+    {
+        for (int i = 0; i < sfxPlayers.Length; i++)
+        {
+            if (sfxPlayers[i].isPlaying && sfxPlayers[i].clip == sfxClips[(int)sfx])
+            {
+                sfxPlayers[i].Stop();
+                sfxPlayers[i].clip = null;
+            }
         }
     }
 }
