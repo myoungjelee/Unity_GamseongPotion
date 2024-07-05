@@ -8,6 +8,7 @@ public class Soup : MonoBehaviour
     private MeshRenderer mdshRenderer;
     private Color originColor;
     private Color currentColor;
+    public ParticleSystem soupParticle;
     private float spawnDistance = 1.0f;
 
     private float currentTime;
@@ -90,10 +91,11 @@ public class Soup : MonoBehaviour
     private void MixColor(Color newColor)
     {
         // 현재 색상과 새로운 색상을 혼합
-        currentColor = Color.Lerp(currentColor, newColor, 0.8f);
+        currentColor = Color.Lerp(currentColor, newColor, 0.6f);
 
         // 수프의 색상 변경
         mdshRenderer.material.color = currentColor;
+        soupParticle.startColor = currentColor;
     }
 
     public void Stir()
@@ -119,6 +121,7 @@ public class Soup : MonoBehaviour
         // 색상 초기화
         currentColor = originColor;
         mdshRenderer.material.color = currentColor;
+        soupParticle.startColor = currentColor;
     }
 
     private string CheckCombination()

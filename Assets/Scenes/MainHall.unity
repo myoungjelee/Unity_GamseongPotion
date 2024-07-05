@@ -13694,6 +13694,11 @@ PrefabInstance:
       objectReference: {fileID: 122734760}
     - target: {fileID: 4214102229123537994, guid: 964e6a9f154a49942851609626fbd012,
         type: 3}
+      propertyPath: soupParticle
+      value: 
+      objectReference: {fileID: 770297433}
+    - target: {fileID: 4214102229123537994, guid: 964e6a9f154a49942851609626fbd012,
+        type: 3}
       propertyPath: progressCanvas
       value: 
       objectReference: {fileID: 1416480797}
@@ -13747,6 +13752,12 @@ PrefabInstance:
 --- !u!4 &770297432 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1440026660537031651, guid: 964e6a9f154a49942851609626fbd012,
+    type: 3}
+  m_PrefabInstance: {fileID: 770297431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &770297433 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2304270471932931318, guid: 964e6a9f154a49942851609626fbd012,
     type: 3}
   m_PrefabInstance: {fileID: 770297431}
   m_PrefabAsset: {fileID: 0}

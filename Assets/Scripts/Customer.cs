@@ -66,8 +66,8 @@ public class Customer : MonoBehaviour
         SetRandomCharacter();
         float randomDelay = Random.Range(2f, 6f); // 2초에서 5초 사이의 랜덤 시간
         yield return new WaitForSecondsRealtime(randomDelay);
+        AudioManager.Instance.PlaySfx(AudioManager.Sfx.Bell);
         transform.DOMoveX(-0.2f, 2).OnComplete(() => {
-            SetText();
             collision.enabled = true;
         });
     }
@@ -113,7 +113,9 @@ public class Customer : MonoBehaviour
         dialogueText.DOKill();
 
         Tween textTween = dialogueText.DOText(selectedDialogue, 3);
+        AudioManager.Instance.PlaySfx(AudioManager.Sfx.Dialogue);
         yield return textTween.WaitForCompletion();
+        AudioManager.Instance.StopSfx(AudioManager.Sfx.Dialogue);
 
         yield return new WaitForSeconds(5);
         textUI.SetActive(false);
@@ -124,6 +126,7 @@ public class Customer : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StopConversation();
+            AudioManager.Instance.StopSfx(AudioManager.Sfx.Dialogue);
             textUI.SetActive(false);
         }
     }
