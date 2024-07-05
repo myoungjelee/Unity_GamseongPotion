@@ -31,7 +31,7 @@ public class ButtonManager : MonoBehaviour
         warningPanel.UIFadeOut();
     }
 
-    public void QuitGame()
+    public void OnClick_GoToEnding()
     {
         StartCoroutine(QuitGameCoRoutine());
     }

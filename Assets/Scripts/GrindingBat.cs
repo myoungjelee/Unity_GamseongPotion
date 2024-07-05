@@ -63,6 +63,8 @@ public class GrindingBat : MonoBehaviour
             if (interactor.xrController == null) return;
 
             interactor.xrController.SendHapticImpulse(amplitude, duration);
+
+            AudioManager.Instance.PlaySfx(AudioManager.Sfx.Grind);
         }
     }
 
