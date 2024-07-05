@@ -764,7 +764,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 999
   m_TargetDisplay: 0
 --- !u!114 &1149033879618890188
 MonoBehaviour:
@@ -1074,7 +1074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: f05c041b36dfba949a585a4e9977ba70, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1822,27 +1822,27 @@ PrefabInstance:
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.47
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.048
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.329
+      value: -2.23
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
@@ -1857,7 +1857,7 @@ PrefabInstance:
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
         type: 3}
@@ -2080,6 +2080,7 @@ MonoBehaviour:
   customerCount: 0
   date: 0
   fadeScreen: {fileID: 2735613702578091593}
+  characterController: {fileID: 4705345644723411185}
   text_CoinBank: {fileID: 5965640128735222677}
 --- !u!114 &1497022609900588140 stripped
 MonoBehaviour:
@@ -2135,6 +2136,12 @@ Transform:
 --- !u!4 &1671844902824173368 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1680501587, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1671844902352958571}
+  m_PrefabAsset: {fileID: 0}
+--- !u!143 &4705345644723411185 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 6232745470614056090, guid: f6336ac4ac8b4d34bc5072418cdc62a0,
     type: 3}
   m_PrefabInstance: {fileID: 1671844902352958571}
   m_PrefabAsset: {fileID: 0}

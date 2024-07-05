@@ -64,7 +64,16 @@ public class GrindingBat : MonoBehaviour
 
             interactor.xrController.SendHapticImpulse(amplitude, duration);
 
-            AudioManager.Instance.PlaySfx(AudioManager.Sfx.Grind);
+            if(collision.gameObject.name.Contains("Garnet") || collision.gameObject.name.Contains("Crystal"))
+            {
+                AudioManager.Instance.PlaySfx(AudioManager.Sfx.Crystal);
+            }
+            else
+            {
+                AudioManager.Instance.PlaySfx(AudioManager.Sfx.Herb);
+            }
+
+            
         }
     }
 

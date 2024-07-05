@@ -25,7 +25,7 @@ public class Calander : MonoBehaviour
 
     IEnumerator MorningSceneRoutine()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(4.1f);
 
         Bed_UI.SetActive(true);
     }

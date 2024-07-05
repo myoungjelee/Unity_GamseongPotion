@@ -13,6 +13,7 @@ public class PotionGrabInteractable : XRGrabInteractable
 
     [Header("¿Ã∆Â∆Æ")]
     public GameObject effect;
+    public AudioSource audioSource;
 
     protected override void Awake()
     {
@@ -27,6 +28,8 @@ public class PotionGrabInteractable : XRGrabInteractable
         base.OnSelectEntered(args);
 
         rb.isKinematic = false;
+
+        audioSource.enabled = false;
 
         if (!args.interactorObject.transform.CompareTag("Socket"))
         {

@@ -33,6 +33,12 @@ public class ButtonManager : MonoBehaviour
 
     public void OnClick_GoToEnding()
     {
+        
+        GameManager.Instance.GoToEnding();
+    }
+
+    public void QuitGame()
+    {
         StartCoroutine(QuitGameCoRoutine());
     }
 

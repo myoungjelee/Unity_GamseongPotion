@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.69796526, g: 0.7392029, b: 0.8351711, a: 1}
+  m_IndirectSpecularColor: {r: 0.21973042, g: 0.34358367, b: 0.5209801, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1348,12 +1348,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 268080958}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &268080960 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 888189252630305943, guid: 3112acda59542544daa2e47f171d77e6,
-    type: 3}
-  m_PrefabInstance: {fileID: 268080958}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &268080961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1363,105 +1357,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 268080959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d0390bd8b8ffd640b34fe25065ff1df, type: 3}
+  m_Script: {fileID: 11500000, guid: 92fb627a2c98c0747b8a5b00195580d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateType: 0
-  isSpeedBased: 0
-  hasOnStart: 0
-  hasOnPlay: 0
-  hasOnUpdate: 0
-  hasOnStepComplete: 0
-  hasOnComplete: 0
-  hasOnTweenCreated: 0
-  hasOnRewind: 0
-  onStart:
-    m_PersistentCalls:
-      m_Calls: []
-  onPlay:
-    m_PersistentCalls:
-      m_Calls: []
-  onUpdate:
-    m_PersistentCalls:
-      m_Calls: []
-  onStepComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  onComplete:
-    m_PersistentCalls:
-      m_Calls: []
-  onTweenCreated:
-    m_PersistentCalls:
-      m_Calls: []
-  onRewind:
-    m_PersistentCalls:
-      m_Calls: []
-  targetIsSelf: 1
-  targetGO: {fileID: 0}
-  tweenTargetIsTargetGO: 1
-  delay: 0
-  duration: 20
-  easeType: 37
-  easeCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1.0249939
-      value: 0.025943756
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  loopType: 0
-  loops: 1
-  id: 
-  isRelative: 0
-  isFrom: 0
-  isIndependentUpdate: 0
-  autoKill: 1
-  autoGenerate: 1
-  isActive: 1
-  isValid: 1
-  target: {fileID: 268080960}
-  animationType: 4
-  targetType: 11
-  forcedTargetType: 0
-  autoPlay: 1
-  useTargetAsV3: 0
-  endValueFloat: 0
-  endValueV3: {x: 0, y: 360, z: 0}
-  endValueV2: {x: 0, y: 0}
-  endValueColor: {r: 1, g: 1, b: 1, a: 1}
-  endValueString: 
-  endValueRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 0
-    height: 0
-  endValueTransform: {fileID: 0}
-  optionalBool0: 0
-  optionalBool1: 0
-  optionalFloat0: 0
-  optionalInt0: 0
-  optionalRotationMode: 3
-  optionalScrambleMode: 0
-  optionalShakeRandomnessMode: 0
-  optionalString: 
+  rotationSpeed: 1
 --- !u!1001 &270908491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3829,8 +3728,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.0191126, y: 2.2654743, z: 2.0985236}
-  m_Center: {x: 1.5432875, y: 0.63273776, z: -2.7242072}
+  m_Size: {x: 2.2665195, y: 1.6820031, z: 2.0985236}
+  m_Center: {x: 1.919584, y: 0.92447346, z: -2.7242072}
 --- !u!114 &664296046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12583,46 +12482,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2341840346258267652, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 9f99c060b0898aa448870f9bee7b087c, type: 2}
-    - target: {fileID: 2735613702578091593, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
-        type: 3}
-      propertyPath: fadeColor.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3478592881359344399, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
-        type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7274582764352931259, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7274582764352931259, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7274582764352931259, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7274582764352931259, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7274582764352931259, guid: 9a2dcd7c9d7ce254b8d9af172197ab86,
-        type: 3}
-      propertyPath: m_Material
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
