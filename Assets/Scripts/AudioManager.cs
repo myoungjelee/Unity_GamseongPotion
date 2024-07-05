@@ -4,19 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    private static AudioManager instance;
-
-    public static AudioManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                return null;
-            }
-            return instance;
-        }
-    }
+    public static AudioManager instance;
 
     [Header("#BGM")]
     public AudioClip bgmClip;
@@ -31,20 +19,11 @@ public class AudioManager : MonoBehaviour
     AudioSource[] sfxPlayers;
     int channelsIndex;
 
-    public enum Sfx { Dead, Hit, LevelUp = 3, Lose, Melee, Range = 7, Select, Win }        // 오디오 소스파일에 따라 enum값 정해주기
+    public enum Sfx { Dead, Hit, LevelUp = 3, Lose, Melee, Range = 7, Select, Win }
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
+        instance = this;
         Init();
     }
 
@@ -91,7 +70,7 @@ public class AudioManager : MonoBehaviour
         bgmEffect.enabled = isPlay;
     }
 
-    public void PlaySfx(AudioClip sfx)
+    public void PlaySfx(Sfx sfx)
     {
         for (int i = 0; i < sfxPlayers.Length; i++)
         {
@@ -100,9 +79,15 @@ public class AudioManager : MonoBehaviour
 
             if (sfxPlayers[loopIndex].isPlaying) continue;
 
+            int ranIndex = 0;
+            if (sfx == Sfx.Hit || sfx == Sfx.Melee)
+            {
+                ranIndex = Random.Range(0, 2);
+            }
+
             // 사용 가능한 sfxPlayer를 찾았으므로 channelsIndex를 현재 loopIndex로 업데이트
             channelsIndex = loopIndex;
-            sfxPlayers[loopIndex].clip = sfx;
+            sfxPlayers[loopIndex].clip = sfxClips[(int)sfx + ranIndex];
             sfxPlayers[loopIndex].Play();
 
             // 사용 가능한 sfxPlayer를 찾았으므로 반복을 종료합니다.
