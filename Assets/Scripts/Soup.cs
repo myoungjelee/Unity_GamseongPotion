@@ -68,6 +68,7 @@ public class Soup : MonoBehaviour
                 if (currentTime > spawnTime)
                 {
                     Stir();
+                    AudioManager.Instance.PlaySfx(AudioManager.Sfx.Bubble);
                 }
             }
             else
@@ -101,6 +102,7 @@ public class Soup : MonoBehaviour
         else
         {
             progressBar.color = Color.red;
+            AudioManager.Instance.PlaySfx(AudioManager.Sfx.Fail);
             //Debug.Log("유효한 조합식이 없습니다.");
         }
 
@@ -176,11 +178,12 @@ public class Soup : MonoBehaviour
             {
                 progressBar.fillAmount = Mathf.Clamp01(progress);
                 bool shouldShowProgressBar = progress > 0f;
-                progressCanvas.gameObject.SetActive(shouldShowProgressBar);
+                progressCanvas.gameObject.SetActive(shouldShowProgressBar);           
             }
             else
             {
                 progressCanvas.gameObject.SetActive(false);
+                AudioManager.Instance.StopSfx(AudioManager.Sfx.Bubble);
             }
 
 

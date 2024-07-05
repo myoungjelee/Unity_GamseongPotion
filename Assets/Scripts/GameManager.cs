@@ -63,7 +63,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-         WakeUp();
+        WakeUp();
+        AudioManager.Instance.PlayBgm("BedRoom_Morning");
     }
 
     public void AddCoins(int amount)
@@ -100,7 +101,7 @@ public class GameManager : MonoBehaviour
                 // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
                 gameObject.transform.position = playerStart.transform.position;
                 gameObject.transform.rotation = playerStart.transform.rotation;
-                fadeScreen.FadeIn();
+                fadeScreen.FadeIn();                
                 isSceneChanging = false; // 플래그 설정
             }
             else
@@ -220,6 +221,7 @@ public class GameManager : MonoBehaviour
         }
 
         operation.allowSceneActivation = true;
+        AudioManager.Instance.PlayBgm(sceneName);
     }
 
     void WakeUp()
@@ -239,8 +241,13 @@ public class GameManager : MonoBehaviour
 
         fadeScreen.FadeIn();
 
-        transform.position = new Vector3(-0.35f, 0, -2.3f);
+        transform.position = new Vector3(-0.5f, 0, -2.3f);
         transform.rotation = Quaternion.identity;
-        currentState = State.BeAwake;   
+        currentState = State.BeAwake;
+    }
+
+    public void GoToEndindg()
+    {
+        GoToSceneAsync("Ending_Credit");
     }
 }

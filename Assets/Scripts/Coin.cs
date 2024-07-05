@@ -19,6 +19,7 @@ public class Coin : MonoBehaviour
         coinUI.SetActive(true);
         coinText.text = $"+{coin}";
         GameManager.Instance.AddCoins(coin);
+        AudioManager.Instance.PlaySfx(AudioManager.Sfx.Coin);
         GameManager.Instance.customerCount++;
 
         if (GameManager.Instance.customerCount >= 3)
