@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnMainHallLoaded;
         GoToSceneAsync("MainHall");
-        characterController.enabled = false;
+
     }
 
     private void OnMainHallLoaded(Scene scene, LoadSceneMode mode)
@@ -125,14 +125,12 @@ public class GameManager : MonoBehaviour
                 DOTween.KillAll();
                 SceneManager.sceneLoaded += OnBedRoomLoaded;
                 GoToSceneAsync("BedRoom_Morning");
-                characterController.enabled = false;
                 break;
 
             case State.CanSleep:
                 DOTween.KillAll();
                 SceneManager.sceneLoaded += OnBedRoomLoaded;
                 GoToSceneAsync("BedRoom_Night");
-                characterController.enabled = false;
                 break;
         }
     }
@@ -226,7 +224,6 @@ public class GameManager : MonoBehaviour
 
         operation.allowSceneActivation = true;
         AudioManager.Instance.PlayBgm(sceneName);
-        characterController.enabled = true;
     }
 
     void WakeUp()
@@ -236,7 +233,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FadeRoutine()
     {
-        characterController.enabled = false;
         fadeScreen.FadeIn();
 
         yield return new WaitForSeconds(fadeScreen.fadeDuration);
@@ -247,7 +243,6 @@ public class GameManager : MonoBehaviour
 
         fadeScreen.FadeIn();
 
-        characterController.enabled = true;
         transform.position = new Vector3(-0.5f, 0, -2.3f);
         transform.rotation = Quaternion.identity;
         currentState = State.BeAwake;

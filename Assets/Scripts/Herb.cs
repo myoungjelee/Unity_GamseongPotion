@@ -62,16 +62,6 @@ public class Herb : MonoBehaviour
         }
     }
 
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Grinder"))
-        {
-            //isInGrinder = false;
-            Debug.Log("Exited Grinder");
-        }
-    }
-
     private void CreatePowder(int id, Herb herb)
     {
         // 첫 번째 단계

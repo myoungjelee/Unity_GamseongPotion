@@ -34624,7 +34624,17 @@ PrefabInstance:
     - target: {fileID: 9151165163110121650, guid: 48e747ac4c5aa1f40b22d6252364d2d5,
         type: 3}
       propertyPath: m_MovementType
-      value: 2
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151165163110121650, guid: 48e747ac4c5aa1f40b22d6252364d2d5,
+        type: 3}
+      propertyPath: m_ThrowOnDetach
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151165163110121650, guid: 48e747ac4c5aa1f40b22d6252364d2d5,
+        type: 3}
+      propertyPath: m_RetainTransformParent
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
