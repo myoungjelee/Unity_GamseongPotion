@@ -20,6 +20,9 @@ public class Customer : MonoBehaviour
     private string currentDialogue;
     private string correctAnswer;
     public Coroutine currentCoroutine;
+    public SphereCollider collision;
+    private bool isSetText;
+
     private string[] dialogues = new string[21]
     {
         "치유의 포션 파는것 맞죠? 한병 주시죠. 혹시 몰라서 한병 장만해두려 합니다",
@@ -70,6 +73,7 @@ public class Customer : MonoBehaviour
     {
         transform.position = initPos;
         textUI.SetActive(false);
+        collision.gameObject.SetActive(false);
         StopConversation();
     }
 
@@ -102,6 +106,7 @@ public class Customer : MonoBehaviour
     IEnumerator SetTextRoutine()
     {
         textUI.SetActive(true);
+        collision.gameObject.SetActive(true);
         dialogueText.text = "";
         dialogueText.DOKill();
 
