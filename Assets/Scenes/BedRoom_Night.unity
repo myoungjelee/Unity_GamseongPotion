@@ -1795,7 +1795,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1122563277}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
-        m_MethodName: QuitGame
+        m_MethodName: OnClick_GoToEnding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9001,7 +9001,7 @@ GameObject:
   - component: {fileID: 1238869335}
   - component: {fileID: 1238869334}
   m_Layer: 0
-  m_Name: Morning_UI
+  m_Name: Bed_UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9026,8 +9026,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.1008334, y: 1.7096757, z: 1.1899757}
-  m_Center: {x: 1.6003435, y: 0.89989954, z: -2.6506763}
+  m_Size: {x: 2.4095488, y: 1.7096757, z: 1.1899757}
+  m_Center: {x: 1.9459858, y: 0.89989954, z: -2.6506763}
 --- !u!114 &1238869335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15436,8 +15436,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 511347433102968365, guid: 3112acda59542544daa2e47f171d77e6,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4834864200880708373}
   m_SourcePrefab: {fileID: 100100000, guid: 3112acda59542544daa2e47f171d77e6, type: 3}
+--- !u!1 &4834864200880708369 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 511347433102968365, guid: 3112acda59542544daa2e47f171d77e6,
+    type: 3}
+  m_PrefabInstance: {fileID: 4834864200880708368}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4834864200880708373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4834864200880708369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fb627a2c98c0747b8a5b00195580d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationSpeed: 1
 --- !u!1001 &6390086485060357273
 PrefabInstance:
   m_ObjectHideFlags: 0

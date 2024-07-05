@@ -39,6 +39,7 @@ public class GameManager : MonoBehaviour
     [Header("페이드인/아웃")]
     public FadeScreen fadeScreen;
     private bool isSceneChanging;
+    public CharacterController characterController;
 
     [SerializeField] private TextMeshProUGUI text_CoinBank;
 
@@ -88,6 +89,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnMainHallLoaded;
         GoToSceneAsync("MainHall");
+        characterController.enabled = false;
     }
 
     private void OnMainHallLoaded(Scene scene, LoadSceneMode mode)
@@ -101,7 +103,7 @@ public class GameManager : MonoBehaviour
                 // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
                 gameObject.transform.position = playerStart.transform.position;
                 gameObject.transform.rotation = playerStart.transform.rotation;
-                fadeScreen.FadeIn();                
+                fadeScreen.FadeIn();
                 isSceneChanging = false; // 플래그 설정
             }
             else
@@ -123,12 +125,14 @@ public class GameManager : MonoBehaviour
                 DOTween.KillAll();
                 SceneManager.sceneLoaded += OnBedRoomLoaded;
                 GoToSceneAsync("BedRoom_Morning");
+                characterController.enabled = false;
                 break;
 
             case State.CanSleep:
                 DOTween.KillAll();
                 SceneManager.sceneLoaded += OnBedRoomLoaded;
                 GoToSceneAsync("BedRoom_Night");
+                characterController.enabled = false;
                 break;
         }
     }
@@ -222,6 +226,7 @@ public class GameManager : MonoBehaviour
 
         operation.allowSceneActivation = true;
         AudioManager.Instance.PlayBgm(sceneName);
+        characterController.enabled = true;
     }
 
     void WakeUp()
@@ -231,6 +236,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FadeRoutine()
     {
+        characterController.enabled = false;
         fadeScreen.FadeIn();
 
         yield return new WaitForSeconds(fadeScreen.fadeDuration);
@@ -241,13 +247,22 @@ public class GameManager : MonoBehaviour
 
         fadeScreen.FadeIn();
 
+        characterController.enabled = true;
         transform.position = new Vector3(-0.5f, 0, -2.3f);
         transform.rotation = Quaternion.identity;
         currentState = State.BeAwake;
     }
 
-    public void GoToEndindg()
+    public void GoToEnding()
     {
+        SceneManager.sceneLoaded += OnEndingLoaded;
         GoToSceneAsync("Ending_Credit");
+    }
+
+    void OnEndingLoaded(Scene scene, LoadSceneMode mode)
+    {
+        transform.position = Vector3.zero;
+        transform.rotation = Quaternion.identity;
+        characterController.enabled = false;
     }
 }

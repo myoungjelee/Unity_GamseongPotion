@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
     AudioSource[] sfxPlayers;
     int channelsIndex;
 
-    public enum Sfx { Bubble, Grind, Coin = 4, Fail, UI }
+    public enum Sfx { Herb, Bubble = 7, Crystal, Coin = 15, Fail, UI }
     
 
     private void Awake()
@@ -115,7 +115,7 @@ public class AudioManager : MonoBehaviour
         {
             bgmPlayer.clip = bgmClip;
             bgmPlayer.Play();
-            Debug.Log(bgmClip.name);
+            //Debug.Log(bgmClip.name);
         }
         else
         {
@@ -138,9 +138,9 @@ public class AudioManager : MonoBehaviour
             if (sfxPlayers[loopIndex].isPlaying) continue;
 
             int ranIndex = 0;
-            if (sfx == Sfx.Bubble || sfx == Sfx.Grind)
+            if (sfx == Sfx.Herb || sfx == Sfx.Crystal)
             {
-                ranIndex = UnityEngine.Random.Range(0, 2);
+                ranIndex = UnityEngine.Random.Range(0, 8);
             }
 
             // 사용 가능한 sfxPlayer를 찾았으므로 channelsIndex를 현재 loopIndex로 업데이트
@@ -153,15 +153,14 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void StopSfx(Sfx sfx)
+public void StopSfx(Sfx sfxToStop)
+{
+    foreach (var sfxPlayer in sfxPlayers)
     {
-        for (int i = 0; i < sfxPlayers.Length; i++)
+        if (sfxPlayer.isPlaying && sfxPlayer.clip == sfxClips[(int)sfxToStop])
         {
-            if (sfxPlayers[i].isPlaying && sfxPlayers[i].clip == sfxClips[(int)sfx])
-            {
-                sfxPlayers[i].Stop();
-                sfxPlayers[i].clip = null;
-            }
+            sfxPlayer.Stop();
         }
     }
+}
 }

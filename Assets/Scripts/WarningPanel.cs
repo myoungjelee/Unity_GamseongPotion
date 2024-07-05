@@ -21,7 +21,7 @@ public class WarningPanel : MonoBehaviour
 
         for (int i = 0; i < warningTexts.Length; i++)
         {
-            warningTexts[i].DOFade(0, 0.1f);
+            warningTexts[i].DOFade(0, 0f);
         }
     }
     private void OnTriggerEnter(Collider other) //트리거 감지했을때 나타나는거
@@ -41,8 +41,10 @@ public class WarningPanel : MonoBehaviour
                 {
                     warningTexts[i].DOFade(1f, 1f);
                 }
+
                 isFading = true;
                 AudioManager.Instance.PlaySfx(AudioManager.Sfx.UI);
+                //Debug.Log(other.gameObject.name);
             }
         }
     }
@@ -66,11 +68,11 @@ public class WarningPanel : MonoBehaviour
 
             for (int i = 0; i < warningTexts.Length; i++)
             {
-                warningTexts[i].DOFade(0, 0.5f); // 텍스트도 사라지게 만들기
+                warningTexts[i].DOFade(0, 1f); // 텍스트도 사라지게 만들기
             }
 
             isFading = false;
-            AudioManager.Instance.PlaySfx(AudioManager.Sfx.UI);
+            //AudioManager.Instance.PlaySfx(AudioManager.Sfx.UI);
         }
 
 

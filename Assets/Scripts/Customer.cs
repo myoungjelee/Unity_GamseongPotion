@@ -66,14 +66,17 @@ public class Customer : MonoBehaviour
         SetRandomCharacter();
         float randomDelay = Random.Range(2f, 6f); // 2초에서 5초 사이의 랜덤 시간
         yield return new WaitForSecondsRealtime(randomDelay);
-        transform.DOMoveX(-0.2f, 2).OnComplete(() => SetText());
+        transform.DOMoveX(-0.2f, 2).OnComplete(() => {
+            SetText();
+            collision.enabled = true;
+        });
     }
 
     private void OnDisable()
     {
         transform.position = initPos;
         textUI.SetActive(false);
-        collision.gameObject.SetActive(false);
+        collision.enabled = false;
         StopConversation();
     }
 
@@ -106,7 +109,6 @@ public class Customer : MonoBehaviour
     IEnumerator SetTextRoutine()
     {
         textUI.SetActive(true);
-        collision.gameObject.SetActive(true);
         dialogueText.text = "";
         dialogueText.DOKill();
 

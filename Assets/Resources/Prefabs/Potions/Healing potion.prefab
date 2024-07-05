@@ -677,6 +677,7 @@ MonoBehaviour:
   isInPocket: 0
   originScale: {x: 0, y: 0, z: 0}
   effect: {fileID: 4877190339986159690}
+  audioSource: {fileID: 8115200009104443160}
 --- !u!82 &8115200009104443160
 AudioSource:
   m_ObjectHideFlags: 0
