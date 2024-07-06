@@ -38,7 +38,7 @@ public class AudioManager : MonoBehaviour
 
     private Dictionary<AudioSource, AudioClip> activeSfxClips = new Dictionary<AudioSource, AudioClip>();
 
-    public enum Sfx { Herb, Bubble = 7, Crystal, Coin = 15, Fail, UI, Dialogue, Bell }
+    public enum Sfx { Herb, Bubble = 7, Crystal, Coin = 15, Fail, UI, Dialogue, Bell, MagicPocket }
 
     private void Awake()
     {
@@ -152,5 +152,17 @@ public class AudioManager : MonoBehaviour
                 kvp.Key.Stop();
             }
         }
+    }
+
+    public void StopAllSfx()
+    {
+        foreach (var sfxPlayer in sfxPlayers)
+        {
+            if (sfxPlayer.isPlaying)
+            {
+                sfxPlayer.Stop();
+            }
+        }
+        activeSfxClips.Clear();
     }
 }

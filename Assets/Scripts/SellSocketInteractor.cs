@@ -32,6 +32,9 @@ public class SellSocketInteractor : XRSocketInteractor
         if (interactableObject != null)
         {
             Potion potion = interactableObject.GetComponent<Potion>();
+            PotionGrabInteractable potionGrab = interactableObject.GetComponent<PotionGrabInteractable>();
+
+            interactableObject.transform.localScale = potionGrab.originScale;
 
             if (potion != null)
             {
@@ -59,7 +62,7 @@ public class SellSocketInteractor : XRSocketInteractor
                     // 대사 완료 후 이동
                     customer.StopConversation();
                     Sequence sequence = DOTween.Sequence();
-                    sequence.Append(customer.dialogueText.DOText("고맙습니다!", 1))
+                    sequence.Append(customer.dialogueText.DOText("고맙습니다!", 1.5f))
                             .AppendCallback(() => customer.textUI.SetActive(false))
                             .Append(customer.transform.DOMoveX(3, 3))
                             .OnComplete(() => StartCoroutine(CustomerOnOff()));
@@ -76,7 +79,7 @@ public class SellSocketInteractor : XRSocketInteractor
         }
         else
         {
-            Debug.LogError("포션 NULL");
+            //Debug.LogError("포션 NULL");
         }
     }
 

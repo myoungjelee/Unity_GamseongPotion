@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 143493556}
   - component: {fileID: 143493557}
   m_Layer: 5
-  m_Name: GameObject
+  m_Name: DOTweenAnim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,7 +213,7 @@ MonoBehaviour:
   targetIsSelf: 1
   targetGO: {fileID: 0}
   tweenTargetIsTargetGO: 1
-  delay: 3
+  delay: 4
   duration: 30
   easeType: 1
   easeCurve:
@@ -254,7 +254,7 @@ MonoBehaviour:
   animationType: 1
   targetType: 5
   forcedTargetType: 0
-  autoPlay: 1
+  autoPlay: 0
   useTargetAsV3: 0
   endValueFloat: 0
   endValueV3: {x: 0, y: 4000, z: 0}

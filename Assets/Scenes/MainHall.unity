@@ -12687,8 +12687,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.28, y: 2.84, z: 2.7038467}
-  m_Center: {x: -1.2099855, y: 1.5699961, z: 1.3019214}
+  m_Size: {x: 2.28, y: 2.84, z: 2.6378114}
+  m_Center: {x: -1.2099851, y: 1.5699961, z: 1.2689037}
 --- !u!114 &712631376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13699,6 +13699,11 @@ PrefabInstance:
       objectReference: {fileID: 770297433}
     - target: {fileID: 4214102229123537994, guid: 964e6a9f154a49942851609626fbd012,
         type: 3}
+      propertyPath: particleRender
+      value: 
+      objectReference: {fileID: 770297434}
+    - target: {fileID: 4214102229123537994, guid: 964e6a9f154a49942851609626fbd012,
+        type: 3}
       propertyPath: progressCanvas
       value: 
       objectReference: {fileID: 1416480797}
@@ -13758,6 +13763,12 @@ Transform:
 --- !u!198 &770297433 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 2304270471932931318, guid: 964e6a9f154a49942851609626fbd012,
+    type: 3}
+  m_PrefabInstance: {fileID: 770297431}
+  m_PrefabAsset: {fileID: 0}
+--- !u!199 &770297434 stripped
+ParticleSystemRenderer:
+  m_CorrespondingSourceObject: {fileID: 2304270471932931319, guid: 964e6a9f154a49942851609626fbd012,
     type: 3}
   m_PrefabInstance: {fileID: 770297431}
   m_PrefabAsset: {fileID: 0}
@@ -22641,7 +22652,7 @@ Transform:
   m_GameObject: {fileID: 1246999867}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.193, y: 0, z: -4.155}
+  m_LocalPosition: {x: 6.193, y: 0, z: -3.746}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -28053,7 +28064,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 22, y: 0, z: 23}
+  m_Size: {x: 22, y: 0, z: 22}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1523642824 stripped
 Transform:
