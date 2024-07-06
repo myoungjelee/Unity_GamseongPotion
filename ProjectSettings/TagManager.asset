@@ -13,6 +13,7 @@ TagManager:
   - Grinder
   - GrindingBat
   - Socket
+  - NameTag
   layers:
   - Default
   - TransparentFX

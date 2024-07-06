@@ -6,9 +6,11 @@ public class Soup : MonoBehaviour
 {
     private List<string> herbPowders = new List<string>();
     private MeshRenderer mdshRenderer;
-    private Color originColor;
-    private Color currentColor;
-    public ParticleSystem soupParticle;
+    private Color originSoupColor;
+    private Color currentSoupColor;
+    public ParticleSystemRenderer particleRender;
+    private Color originEffectColor;
+    private Color currentEffectColor;
     private float spawnDistance = 1.0f;
 
     private float currentTime;
@@ -22,7 +24,8 @@ public class Soup : MonoBehaviour
     private void Awake()
     {
         mdshRenderer = GetComponent<MeshRenderer>();
-        originColor = mdshRenderer.material.color;
+        originSoupColor = mdshRenderer.material.color;
+        originEffectColor = particleRender.material.color;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -91,11 +94,12 @@ public class Soup : MonoBehaviour
     private void MixColor(Color newColor)
     {
         // 현재 색상과 새로운 색상을 혼합
-        currentColor = Color.Lerp(currentColor, newColor, 0.6f);
+        currentSoupColor = Color.Lerp(currentSoupColor, newColor, 0.5f);
+        currentEffectColor = Color.Lerp(currentEffectColor, newColor, 0.5f);
 
         // 수프의 색상 변경
-        mdshRenderer.material.color = currentColor;
-        soupParticle.startColor = currentColor;
+        mdshRenderer.material.color = currentSoupColor;
+        particleRender.material.color = currentEffectColor;
     }
 
     public void Stir()
@@ -119,9 +123,10 @@ public class Soup : MonoBehaviour
         herbPowders.Clear();
 
         // 색상 초기화
-        currentColor = originColor;
-        mdshRenderer.material.color = currentColor;
-        soupParticle.startColor = currentColor;
+        currentSoupColor = originSoupColor;
+        currentEffectColor = originEffectColor;
+        mdshRenderer.material.color = currentSoupColor;
+        particleRender.material.color = currentEffectColor;
     }
 
     private string CheckCombination()

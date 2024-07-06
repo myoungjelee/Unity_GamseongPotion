@@ -110,7 +110,7 @@ public class GameManager : MonoBehaviour
                 // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
                 gameObject.transform.position = playerStart.transform.position;
                 gameObject.transform.rotation = playerStart.transform.rotation;
-                fadeScreen.FadeIn();
+                //fadeScreen.FadeIn();
                 isSceneChanging = false; // 플래그 설정
             }
             else
@@ -158,7 +158,7 @@ public class GameManager : MonoBehaviour
                         // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
                         transform.position = playerStart.transform.position;
                         transform.rotation = playerStart.transform.rotation;
-                        fadeScreen.FadeIn();
+                        //fadeScreen.FadeIn();
                         isSceneChanging = false; // 플래그 설정
                     }
                     else
@@ -216,6 +216,7 @@ public class GameManager : MonoBehaviour
     {
         isSceneChanging = true; // 플래그 설정
 
+        AudioManager.Instance.StopAllSfx();
         locomotion.SetActive(false);
         DOTween.KillAll();
         fadeScreen.FadeOut();
@@ -232,6 +233,7 @@ public class GameManager : MonoBehaviour
 
         operation.allowSceneActivation = true;
         AudioManager.Instance.PlayBgm(sceneName);
+        fadeScreen.FadeIn();
         locomotion.SetActive(true);
     }
 
@@ -268,9 +270,22 @@ public class GameManager : MonoBehaviour
 
     void OnEndingLoaded(Scene scene, LoadSceneMode mode)
     {
-        transform.position = Vector3.zero;
-        transform.rotation = Quaternion.identity;
-        characterController.enabled = false;
-        locomotion.SetActive(false);
+        if (scene.name.Contains("Ending"))
+        {
+            transform.position = Vector3.zero;
+            transform.rotation = Quaternion.identity;
+            characterController.enabled = false;
+            locomotion.SetActive(false);
+
+            DOTweenAnimation Anim = FindFirstObjectByType<DOTweenAnimation>();
+            if(Anim != null )
+            {
+                Anim.RecreateTweenAndPlay();
+            }
+            else
+            {
+                Debug.Log("애니메이션 못찾음");
+            }
+        }
     }
 }

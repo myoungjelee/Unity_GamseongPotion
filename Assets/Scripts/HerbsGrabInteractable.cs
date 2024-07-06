@@ -49,6 +49,6 @@ public class HerbsGrabInteractable : XRGrabInteractable
             {
                 herbLight.SetActive(true);
             }
-        }
+        }    
     }
 }

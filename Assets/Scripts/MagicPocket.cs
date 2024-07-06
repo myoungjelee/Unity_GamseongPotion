@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -13,9 +14,7 @@ public class MagicPocket : MonoBehaviour
         if (other.gameObject.CompareTag("Herb") || other.gameObject.CompareTag("HerbPowder") || other.gameObject.CompareTag("Potion"))
         {
             XRGrabInteractable item = other.gameObject.GetComponent<XRGrabInteractable>();
-            Rigidbody rigidbody = other.gameObject.GetComponent<Rigidbody>();
-
-            
+            Rigidbody rigidbody = other.gameObject.GetComponent<Rigidbody>();   
 
             if (item != null && item.isSelected && !itemsInPocket.Contains(item))
             {
@@ -25,7 +24,7 @@ public class MagicPocket : MonoBehaviour
 
                 if (pocketHerb != null)
                 {
-                    pocketHerb.isInPocket = true;
+                    pocketHerb.isInPocket = true;                   
                 }
                 else if (pocketPotion != null)
                 {
@@ -39,7 +38,16 @@ public class MagicPocket : MonoBehaviour
 
                 item.gameObject.layer = LayerMask.NameToLayer("Stencil");
 
+                // NameTag 태그를 가진 자식 객체 비활성화
+                Transform nameTag = item.gameObject.transform.Find("NameTag");
+                if (nameTag != null)
+                {
+                    nameTag.gameObject.SetActive(false);
+                }
+
                 itemsInPocket.Add(item);
+
+                //AudioManager.Instance.PlaySfx(AudioManager.Sfx.MagicPocket);
 
                 //Debug.Log($"{item.gameObject.name}가 Magic Pocket에 들어갔습니다.");
             }
@@ -75,6 +83,7 @@ public class MagicPocket : MonoBehaviour
 
                 itemsInPocket.Remove(item);
 
+                AudioManager.Instance.PlaySfx(AudioManager.Sfx.MagicPocket);
                 //Debug.Log($"{item.gameObject.name}가 Magic Pocket에서 나갔습니다.");
             }
         }

@@ -48,6 +48,13 @@ public class PotionGrabInteractable : XRGrabInteractable
         {
             rb.isKinematic = false;
             transform.localScale = originScale;
+
+            // 네임태그를 갖고 있는 게임 오브젝트를 찾아서 활성화
+            Transform nameTag = gameObject.transform.Find("NameTag");
+            if (nameTag != null)
+            {
+                nameTag.gameObject.SetActive(true);
+            }
         }
     }   
 }
