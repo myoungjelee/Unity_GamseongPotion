@@ -244,7 +244,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FadeRoutine()
     {
-        yield return null;
+        yield return new WaitForSeconds(1);
         locomotion.SetActive(false);
         fadeScreen.FadeIn();
 
