@@ -18,38 +18,27 @@ public class MagicPocket : MonoBehaviour
 
             if (item != null && item.isSelected && !itemsInPocket.Contains(item))
             {
+                item.gameObject.transform.SetParent(pocketWorld);
+                item.gameObject.layer = LayerMask.NameToLayer("Stencil");
+
                 // HerbGrabInteractable 또는 PotionGrabInteractable 인지 확인
                 var pocketHerb = item as HerbsGrabInteractable;
-                var pocketPotion = item as PotionGrabInteractable;
+                var pocketPotion = item as PotionGrabInteractable;         
 
                 if (pocketHerb != null)
                 {
-                    pocketHerb.isInPocket = true;                   
+                    pocketHerb.isInPocket = true;
+                    item.gameObject.transform.DOScale(pocketHerb.originScale / 5, 0.5f);
                 }
                 else if (pocketPotion != null)
                 {
                     pocketPotion.isInPocket = true;
-                }
-
-                if (item.gameObject.transform.parent != pocketWorld)
-                {
-                    item.gameObject.transform.SetParent(pocketWorld);
-                }
-
-                item.gameObject.layer = LayerMask.NameToLayer("Stencil");
-
-                // NameTag 태그를 가진 자식 객체 비활성화
-                Transform nameTag = item.gameObject.transform.Find("NameTag");
-                if (nameTag != null)
-                {
-                    nameTag.gameObject.SetActive(false);
+                    item.gameObject.transform.DOScale(pocketPotion.originScale / 5, 0.5f);
                 }
 
                 itemsInPocket.Add(item);
 
-                //AudioManager.Instance.PlaySfx(AudioManager.Sfx.MagicPocket);
-
-                //Debug.Log($"{item.gameObject.name}가 Magic Pocket에 들어갔습니다.");
+                AudioManager.Instance.PlaySfx(AudioManager.Sfx.MagicPocket);
             }
         }
     }
@@ -73,18 +62,17 @@ public class MagicPocket : MonoBehaviour
                 if (pocketHerb != null)
                 {
                     pocketHerb.isInPocket = false;
-                    //item.gameObject.transform.DOScale(pocketHerb.originScale, 1);
+                    item.gameObject.transform.DOScale(pocketHerb.originScale, 0.5f);
                 }
                 else if (pocketPotion != null)
                 {
                     pocketPotion.isInPocket = false;
-                    //item.gameObject.transform.DOScale(pocketPotion.originScale, 1);
+                    item.gameObject.transform.DOScale(pocketPotion.originScale, 0.5f);
                 }
 
                 itemsInPocket.Remove(item);
 
                 AudioManager.Instance.PlaySfx(AudioManager.Sfx.MagicPocket);
-                //Debug.Log($"{item.gameObject.name}가 Magic Pocket에서 나갔습니다.");
             }
         }
     }

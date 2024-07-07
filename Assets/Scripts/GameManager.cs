@@ -110,7 +110,6 @@ public class GameManager : MonoBehaviour
                 // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
                 gameObject.transform.position = playerStart.transform.position;
                 gameObject.transform.rotation = playerStart.transform.rotation;
-                //fadeScreen.FadeIn();
                 isSceneChanging = false; // 플래그 설정
             }
             else
@@ -158,7 +157,6 @@ public class GameManager : MonoBehaviour
                         // 플레이어의 위치와 회전 값을 PlayerStart 오브젝트의 위치와 회전 값으로 설정
                         transform.position = playerStart.transform.position;
                         transform.rotation = playerStart.transform.rotation;
-                        //fadeScreen.FadeIn();
                         isSceneChanging = false; // 플래그 설정
                     }
                     else
@@ -200,7 +198,7 @@ public class GameManager : MonoBehaviour
     public void SetCalendar()
     {
         date++;
-        GameManager.Instance.customerCount = 0;
+        customerCount = 0;
     }
 
     public void GoToSceneAsync(string sceneName)
@@ -216,6 +214,7 @@ public class GameManager : MonoBehaviour
     {
         isSceneChanging = true; // 플래그 설정
 
+        yield return new WaitForSeconds(1);
         AudioManager.Instance.StopAllSfx();
         locomotion.SetActive(false);
         DOTween.KillAll();
@@ -244,7 +243,6 @@ public class GameManager : MonoBehaviour
 
     IEnumerator FadeRoutine()
     {
-        yield return new WaitForSeconds(1);
         locomotion.SetActive(false);
         fadeScreen.FadeIn();
 

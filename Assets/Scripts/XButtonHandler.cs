@@ -27,6 +27,7 @@ public class XButtonHandler : MonoBehaviour
         {
             magicPocket.SetActive(true);
             interactor.enabled = false;
+            //AudioManager.Instance.PlaySfx(AudioManager.Sfx.MagicPocket);
         }
     }
 
@@ -37,6 +38,7 @@ public class XButtonHandler : MonoBehaviour
         {
             magicPocket.SetActive(false);
             interactor.enabled = true;
+            //AudioManager.Instance.PlaySfx(AudioManager.Sfx.MagicPocket);
         }
     }
 }

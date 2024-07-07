@@ -14,6 +14,7 @@ TagManager:
   - GrindingBat
   - Socket
   - NameTag
+  - MagicPocket
   layers:
   - Default
   - TransparentFX

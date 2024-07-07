@@ -145,11 +145,11 @@ public class AudioManager : MonoBehaviour
     {
         AudioClip clipToStop = sfxClips[(int)sfxToStop];
 
-        foreach (var kvp in activeSfxClips)
+        foreach (var activeClip in activeSfxClips)
         {
-            if (kvp.Value == clipToStop && kvp.Key.isPlaying)
+            if (activeClip.Value == clipToStop && activeClip.Key.isPlaying)
             {
-                kvp.Key.Stop();
+                activeClip.Key.Stop();
             }
         }
     }

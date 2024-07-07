@@ -16,6 +16,8 @@ public class Soup : MonoBehaviour
     private float currentTime;
     private float spawnTime = 10f;
 
+    private int failState = 0;
+
     [SerializeField] private Image progressBar; 
     [SerializeField] private GameObject progressCanvas;
 
@@ -62,6 +64,8 @@ public class Soup : MonoBehaviour
             currentTime = 0;
             UpdateProgressBar(0); // 프로그레스 바 초기화
             progressBar.color = Color.white;
+            AudioManager.Instance.StopSfx(AudioManager.Sfx.Bubble);
+            failState = 0;
         }
     }
 
@@ -115,7 +119,12 @@ public class Soup : MonoBehaviour
         else
         {
             progressBar.color = Color.red;
-            AudioManager.Instance.PlaySfx(AudioManager.Sfx.Fail);
+            if(failState == 0)
+            {
+                AudioManager.Instance.StopSfx(AudioManager.Sfx.Bubble);
+                AudioManager.Instance.PlaySfx(AudioManager.Sfx.Fail);
+                failState++;
+            }
             //Debug.Log("유효한 조합식이 없습니다.");
         }
 
