@@ -126,7 +126,6 @@ public class Customer : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             StopConversation();
-            AudioManager.Instance.StopSfx(AudioManager.Sfx.Dialogue);
             textUI.SetActive(false);
         }
     }
@@ -165,6 +164,7 @@ public class Customer : MonoBehaviour
             StopCoroutine(currentCoroutine);
             currentCoroutine = null;
         }
+        AudioManager.Instance.StopSfx(AudioManager.Sfx.Dialogue);
         dialogueText.DOKill();
         dialogueText.text = "";
     }

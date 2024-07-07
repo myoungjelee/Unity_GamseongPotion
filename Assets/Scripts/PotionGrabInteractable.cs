@@ -27,7 +27,7 @@ public class PotionGrabInteractable : XRGrabInteractable
     {
         base.OnSelectEntered(args);
 
-        rb.isKinematic = false;  
+        //rb.isKinematic = false;  
 
         if (!args.interactorObject.transform.CompareTag("Socket"))
         {
@@ -43,11 +43,28 @@ public class PotionGrabInteractable : XRGrabInteractable
         if (isInPocket)
         {
             rb.isKinematic = true;
+            movementType = MovementType.Instantaneous;
+
+            // 매직포켓 자식으로 재설정
+            Collider[] hitColliders = Physics.OverlapSphere(transform.position, 0.1f); // 포켓을 찾기 위해 작은 반경을 설정합니다.
+            foreach (var hitCollider in hitColliders)
+            {
+                if (hitCollider.CompareTag("MagicPocket"))
+                {
+                    Transform pocketWorld = hitCollider.transform.Find("PocketWorld");
+                    if (pocketWorld != null)
+                    {
+                        isInPocket = true;
+                        transform.SetParent(pocketWorld); // 포켓월드의 자식으로 설정합니다.
+                        break;
+                    }
+                }
+            }
         }
         else
         {
             rb.isKinematic = false;
-            transform.localScale = originScale;
+            movementType = MovementType.VelocityTracking;
 
             // 네임태그를 갖고 있는 게임 오브젝트를 찾아서 활성화
             Transform nameTag = gameObject.transform.Find("NameTag");

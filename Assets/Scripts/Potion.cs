@@ -17,9 +17,12 @@ public class Potion : MonoBehaviour
     [Header("이름표")]
     public GameObject nameTag;
     private Transform player;
+    private PotionGrabInteractable potionGrab;
 
     private void Start()
     {
+        potionGrab = GetComponent<PotionGrabInteractable>();
+
         // "Player" 태그를 가진 게임 오브젝트의 Transform을 찾습니다.
         GameObject playerObject = GameObject.FindWithTag("Player");
         if (playerObject != null)
@@ -43,7 +46,10 @@ public class Potion : MonoBehaviour
     // 호버 시작 시 호출되는 메서드
     public void OnHoverEnter()
     {
-        nameTag.SetActive(true);
+        if(!potionGrab.isInPocket)
+        {
+            nameTag.SetActive(true);
+        }
     }
 
     // 호버 종료 시 호출되는 메서드
