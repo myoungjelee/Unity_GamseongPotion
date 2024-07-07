@@ -62,8 +62,7 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        date = 1;
-        totalCoin = 1000;
+        LoadGameData();
         SetCoinText(totalCoin);
 
         currentState = State.CanSleep;
@@ -285,5 +284,26 @@ public class GameManager : MonoBehaviour
                 Debug.Log("애니메이션 못찾음");
             }
         }
+    }
+
+    public void SaveGameData()
+    {
+        PlayerPrefs.SetInt("TotalCoin", totalCoin);
+        PlayerPrefs.SetInt("Date", date);
+        PlayerPrefs.Save();
+    }
+
+    public void ClearGameData()
+    {
+        PlayerPrefs.DeleteKey("TotalCoin");
+        PlayerPrefs.DeleteKey("Date");
+        PlayerPrefs.Save();
+        //Debug.Log("게임 데이터가 클리어되었습니다.");
+    }
+
+    public void LoadGameData()
+    {
+        totalCoin = PlayerPrefs.GetInt("TotalCoin", 1000); // 기본값 1000
+        date = PlayerPrefs.GetInt("Date", 1); // 기본값 1
     }
 }
