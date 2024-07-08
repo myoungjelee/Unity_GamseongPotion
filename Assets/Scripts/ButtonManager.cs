@@ -27,8 +27,8 @@ public class ButtonManager : MonoBehaviour
     {
         GameManager.Instance.currentState = GameManager.State.Sleeping;
         warningPanel.UIFadeOut();
-        GameManager.Instance.GoToNextDay();
         GameManager.Instance.SaveGameData();
+        GameManager.Instance.GoToNextDay();
     }
 
     public void OnClick_CancleButton()
@@ -39,8 +39,8 @@ public class ButtonManager : MonoBehaviour
     public void OnClick_GoToEnding()
     {
         warningPanel.UIFadeOut();
-        GameManager.Instance.GoToEnding();
         GameManager.Instance.SaveGameData();
+        GameManager.Instance.GoToEnding();
     }
 
     public void QuitGame()
