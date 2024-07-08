@@ -57,8 +57,11 @@ public class Customer : MonoBehaviour
 
     private void OnEnable()
     {
-        StopConversation();
-        StartCoroutine(InitCustomer());
+        if(GameManager.Instance.customerCount < 3)
+        {
+            StopConversation();
+            StartCoroutine(InitCustomer());
+        }
     }
 
     IEnumerator InitCustomer()
