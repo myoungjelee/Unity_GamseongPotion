@@ -191,6 +191,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnBedRoomLoaded;
         SetCalendar();
+        SaveGameData();
         GoToSceneAsync("BedRoom_Morning");
     }
 
@@ -263,6 +264,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded += OnEndingLoaded;
         SetCalendar();
+        SaveGameData();
         GoToSceneAsync("Ending_Credit");
     }
 
@@ -289,7 +291,6 @@ public class GameManager : MonoBehaviour
 
     public void SaveGameData()
     {
-        date++;
         PlayerPrefs.SetInt("TotalCoin", totalCoin);
         PlayerPrefs.SetInt("Date", date);
         PlayerPrefs.Save();
@@ -300,7 +301,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.DeleteKey("TotalCoin");
         PlayerPrefs.DeleteKey("Date");
         PlayerPrefs.Save();
-        //Debug.Log("게임 데이터가 클리어되었습니다.");
+       //Debug.Log("게임 데이터가 클리어되었습니다.");
     }
 
     public void LoadGameData()
