@@ -127,13 +127,13 @@ public class GameManager : MonoBehaviour
         {
             case State.BeAwake:
             case State.Sleeping:
-                DOTween.KillAll();
+                //DOTween.KillAll();
                 SceneManager.sceneLoaded += OnBedRoomLoaded;
                 GoToSceneAsync("BedRoom_Morning");
                 break;
 
             case State.CanSleep:
-                DOTween.KillAll();
+                //DOTween.KillAll();
                 SceneManager.sceneLoaded += OnBedRoomLoaded;
                 GoToSceneAsync("BedRoom_Night");
                 break;
