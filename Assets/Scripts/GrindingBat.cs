@@ -11,7 +11,7 @@ public class GrindingBat : MonoBehaviour
     private Grinder grinder; // 
     private Vector3 originPos; // 방망이 처음 위치
     private Quaternion originRot; // 방망이 처음 회전값
-    private float maxDistance = 1.2f; // 절구통에서 벗어날 최대 거리
+    private float maxDistance = 1f; // 절구통에서 벗어날 최대 거리
     private bool isGrabbed = false;
 
     [Header("햅틱")]
