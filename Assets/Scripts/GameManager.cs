@@ -190,8 +190,8 @@ public class GameManager : MonoBehaviour
     public void GoToNextDay()
     {
         SceneManager.sceneLoaded += OnBedRoomLoaded;
-        GoToSceneAsync("BedRoom_Morning");
         SetCalendar();
+        GoToSceneAsync("BedRoom_Morning");
     }
 
     public void SetCalendar()
@@ -262,6 +262,7 @@ public class GameManager : MonoBehaviour
     public void GoToEnding()
     {
         SceneManager.sceneLoaded += OnEndingLoaded;
+        SetCalendar();
         GoToSceneAsync("Ending_Credit");
     }
 
