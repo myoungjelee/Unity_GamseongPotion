@@ -289,6 +289,7 @@ public class GameManager : MonoBehaviour
 
     public void SaveGameData()
     {
+        date++;
         PlayerPrefs.SetInt("TotalCoin", totalCoin);
         PlayerPrefs.SetInt("Date", date);
         PlayerPrefs.Save();
